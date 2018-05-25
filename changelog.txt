@@ -1,0 +1,99 @@
+Version 4.2
+• Fixed bug that stopped app mode working without internet connection
+• Fixed italic sync with server
+• Improved auto-connect
+• Added way to send in a translation through the app
+• Added backwards navigation in some activities
+• Added info about source code
+
+Version 4.1
+• Improved performance after resuming the app
+• Improved performance on slow connections?
+• Fixed crash when server isn't started
+• Added black theme for the app
+• Fixed themes dialog
+• Fixed image cache bug
+• Fixed No Item Live bug
+• Added PDF/Image Group preview
+• Increased thumbnail sizes
+• Increased text size
+• Updated button color
+• Added chapter/verse selection help
+• Code clean-up to improve performance
+
+Version 4.0
+• Fixed crash
+• Improved crash handler
+• Will warn if wifi isn't started
+
+Version 3.9
+• Fixed search bug with foreign characters
+• Fixed crash if the server isn't started when connecting
+
+Version 3.8
+• Fixed crash caused by items with a single bracket
+• Fixed search dialog layout bug on certain devices
+
+Version 3.7
+• Simplify the connection process:
+- Set auto-connect to be on by default
+- Connect to an automatically found server without confirmation
+- Improved auto-connect accuracy
+• Small layout improvements
+
+Version 3.6
+• Fixed image handling
+• Added support for multi window usage on some Samsung devices
+• Small layout improvements
+
+Version 3.5
+• Fixed video playback bug
+• Fixed dialog button size
+
+Version 3.4
+• Added option to disable the record button
+
+Version 3.3
+• Added support for blank slides
+
+Version 3.2
+• Finally found a way to solve the bad response bug within the app! (I.e. the latest nightly release is no longer needed to run the app flawlessly.)
+
+Version 3.1
+• Fixed bug where the app could force close if an item title had two subsequent stars
+• Added support for changing theme (when added to Quelea)
+• Added support for moving/removing schedule items (when added to Quelea)
+• Added auto-connect button (Note: The feature must be activated in Quelea preference file first to work - see information here in Play Store or in the troubleshooting guide)
+• Fixed auto-connect dialog behaviour
+
+Version 3.0
+• New logo to match Quelea 2016.0
+• New design
+• Added connection troubleshooting guide
+• Fixed play/pause to only display the one that is appropriate
+• It's now easier to see when the buttons have finished synchronizing with Quelea
+• Added support for skipping directly to an item in the schedule (needs Quelea 2016.1)
+• Prepared for previewing presentation slides (upcoming feature in Quelea)
+• Updated Czech labels
+
+Version 2.9
+• Better crash handling: The default crash report doesn't always supply sufficient information to track down the bugs; hopefully you will be able to easily send me all the info I need to fix it mode now on.
+• Added shortcut to report bugs or give suggestions.
+• Prepared option to control the new recording feature in Quelea (will automatically become active as soon as the code changes have been added to Quelea 2016.0)
+
+Version 2.8
+• Fixed bug where songs were searched for if more that three characters were added in a bible passage search.
+• (Hopefully) Solved crash on certain devices.
+• Cleaned up code and moved to latest SDK.
+
+Version 2.7
+• Fixed bug where the buttons to hide the text could flicker when pressed.
+• Added timeout settings for auto-connect if you're experience issues with the feature.
+• Fixed bug where the app could force close if the current song contained '+', '(' or ')'.
+
+Version 2.6
+• New automatic search after four characters have been entered. The search will automatically be updated as you continue to write and the result will show up below the search bar. If you prefer to open the results in a dialog (e.g. if you have a small screen), just press return and the search will behave just as before.
+
+Version 2.5
+• Fixed a message to properly show the translated text.
+• Schedule drawer will no longer close automatically when screen orientation is changed.

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="action_logout">Sair</string>
+    <string name="action_exit">Sair</string>
+    <string name="action_black">Preto</string>
+    <string name="action_clear">Limpar</string>
+    <string name="action_logo">Logo</string>
+    <string name="action_previous_item">Item anterior</string>
+    <string name="action_previous_slide">Slide anterior</string>
+    <string name="action_next_slide">Próximo slide</string>
+    <string name="action_next_item">Próximo item</string>
+    <string name="title_activity_about">Sobre</string>
+    <string name="msg_currently_displaying">Actualmente exibindo%s</string>
+    <string name="msg_want_to_exit">Tem ceteza que deseja sair?</string>
+    <string name="action_yes_label">Sim</string>
+    <string name="action_no_label">Não</string>
+    <string name="action_ok_label">OK</string>
+    <string name="msg_enter_mr_url">Digite o URL para o servidor remoto Quelea Mobile.</string>
+    <string name="error_failed_finding_mr_server">Falha ao localizar o servidor remoto Quelea Mobile. Por favor, certifique-se de que o Quelea é iniciado e que você inseriu o URL correcto.</string>
+    <string name="error_url_incorrect">URL parece estar incorreta. Certifique-se de que o Quelea é iniciado e digite o URL para o servidor remoto Quelea Mobile.</string>
+    <string name="msg_no_live_item">Nenhum item actualmente Ao vivo</string>
+    <string name="action_cancel_label">Cancelar</string>
+    <string name="msg_enter_password">Digite a senha para o servidor remoto Quelea Mobile</string>
+    <string name="msg_logged_in">Conectado</string>
+    <string name="msg_logged_out">Desconectado</string>
+    <string name="title_about_headline">Sobre o app:</string>
+    <string name="app_name_mr">Quelea Mobile Remote</string>
+    <string name="title_enter_song">Procurar uma música para adicionar ao seu culto</string>
+    <string name="msg_add_song">Você quer adicionar esta canção?</string>
+    <string name="msg_select_song">Selecione a música que você deseja adicionar</string>
+    <string name="msg_no_songs_message">Não é possível encotrar músicas correspondentes a sua busca.</string>
+    <string name="msg_search_tooltip">Adicione uma música ou uma passagem da bíblia</string>
+    <string name="msg_about_text_app">Este app é um aplicativo sem fins lucrativos feita para usar com o software open source de projecção da igreja chamado Quelea (http://quelea.org). Embora já não seja beta, certamente pode apresentar falhas ainda e nem é cheio de recursos. Este é um projeto paralelo e na maior parte para uso pessoal, mas é com prazer que compartilho com qualquer pessoa que achar útil.</string>
+    <string name="msg_about_text_support">Sinta-se livre para me enviar um e-mail para arvid@quelea.org se você tiver dúvidas ou outras questões que estejas enfrentando, mas certifique-se que você esteja com o Quelea iniciado em seu computador antes do app (com ambos os servidores ativos), que ambos os dispositivos estejam conectados à mesma rede e que você tenha entrado com a URL correta em primeiro lugar.</string>
+    <string name="msg_about_text_responsibility">Eu não posso garantir uma experiência sem falhas, por isso não vou assumir a responsabilidade por eventuais problemas que poderão ocorrer em um ambiente ao vivo.</string>
+    <string name="msg_connected">Connectando-se ao Mobile Remote Server</string>
+    <string name="msg_select_book">Seleccione o livro</string>
+    <string name="msg_bible_query_hint">[Capítulo]:[Verso]-[Verso] no </string>
+    <string name="action_change_translation">Alterar tradução</string>
+    <string name="action_search_song">Pesquisar uma música</string>
+    <string name="action_add_bible">Adicionar uma passagem da bíblia</string>
+    <string name="action_play">Play</string>
+    <string name="msg_no_server_found">Nenhum servidor foi encontrado ao tentar auto-connectar. Por favor, certifique-se de que o Quelea e o servidor de auto-conexão está iniciado ou digite a URL manualmente.</string>
+    <string name="action_select_translation">Selecione a tradução da Bíblia</string>
+    <string name="action_add_go_live">Adicionar e ir ao vivo</string>
+    <string name="msg_how_to"><b>Pesquisar uma música:</b>\nProcurar por uma parte da letra da canção ou o título da música, pressione Enter e depois de alguns segundos você receberá todas as músicas correspondentes a frase de pesquisa.\n\n<b>Adicionar uma passagem da bíblia:</b>\nSeparar o capítulo de um verso com dois pontos (:) e vários versos em uma fila com um hífen (-). Se você quiser adicionar vários versos diferentes para o mesmo slide, você pode separar cada novo verso com uma vírgula (,) ou um ponto e vírgula (;) e, em seguida, escrever a passagem completa (incluindo capítulo). Depois de pressionar Enter, você receberá uma mensagem se foi possível adicionar a passagem ou não.</string>
+    <string name="title_search_help">Ajuda da pesquisa</string>
+    <string name="msg_trying_to_find_server_automatically">Tentando encontrar o servidor automaticamente…</string>
+    <string name="msg_getting_bible_translations">Obtendo traduções da biblia</string>
+    <string name="msg_trying_to_add_passage">Tentando adicionar passagem para o seu culto…</string>
+    <string name="msg_checking_stored_url">Verificando URL armazenado…</string>
+    <string name="msg_searching">Procurando…</string>
+    <string name="msg_getting_bible_books">Obtendo livros da bíblia…</string>
+    <string name="msg_checking_stored_url_and_auto_connecting">Verificar URL armazenado e auto-conectar…</string>
+    <string name="action_change_book_or_translation">Alterar a tradução da bíblia</string>
+    <string name="msg_new_settings_added">Nova configuração de navegação adicionada</string>
+    <string name="msg_cant_use_ipv6">Infelizmente você não pode usar endereços IPv6. Você precisa usar um endereço IPv4 para ser capaz de usar este aplicativo. Se você não sabe como encontrá-lo, o google encontrará o IP local e o nome do seu sistema operacional. Digite o endereço/URL ipv4 abaixo.</string>
+    <string name="action_pause">Pause</string>
+    <string name="msg_navigation_drawer_open">Abrir lista de culto</string>
+    <string name="msg_navigation_drawer_close">Fechar lista de culto</string>
+
+    <!-- Preference labels -->
+    <string name="pref_title_activity_settings">Configurações</string>
+    <string name="pref_header_general">Geral</string>
+    <string name="pref_title_volume_buttons">Permitir a navegação pelo volume</string>
+    <string name="pref_description_volume_buttons">Use os botões de volume do telefone para navegar para avançar ou recuar slide/item.</string>
+    <string name="pref_title_dpad_buttons">Pemitir a navegação pelo dpad</string>
+    <string name="pref_description_dpad_buttons">Use os botões dpad (cima/baixo) para navegar para avançar ou recuar slide/item. Se você quiser usar um teclado bluetooth ou pedal (como AirTurn), activate aquí.</string>
+    <string name="pref_header_server_settings">Configurações do servidor</string>
+    <string name="pref_title_mr_server">Servidor remoto móvel</string>
+    <string name="pref_description_mr_server">Clique aqui para inserir a URL para o Servidor Remoto Mobile.</string>
+    <string name="pref_description_auto_connect">Sempre tente se auto-conectar-se se a URL armazenada não funcionar.</string>
+    <string name="pref_title_auto_connect">Usar auto-conectar-se</string>
+    <string name="pref_header_navigation_settings">Configuração de Navegação</string>
+    <string name="pref_title_on_end">Item final/começando acção</string>
+    <string name="pref_description_on_end">Seleccione o que deseja que o aplicativo faça quando você navegar com qualquer uma das duas opções acima e chegar ao final/início de um item.</string>
+    <string name="pref_description_long_press">Selecione o que você quer que aconteça se pressionar por um tempo longo um botão quando estiver navegando com qualquer uma das duas opções acima. Note que este não vai funcionar com pedais AirTurn.</string>
+    <string name="pref_title_long_press">Pressionar e segurar</string>
+    <string name="pref_title_double_press">Premir com dupla acção</string>
+    <string name="pref_description_double_press">Seleccione o que você quer que  aconteça se  pressionar dois botões ao mesmo tempo quando você está navegando com qualquer uma das duas opções acima.</string>
+    <string name="pref_description_swipe_navigation">Escolha o que deve acontecer se você deslizar para a esquerda ou para a direita na tela.</string>
+    <string name="pref_title_swipe_navigation">Swipe navigation</string>
+    <string name="pref_description_auto_timeout">Longo, significa melhor resultado se você tiver uma conexão wi-fi ruim, Curto, conexão mais rápida, mas pode significar que o servidor é encontrado com menos frequência.</string>
+    <string name="pref_title_auto_timeout">Editar o tempo limite da auto-conexão</string>
+
+
+    <!-- Translatable arrays -->
+    <string-array name="auto_progress">
+        <item name="0">Avançar para o próximo/anterior item/ seguinte</item>
+        <item name="1">Ocultar texto com o botão Ocultar</item>
+        <item name="2">Ocultar texto e mostrar o Logotipo</item>
+        <item name="3">Ocultar texto com Tela Preta</item>
+        <item name="4">Não fazer nada</item>
+    </string-array>
+    <string-array name="swipe_navigation">
+        <item name="0">Mover para o item seguinte/anterior</item>
+        <item name="1">Mover para o próximo slide/anterior</item>
+        <item name="2">Não fazer nada</item>
+    </string-array>
+    <string-array name="auto_timeout">
+        <item name="200">Curto</item>
+        <item name="500">Médio</item>
+        <item name="1000">Longo</item>
+    </string-array>
+
+
+</resources>

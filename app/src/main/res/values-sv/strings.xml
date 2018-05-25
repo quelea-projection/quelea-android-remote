@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="action_logout">Logga ut</string>
+    <string name="action_exit">Avsluta</string>
+    <string name="action_black">Svart</string>
+    <string name="action_clear">Töm</string>
+    <string name="action_logo">Logga</string>
+    <string name="action_previous_item">Föregående punkt</string>
+    <string name="action_previous_slide">Föregående textdel</string>
+    <string name="action_next_slide">Nästa textdel</string>
+    <string name="action_next_item">Nästa punkt</string>
+    <string name="title_activity_about">Om</string>
+    <string name="msg_currently_displaying">Live%s</string>
+    <string name="msg_want_to_exit">Är du säker på att du vill avsluta?</string>
+    <string name="action_yes_label">Ja</string>
+    <string name="action_no_label">Nej</string>
+    <string name="action_ok_label">OK</string>
+    <string name="msg_enter_mr_url">Skriv in URL:en till Quelea\'s fjärrstyrningsserver.</string>
+    <string name="error_failed_finding_mr_server">Hittade inte Quelea\'s fjärrstyrningsserver. Se till att Quelea är startad och att du har skrivit in rätt URL.</string>
+    <string name="error_url_incorrect">URL:en verkar vara fel. Se till att Quelea är startad och att URL:en till Quelea\'s fjärrstyrningsserver är rätt.</string>
+    <string name="msg_no_live_item">Ingen punkt är för närvarande live</string>
+    <string name="action_cancel_label">Avbryt</string>
+    <string name="msg_enter_password">Skriv in lösenordet till Quelea\'s fjärrstyrningsserver</string>
+    <string name="msg_logged_in">Inloggad</string>
+    <string name="msg_logged_out">Utloggad</string>
+    <string name="title_about_headline">Om appen:</string>
+    <string name="app_name_mr">Quelea Fjärrstyrning</string>
+    <string name="title_enter_song">Sök efter en sång att lägga till i gudstjänstordningen</string>
+    <string name="msg_add_song">Vill du lägga till denna sång?</string>
+    <string name="msg_select_song">Välj vilken sång du vill lägga till</string>
+    <string name="msg_no_songs_message">Kunde inte hitta några sånger som matchade din sökning.</string>
+    <string name="msg_search_tooltip">Lägg till en sång eller en bibeltext</string>
+    <string name="msg_about_text_app">Detta är en gratisapp gjord för att användas med open source-programmet Quelea (http://quelea.org). Även om den inte längre är i en betafas är den säkerligen inte buggfri och inte heller färdigutvecklad. Detta är ett sidoprojekt och främst ämnat för eget bruk men som delas gärna med alla som kan finna användning för det.</string>
+    <string name="msg_about_text_support">Känn dig fri att skicka ett e-mail till mig på arvid@quelea.org om du har några frågor eller upplever några problem, men se till att du har startat Quelea före appen (med båda servrarna aktiva), att båda enheterna är anslutna till samma nätverk och att du har skrivit in rätt URL först.</string>
+    <string name="msg_about_text_responsibility">Jag kan inte garantera en felfri upplevelse av appen så jag tar inget ansvar för några problem som kan uppstå vid live-användning.</string>
+    <string name="msg_connected">Ansluten till fjärrsyrningsservern</string>
+    <string name="msg_select_book">Välj bok</string>
+    <string name="msg_bible_query_hint">[Kapitel]:[Vers]-[Vers] i </string>
+    <string name="action_change_translation">Byt översättning</string>
+    <string name="action_search_song">Sök efter en sång</string>
+    <string name="action_add_bible">Lägg till en bibeltext</string>
+    <string name="action_play">Play</string>
+    <string name="msg_no_server_found">Ingen server hittades vid automatisk anslutning. Se till att Quelea och servern för automatisk anslutning är startad eller skriv in URL:en manuellt.</string>
+    <string name="action_select_translation">Välj bibelöversättning</string>
+    <string name="action_add_go_live">Lägg till och visa live</string>
+    <string name="msg_how_to"><b>Sök efter en sång:</b>\nSök efter en del av sångtexten eller namnet på sången, tryck Enter och efter några sekunder kommer du se alla sånger som matchar din sökning.\n\n<b>Lägg till en bibeltext:</b>\nDu separerar kapitel från vers med ett kolon (:) och flera verser i rad med ett bindestreck (-). Om du vill lägga till flera olika verser på samma bild kan du separera varje ny vers med ett komma (,) eller ett semikolon (;) och sedan skriva hela numret till bibelstycket (inklusive kapitel). Efter att du har tryckt Enter kommer du se ett meddelande om det var möjligt att lägga till bibeltexten eller inte.</string>
+    <string name="title_search_help">Sökhjälp</string>
+    <string name="msg_trying_to_find_server_automatically">Försöker hitta server automatiskt…</string>
+    <string name="msg_getting_bible_translations">Hämtar bibelöversättningar…</string>
+    <string name="msg_trying_to_add_passage">Försöker lägga till bibeltexten till din gudstjänstordning…</string>
+    <string name="msg_checking_stored_url">Kontrollerar den sparade URL:en…</string>
+    <string name="msg_searching">Söker…</string>
+    <string name="msg_getting_bible_books">Hämtar bibelböcker…</string>
+    <string name="msg_checking_stored_url_and_auto_connecting">Kontrollerar den sparade URL:en och söker server automatiskt…</string>
+    <string name="action_change_book_or_translation">Ändra bibelbok eller bibelöversättning</string>
+    <string name="msg_cant_use_ipv6">Tyvärr kan du inte använda ipv6-adresser. Du måste använda en ipv4-adress för att kunna använda denna app. Om du inte vet hur du hittar det, googla \'hitta lokalt ip-nummer\' och namnet på ditt operativsystem. Skriv in ipv4-adressen/URL:en nedan.</string>
+    <string name="msg_new_settings_added">Nya navigationsinställningar tillagda</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_feedback">Rapportera en bug/Föreslå en funktion</string>
+    <string name="action_search_server">Sök server</string>
+    <string name="msg_choose_action">Välj händelse för %s</string>
+    <string name="action_move_down">Flytta ner</string>
+    <string name="action_move_up">Flytta upp</string>
+    <string name="troubleshoot_action_next">Nästa</string>
+    <string name="msg_not_supported">Din Quelea-version stöder inte denna funktion.</string>
+    <string name="troubleshoot_msg_auto_connect">Om du använder automatisk anslutning, se till att du har aktiverat det i Quelea genom att lägga till \"use.auto.detect.server=true\" i inställningsfilen i mappen som heter .quelea i din användarmapp.</string>
+    <string name="troubleshoot_msg_change_port">Prova byta port i Quelea.</string>
+    <string name="troubleshoot_msg_check_router">Kontrollera dina serverinställningar så att "port forwarding" är aktiverat. Hur man gör det skiljer sig från märke till märke så konsultera din användarmanual för detta.</string>
+    <string name="troubleshoot_msg_check_url">Pröva URL:en i din webbläsare så att du vet att URL:en fungerar som den ska.</string>
+    <string name="troubleshoot_msg_check_wifi">Se till att wifi är aktiverat på din enhet och att du är ansluten till samma nätverk som datorn med Quelea.</string>
+    <string name="troubleshoot_msg_disable_firewall">Avaktivera brandvägg och virusskydd tillfälligt för att se till att det inte är där problemet ligger.</string>
+    <string name="troubleshoot_msg_finished">Perfekt! Då bör du kunna använda appen som vanligt framöver.</string>
+    <string name="troubleshoot_msg_not_within_app">Tyvärr innebär detta att problemet ligger utanför appen, så jag kan tyvärr inte lösa problemet åt dig. Jag är glad att du har hittat något sätt att få det att fungera i alla fall!</string>
+    <string name="troubleshoot_msg_nothing_worked">Ledsen att du fortfarande inte kan få det att fungera. Vill du skicka ett email till mig så jag kan se om jag kan hjälpa dig mer?</string>
+    <string name="troubleshoot_msg_report_bug">Detta innebär att det är ett fel i appen. Kan du tänka dig skicka ett email med lite information så att jag kan fixa det?</string>
+    <string name="troubleshoot_title_activity">Felsökning av anslutningen med Quelea</string>
+    <string name="troubleshoot_msg_guide_info">Välkommen till felsökningsguiden. Den kommer att ta dig igenom några av de mest vanliga anledningarna för anslutningen att misslyckas. För att hjälpa mig förbättra appen, klicka gärna "Detta fungerade" när du har hittat något som fungerar.</string>
+    <string name="troubleshoot_action_nothing_worked">Ingenting fungerade</string>
+    <string name="troubleshoot_action_previous">Föregående</string>
+    <string name="action_remove_item">Ta bort från gudstjänstordningen</string>
+    <string name="action_report">Rapportera</string>
+    <string name="title_select_theme">Välj tema</string>
+    <string name="msg_setting_theme">Anger tema %s</string>
+    <string name="action_start_recording">Börja spela in</string>
+    <string name="action_stop_recording">Sluta spela in</string>
+    <string name="title_activity_crash">Quelea fjärrstyrning krashade</string>
+    <string name="troubleshoot_action_this_worked">Detta fungerade</string>
+    <string name="pref_description_choose_app_theme">Väl tema för appen</string>
+    <string name="pref_title_app_theme">Färgtema</string>
+    <string name="title_select_chapter">Välj kapitel</string>
+    <string name="title_select_verse">Välj vers</string>
+    <string name="title_select_ending_verse">Välj slutvers</string>
+    <string name="action_add">Lägg bara till</string>
+    <string name="msg_failed_sending">Misslyckades sända signal till servern</string>
+    <string name="action_change_book">Byt bok</string>
+    <string name="msg_navigation_drawer_open">Öppna gudstjänstordning</string>
+    <string name="msg_navigation_drawer_close">Stäng gudstjänstordning</string>
+    <string name="action_translate">Hjälp till att översätta appen</string>
+    <string name="msg_partially_translated">Tyvärr kan den här appen vara bara delvis översatt till ditt språk. Några av orden kommer stå på engelska tills de läggs till i en senare uppdatering. Vill du hjälpa mig med att uppdatera översättningen?</string>
+
+    <!-- Preference labels -->
+    <string name="pref_title_activity_settings">Inställningar</string>
+    <string name="pref_header_general">Allmänt</string>
+    <string name="pref_title_volume_buttons">Använd volymnavigation</string>
+    <string name="pref_description_volume_buttons">Använd telefonens volymknappar för att navigera till nästa eller föregående textdel/punkt.</string>
+    <string name="pref_title_dpad_buttons">Använd dpad-navigation</string>
+    <string name="pref_description_dpad_buttons">Använd dpad-knappar (upp/ner) för att navigera till nästa eller föregående textdel/punkt. Om du vill använda ett Bluetooth-tangentbord eller -pedal (som AirTurn), aktiverar du detta.</string>
+    <string name="pref_header_server_settings">Serverinställningar</string>
+    <string name="pref_title_mr_server">Fjärrstyrningsserver</string>
+    <string name="pref_description_mr_server">Klicka här för att ange URL:en till fjärrstyrningservern.</string>
+    <string name="pref_description_auto_connect">Försök alltid att ansluta automatiskt om den sparade URL:en inte fungerar.</string>
+    <string name="pref_title_auto_connect">Använd automatisk anslutning</string>
+    <string name="pref_header_navigation_settings">Navigationsinställningar</string>
+    <string name="pref_title_on_end">Händelse vid början/slutet av en punkt</string>
+    <string name="pref_description_on_end">Välj vad appen ska göra när du navigerar med någon av alternativen ovan och du når början/slutet av en punkt.</string>
+    <string name="pref_description_long_press">Välj vad du vill ska hända när du gör en lång tryckning på en av knapparna när du navigerar med någon av alternativen ovan. Märk att detta alternativ inte fungerar med AirTurn-pedaler.</string>
+    <string name="pref_title_long_press">Långtryckshändelse</string>
+    <string name="pref_title_double_press">Dubbeltryckshändelse</string>
+    <string name="pref_description_double_press">Välj vad du vill ska hända när du trycker ner två knappar samtidigt när du navigerar med någon av alternativen ovan.</string>
+    <string name="pref_description_swipe_navigation">Välj vad som ska hända när du sveper höger eller vänster på skärmen.</string>
+    <string name="pref_title_swipe_navigation">Svepnavigation</string>
+    <string name="pref_description_auto_timeout">Längre tid innebär bättre resultat om du har en dåligt wifi-anslutning, kortare tid innebär snabbare anslutning men kan innebära att servern hittas mindre ofta.</string>
+    <string name="pref_title_auto_timeout">Timeout-längd för automatisk anslutning</string>
+    <string name="pref_title_disable_rec">Avaktivera inspelningsknappen</string>
+
+
+    <!-- Translatable arrays -->
+    <string-array name="auto_progress">
+        <item name="0">Gå vidare till nästa/föregående punkt</item>
+        <item name="1">Göm texten med blankknappen</item>
+        <item name="2">Göm texten och visa logga</item>
+        <item name="3">Göm texten med svart skärm</item>
+        <item name="4">Gör ingenting</item>
+    </string-array>
+    <string-array name="swipe_navigation">
+        <item name="0">Gå vidare till nästa/föregående punkt</item>
+        <item name="1">Gå vidare till nästa/föregående textdel</item>
+        <item name="2">Gör ingenting</item>
+    </string-array>
+    <string-array name="auto_timeout">
+        <item name="200">Kort</item>
+        <item name="500">Medel</item>
+        <item name="1000">Lång</item>
+    </string-array>
+
+</resources>

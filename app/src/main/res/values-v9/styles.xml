@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme for API 11+. This theme completely replaces
+        AppBaseTheme mode res/values/styles.xml on API 11+ devices.
+
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- API 11 theme customizations can go here. -->
+         <item name="android:alertDialogStyle">@style/MyOpaqueAlertDialog</item>
+        <item name="android:editTextStyle">@style/Theme.MyApp.EditText</item>
+    </style>
+
+    <style name="Theme.MyApp.EditText" parent="@android:style/Widget.EditText">
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="MyOpaqueAlertDialog">
+        <item name="android:fullDark">@android:color/black</item>
+        <item name="android:topDark">@android:color/black</item>
+        <item name="android:centerDark">@android:color/black</item>
+        <item name="android:bottomDark">@android:color/black</item>
+        <item name="android:fullBright">@android:color/black</item>
+        <item name="android:topBright">@android:color/white</item>
+        <item name="android:centerBright">@android:color/white</item>
+        <item name="android:bottomBright">@android:color/black</item>
+        <item name="android:bottomMedium">@android:color/black</item>
+        <item name="android:centerMedium">@android:color/white</item>
+    </style>
+    
+</resources>

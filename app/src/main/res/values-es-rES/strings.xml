@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="error_failed_finding_mr_server">No se ha podido encontrar el servidor remoto de Quelea. Compruebe que Quelea esté iniciado y que el URL indicado esté correcto.</string>
+    <string name="msg_enter_password">Introduzca la contraseña del servidor remoto de Quelea Mobile</string>
+    <string name="app_name_mr">Quelea Operación Remota</string>
+    <string name="error_url_incorrect">Parece que el URL está incorrecto. Compruebe que Quelea esté iniciado y que el URL del servidor remoto esté correcto.</string>
+    <string name="action_logout">Cerrar sesión</string>
+    <string name="action_exit">Salir</string>
+    <string name="action_black">Negro</string>
+    <string name="action_clear">Ocultar texto</string>
+    <string name="action_logo">Logotipo</string>
+    <string name="action_previous_item">Elemento anterior</string>
+    <string name="action_previous_slide">Párrafo anterior</string>
+    <string name="action_next_slide">Próximo párrafo</string>
+    <string name="action_next_item">Próximo elemento</string>
+    <string name="title_activity_about">Acerca de la aplicación</string>
+    <string name="msg_currently_displaying">Actualmente mostrando%s</string>
+    <string name="msg_navigation_drawer_open">Abrir el orden del guión</string>
+    <string name="msg_navigation_drawer_close">Cerrar el guión del culto</string>
+    <string name="msg_want_to_exit">¿Seguro que desea salir?</string>
+    <string name="action_yes_label">Sí</string>
+    <string name="action_no_label">No</string>
+    <string name="action_ok_label">OK</string>
+    <string name="msg_no_live_item">Ningún elemento en vivo</string>
+    <string name="action_cancel_label">Cancelar</string>
+    <string name="msg_logged_in">Sesión iniciada</string>
+    <string name="msg_logged_out">Sesión cerrada</string>
+    <string name="title_about_headline">Acerca de la aplicación <xliff:g id="app_name" example="Quelea Mobile Remote">%s</xliff:g>:</string>
+    <string name="title_enter_song">Busque una canción que desea añadir a la lista del guión</string>
+    <string name="msg_add_song">¿Desea añadir esta canción?</string>
+    <string name="msg_select_song">Seleccione la canción que desea añadir</string>
+    <string name="msg_no_songs_message">No se encontraron canciones correspondientes a la búsqueda.</string>
+    <string name="msg_search_tooltip">Añadir una canción o una cita bíblica.</string>
+    <string name="msg_about_text_app">Esta es una aplicación sin fines lucrativos desarrollada para el uso con el programa de código abierto Quelea (http://quelea.org). Aunque ya no esté en fase beta, seguramente no esté sin errores, tampoco está del todo desarrollada. Esto es un proyecto lateral y principalmente destinado al uso privado, pero que se comparte con placer con todos los que lo puedan encontrar útil.</string>
+    <string name="msg_about_text_support">No dude en mandarme un correo electrónico a arvid@quelea.org en caso de que tenga preguntas o experimente problemas, pero anteriormente, compruebe que Quelea esté en marcha antes que la aplicación (con los dos servidores activos), que los dos dispositivos estén conectados al mismo red y que haya introducido el URL correcto.</string>
+    <string name="msg_about_text_responsibility">No puedo garantizar una experiencia de la aplicación sin errores, por eso declino toda responsabilidad de cualquier problema que pueda ocurrir al uso en vivo.</string>
+    <string name="msg_connected">Conectado al servidor remoto</string>
+    <string name="msg_select_book">Seleccionar libro</string>
+    <string name="msg_bible_query_hint">[Capítulo]:[Versículo]-[Versículo] en</string>
+    <string name="action_change_translation">Cambiar traducción</string>
+    <string name="action_search_song">Buscar una canción</string>
+    <string name="action_add_bible">Añadir una cita bíblica</string>
+    <string name="msg_no_server_found">No se ha encontrado ningún servidor a la conexión automática. Compruebe que Quelea y el servidor de conexión automática estén iniciados, o introduzca el URL de manera manual.</string>
+    <string name="action_select_translation">Seleccionar traducción de Bíblia.</string>
+    <string name="action_add_go_live">Añadir y mostrar en vivo</string>
+    <string name="msg_how_to"><b>Buscar una canción:</b>\nBusque una parte de la letra o el nombre de la canción, haga clic en Enter y dentro de unos segundos aparecerán los resultados que correspondan a su búsqueda.\n\n<b>Añadir una cita bíblica:</b>\n Se separa el capítulo del versículo a través de dos puntos (:) y varios versículos consecutivos a través de un guión (-). Sí desea añadir varios versículos diferentes en una misma diapositiva puede separar cada verso nuevo con una coma (,) o con punto y coma (;) y después escribir el número entero de la cita bíblica (incluyendo el capítulo). Después de pulsar Enter aparecerá un mensaje que informa sobre si la cita ha sido añadida o no.</string>
+    <string name="title_search_help">Ayuda de búsqueda</string>
+    <string name="msg_trying_to_find_server_automatically">Intentando encontrar el servidor automáticamente…</string>
+    <string name="msg_getting_bible_translations">Obteniendo traducciones de la Bíblia…</string>
+    <string name="msg_trying_to_add_passage">Intentando añadir la cita bíblica al programa del guión…</string>
+    <string name="msg_checking_stored_url">Verificando el URL guardado</string>
+    <string name="msg_searching">Buscando…</string>
+    <string name="msg_getting_bible_books">Obteniendo libros de la Bíblia…</string>
+    <string name="msg_checking_stored_url_and_auto_connecting">Verificando el URL guardado y buscando el servidor automáticamente…</string>
+    <string name="action_change_book_or_translation">Cambiar libro de Bíblia o traducción</string>
+    <string name="msg_cant_use_ipv6">Desafortunadamente no puede utilizar direcciones IPv6. Debe emplear una dirección IPv4 para el uso de esta aplicación. Para saber cómo encontrar su dirección, busque en Google \'enconrar dirección IP local\' y el nombre de su sistema operativo. Introduzca la dirección IPv4/el URL abajo.</string>
+    <string name="msg_new_settings_added">Nuevos ajustes de navegación han sido añadidos.</string>
+    <string name="msg_not_supported">Su version de Quelea no admite esta función</string>
+
+    <!-- Preference labels -->
+    <string name="pref_title_activity_settings">Ajustes</string>
+    <string name="pref_header_general">General</string>
+    <string name="pref_title_volume_buttons">Utilizar navegación de volumen</string>
+    <string name="pref_description_volume_buttons">Utilice los botones de volumen del celular para navegar al elemento próximo/anterior</string>
+    <string name="pref_title_dpad_buttons">Utilizar navegación de dpad Använd dpad-navigation</string>
+    <string name="pref_description_dpad_buttons">Utilice los botones de dpad (arriba/abajo) para navegar al elemento próximo/anterior. Si desea emplear un teclado o un pedal de Bluetooth (p.ej. AirTurn) este tiene que estar activado.</string>
+    <string name="pref_header_server_settings">Configuraciones de servidor</string>
+    <string name="pref_description_auto_connect">Intentar conectar automáticamente si el URL guardado no funciona.</string>
+    <string name="pref_title_auto_connect">Utilizar conexión automática</string>
+    <string name="pref_header_navigation_settings">Configuraciones de navigación</string>
+    <string name="pref_title_on_end">Suceso al inicio/finales de un punto</string>
+    <string name="pref_description_on_end">Seleccione el procedimiento cuando navege con alguna de las opciones de arriba y llegue al inicio/final de un punto.</string>
+    <string name="pref_description_long_press">Seleccione qué desee que suceda al pulsar prolongadamente alguno de los botones al navegar con alguna de las opciones de arriba. Nótese que esta alternativa no funciona con pédalos de AirTurn.</string>
+    <string name="pref_title_long_press">Suceso de presión prolongada</string>
+    <string name="pref_title_double_press">Suceso de presión doble</string>
+    <string name="pref_description_double_press">Seleccione qué desee que suceda cuando pulse dos botones simultáneamente al navegar con alguna de las opciones de arriba.</string>
+    <string name="pref_description_swipe_navigation">Seleccione lo que desee que suceda al pasar el dedo por la pantalla a la derecha o a la izquierda.</string>
+    <string name="pref_title_swipe_navigation">Svepnavigation</string>
+    <string name="pref_description_auto_timeout">Más tiempo da un mejor resultado si su conexión a wi-fi es insuficiente; menos tiempo implica una conexión más rápida, pero puede significar que se encuentre el servidor con menos frecuencia.</string>
+    <string name="pref_title_auto_timeout">Tiempo límite de conexión automática</string>
+    <string name="pref_description_mr_server">Haga clic aquí para indicar el URL del servidor de texto remoto.</string>
+    <string name="pref_title_mr_server">Servidor remoto</string>
+
+    <!-- Translatable arrays -->
+    <string-array name="auto_timeout">
+        <item name="200">Corto</item>
+        <item name="500">Medio</item>
+        <item name="1000">Largo</item>
+    </string-array>
+    <string-array name="auto_progress">
+        <item name="0">Proceder al elemento siguiente/anterior</item>
+        <item name="1">Ocultar texto con pantalla en blanco</item>
+        <item name="2">Ocultar el texto y mostrar el logo</item>
+        <item name="3">Ocultar el texto con pantalla en negro</item>
+        <item name="4">No hacer nada</item>
+    </string-array>
+
+</resources>

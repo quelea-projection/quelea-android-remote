@@ -1,0 +1,9 @@
+<resources>
+
+    <color name="background">#EEEEEE</color>
+    <color name="text_dark_theme">#FFFFFF</color>
+    <color name="text_default">#000000</color>
+    <color name="live_item">#90CAF9</color>
+    <color name="preview_item">#E0E0E0</color>
+
+</resources>

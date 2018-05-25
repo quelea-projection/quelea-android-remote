@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="action_logout">Deconectați-vă</string>
+    <string name="action_exit">Ieșire</string>
+    <string name="action_black">Negru</string>
+    <string name="action_clear">Șterge</string>
+    <string name="action_logo">LOGO</string>
+    <string name="action_previous_item">Elementul anterior</string>
+    <string name="action_previous_slide">Pagina anterioară</string>
+    <string name="action_next_slide">Pagina următoare</string>
+    <string name="action_next_item">Elementul următor</string>
+    <string name="title_activity_about">Despre</string>
+    <string name="msg_currently_displaying">În Afișare%s</string>
+    <string name="msg_navigation_drawer_open">Deschide lista program</string>
+    <string name="msg_navigation_drawer_close">Închide lista program</string>
+    <string name="msg_want_to_exit">Sigur vreți să ieșiți?</string>
+    <string name="action_yes_label">Da</string>
+    <string name="action_no_label">Nu</string>
+    <string name="action_ok_label">OK</string>
+    <string name="msg_enter_mr_url">Introdu URL-ul pentru serverul Quelea Mobil îndepărtat.</string>
+    <string name="error_failed_finding_mr_server">Nu găsesc serverul Quelea Mobil îndepărtat. Verificați dacă Quelea este pornită si dacă ați introdus URL-ul corect.</string>
+    <string name="error_url_incorrect">Se pare că URL este incorect. Verificați că Quelea este pornită și introduceți URL-ul în serverul Quelea Mobil îndepărtat.</string>
+    <string name="msg_no_live_item">Niciun element nu este activ</string>
+    <string name="action_cancel_label">Anulează</string>
+    <string name="msg_enter_password">Introcudeți parola de la serverul Quelea Mobil îndepărtat</string>
+    <string name="msg_logged_in">Conectat</string>
+    <string name="msg_logged_out">Deconectat</string>
+    <string name="msg_about_text_support">Simte te liber să-mi trimiți un email (arvid@quelea.org) dacă ai întrebări, sau experimentezi erori, dar asigură te că pornești Quelea îninte de aplicația(cu samvele servere active), că ambele dispozitive sunt conectate la aceași rețea și că întăi ai introdus URL-ul corect.</string>
+    <string name="msg_about_text_responsibility">Nu garantez o experiență perfectă, deci nu iau responsabilitatea pentru orice problemă care se ivește la propriu.</string>
+    <string name="title_about_headline">Despre această aplicație:</string>
+    <string name="msg_about_text_app">Această aplicație este fără profit, făcută pentru a utiliza aplicația open source pentru biserici Quelea (http://quelea.org). Chiar dacă nu mai este în beta, încă nu este perfectă, nici completă. Acesta este un proiect făcut pentru uz presonal, dar împărțit cu bucurie cu cei ce găsesc vre-un folos în ea.</string>
+
+    <!-- Preference labels -->
+    <string name="pref_title_activity_settings">Setări</string>
+    <string name="pref_header_general">General</string>
+    <string name="pref_title_volume_buttons">Activați navigare prin volum</string>
+    <string name="pref_description_volume_buttons">Utilizați tastele de volum a telefonului pentru a comuta înainte sau înapoi între elemente.</string>
+    <string name="pref_title_dpad_buttons">Activați navigare prin d-pad</string>
+    <string name="pref_description_dpad_buttons">Utilizați tastele d-pad (sus/jos) pentru a naviga la urmatorul sau anteriorul element. Dacă vrei sa folosești o tastatură cu bluetooth sau o pedală (precum AirTurn), activează asta.</string>
+    <string name="pref_header_server_settings">Setări Server</string>
+    <string name="pref_title_mr_server">Serverul Mobil îndepărtat</string>
+    <string name="pref_description_mr_server">Apăsați aici pentru a introduce URL-ul în Serverul Mobil îndepărtat.</string>
+
+
+    <!-- Translatable arrays -->
+    <string-array name="auto_progress">
+        <item name="0">Progress to next/previous item</item>
+        <item name="1">Hide text with clear button</item>
+        <item name="2">Hide text and show logo</item>
+        <item name="3">Hide text with black screen</item>
+        <item name="4">Do nothing</item>
+    </string-array>
+    <string-array name="swipe_navigation">
+        <item name="0">Move to next/previous item</item>
+        <item name="1">Move to next/previous slide</item>
+        <item name="2">Do nothing</item>
+    </string-array>
+
+
+</resources>

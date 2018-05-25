@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="action_logout">Odhlásit</string>
+    <string name="action_exit">Vypnout</string>
+    <string name="action_black">Černá obrazovka</string>
+    <string name="action_clear">Vypnout text</string>
+    <string name="action_logo">Logo</string>
+    <string name="action_previous_item">Předchozí píseň</string>
+    <string name="action_previous_slide">Předchozí slide</string>
+    <string name="action_next_slide">Další slide</string>
+    <string name="action_next_item">Další píseň</string>
+    <string name="title_activity_about">O aplikaci</string>
+    <string name="msg_currently_displaying">Pravě se promítá%s</string>
+    <string name="msg_want_to_exit">Opravdu chcete ukončit?</string>
+    <string name="action_yes_label">Ano</string>
+    <string name="action_no_label">Ne</string>
+    <string name="action_ok_label">OK</string>
+    <string name="msg_enter_mr_url">Vložte adresu serveru dalkového ovládání.</string>
+    <string name="error_failed_finding_mr_server">Nelze nalézt server dálkového ovládání.</string>
+    <string name="error_url_incorrect"> Ujistěte se že quelea běží se zapnutým dalkovým ovládáním a že jste zadaly správnou adresu</string>
+    <string name="msg_no_live_item">Žádné položky na zobrazení</string>
+    <string name="action_cancel_label">Zrušit</string>
+    <string name="msg_enter_password">Vložte heslo serveru dalkového ovladaní</string>
+    <string name="msg_logged_in">Přihlášen</string>
+    <string name="msg_logged_out">Odhlášen</string>
+    <string name="title_about_headline">O aplikaci:</string>
+    <string name="app_name_mr">Quelea Dálkové ovládáni</string>
+    <string name="title_enter_song">Vyhledat píseň kterou chcete přidat do vašeho plánu.</string>
+    <string name="msg_add_song">Chete ji přidat?</string>
+    <string name="msg_select_song">Vyberte píseò kterou chete přidat</string>
+    <string name="msg_no_songs_message">Nelze najít píseò shodující se s vaším vyhledáváním.</string>
+    <string name="msg_search_tooltip">Vložit píseò nebo pasáž z bible</string>
+    <string name="msg_about_text_app">Tahle aplikace byla vytvořena k tomu aby mohla ovládat open source církevní software Quelea (http://quelea.org). I když to už není beta verze pořád není pervektní některé funkce nejsou dokončené. Je to aplikace kterou jsem si vytvořil pro osobní potřebu ale rád ji poskytuju i těm kteří ji schledají jako užitečnou.</string>
+    <string name="msg_about_text_support">Pokud máte nějáké potíže nebo se chcete na něco zeptat nebojte se mě kontaktovat na arvid@quelea.org  (pouze anglicky) ale vždy se ujistěte že Quelea běží, má zapnuté oba servery a že obě zařízení jsou připojeny ke stejné síti a zadaly jste správné udaje.</string>
+    <string name="msg_about_text_responsibility">Nelze garantovat dokonalou funkčnost proto nenesu odpovědnost  za chyby které se mohou naskitnout that could occur in a live setting.</string>
+    <string name="msg_connected">Připojeno k serveru pro dálkové ovládáni</string>
+    <string name="msg_select_book">Výběr knihy</string>
+    <string name="msg_bible_query_hint">[Kap:Vrš–Vrš] v </string>
+    <string name="action_change_translation">Změnit překlad</string>
+    <string name="action_search_song">Vyhledat píseò</string>
+    <string name="action_add_bible">Přidat pasáž bible</string>
+    <string name="action_play">Přehrát</string>
+    <string name="action_select_translation">Vybrat překlad bible</string>
+    <string name="action_add_go_live">přidat a promítnout</string>
+    <string name="msg_how_to"><b>Vyhledání písně:</b>\n Vyhledávat mužete pomocí textu nebo názvu písně, poté co název zadáte zmačkněte enter a za pár sekund dostanete všechny písně odpovídající vašemu hledání.\n\n<b>Přidání pasáže bible:</b>\n Kapitolu od verše odělujte dvoutečkou (:) rozsah veršů mužete zadat pomlčkou či mínuskem (–). Pokud chcete přidat oddělenou pasáž na stejný slide udělá se to pomocí středníku (;) či čárky(,)  toto funguje funguje to následovně: 15:4–9; 15:19–26 přidá verše4 až9 a verš 19 až 26 z 15 kapitoly( tzn musí se napsat kapitola(pokud se zadá jiná kapitola tak to funguje také /n po potvrzení( zmáčknutí enter), Se oběví hlášení jestly je možné přidat pasáž.</string>
+    <string name="title_search_help">Nápověda: jak vyhledávat</string>
+    <string name="msg_trying_to_find_server_automatically">Pokouším se najít server automaticky…</string>
+    <string name="msg_getting_bible_translations">Získávám překlady bible…</string>
+    <string name="msg_trying_to_add_passage">Pokouším se přidat pasáž do vašeho plánu…</string>
+    <string name="msg_checking_stored_url">Kontroluji uloženou adresu…</string>
+    <string name="msg_searching">Hledám…</string>
+    <string name="msg_getting_bible_books">Získávám  knihy z Bible…</string>
+    <string name="msg_checking_stored_url_and_auto_connecting">Zkouším uloženou adresu a najít server automaticky…</string>
+    <string name="action_change_book_or_translation">Změnit knihu z Bible nebo Překlad</string>
+    <string name="msg_new_settings_added">Nové nastavení navigace bylo přidáno.</string>
+    <string name="msg_cant_use_ipv6">Bohužel nelze použít ipv6 adresu. Je třeba ipv4 adresa aby šla použít aplikace. Pokud nevíte jak IP adresu najít vygooglete "Jak najít ip adresu počítače" a Jméno vašeho operačního systému. Vložte IPv4 adresu zde:</string>
+    <string name="msg_no_server_found">Nebyl nalezen žádný server při automatickém připojování. Ujstěte se že Quelea běží nebo vyplňte adresu ručně.</string>
+    <string name="action_pause">Pozastavit</string>
+    <string name="action_feedback">Nahlásit chybu/doporučit novou funkci</string>
+    <string name="action_report">Nahlásit</string>
+    <string name="troubleshoot_msg_disable_firewall">Vypněte prosím firewall na pc a antivirus (dočasně) aby jste ověřily že problem není v nich.</string>
+    <string name="troubleshoot_msg_check_router">ověřte že je na vašem routeru povolen port forwarding. pokud nevíte jak poradtě se s výrobcem.</string>
+    <string name="troubleshoot_msg_guide_info">Vítejte v návodu na odstranění problémů. Pomůže vám s nejčastějšími přičinamy problemu připojení. Prosím vás o to aby jste kleply na "Tohle zafungovalo" když neco pomuže. Pomáháte mi tím vylepšovat aplikaci</string>
+    <string name="troubleshoot_msg_report_bug">Tohle znamená že když máte problém s aplikací. Tak mužete kontaktovat vývojáře který to může vyřešit.</string>
+    <string name="troubleshoot_msg_not_within_app">Tohle bohužel znamená že problem není v aplikaci a jako vívojář to nemohu vyřešit. Doufám že se vám podáří nalézt cestu jak to rozchodit!</string>
+    <string name="title_select_theme">Vybrat tema</string>
+    <string name="msg_setting_theme">Nastavit téma: %s</string> //%s = Will be replaced by the theme name
+    <string name="msg_choose_action">Vybrat akci pro %s</string> //%s = Will be replaced by the item name
+    <string name="action_remove_item">Odebrat z rozvrhu</string>
+    <string name="action_move_up">Posunout nahoru</string>
+    <string name="action_move_down">Posunout dolů</string>
+    <string name="action_search_server">Automatické připojení</string>
+    <string name="troubleshoot_title_activity">Řešení problému připojení s Quelea</string>
+    <string name="troubleshoot_msg_check_url">Zkontroluje prosím adresu v webovém prohlížeči aby jste ověřily že adresa funguje.</string>
+    <string name="troubleshoot_msg_check_wifi">Ověřte jestly máte zapnutou WIfi a jste připojení na stejné síti na kterém běží Quelea.</string>
+    <string name="troubleshoot_msg_auto_connect">Pokud používáte funkci automatického připojování ověřte že jste přidaly do nastavovacího souboru queley řádek: "use.auto.detect.server=true" (bez uvozovek)soubor se jmenuje quelea.properties a je k nalezení většinou na C:/user/(vaše uživatelské jmeno)/.quelea .</string>
+    <string name="troubleshoot_msg_change_port">zkuste změnit port v Quele na PC.</string>
+    <string name="troubleshoot_msg_finished">Konečně! Od teď můžete používat aplikaci normálně.</string>
+    <string name="troubleshoot_msg_nothing_worked">Je mi líto že se vám nepodařilo to rozchodit! Pokud chcete mužete kontaktovat vívojaře emailem a ten vám muže pomoci více.</string>
+    <string name="troubleshoot_action_previous">Předchozí</string>
+    <string name="troubleshoot_action_this_worked">Tohle zafungovalo</string>
+    <string name="troubleshoot_action_next">Další</string>
+    <string name="troubleshoot_action_nothing_worked">Nic zatím nepomohlo</string>
+    <string name="msg_not_supported">Verze programu Quelea na počítači tuto funkci nepodporuje.</string>
+    <string name="action_start_recording">Začít nahrávání</string>
+    <string name="action_stop_recording">Přestat nahrávat</string>
+    <string name="title_activity_crash">aplikace dalkové ovládání selhala!</string>
+    <string name="msg_navigation_drawer_open">Otevřít rozvrh písniček</string>
+    <string name="msg_navigation_drawer_close">Zavřít seznam písniček</string>
+
+    <!-- Preference labels -->
+    <string name="pref_title_activity_settings">Nastavení</string>
+    <string name="pref_header_general">Hlavní</string>
+    <string name="pref_title_volume_buttons">Povolit ovládání tlačitky hlasitosti</string>
+    <string name="pref_description_volume_buttons">Použít fyzická tlačítka hlasitosti k přepínání slideú či položek.</string>
+    <string name="pref_title_dpad_buttons">Povolit dpad ovládání</string>
+    <string name="pref_description_dpad_buttons">Použít směrová tlačítka (nahoru/dolů) k navigaci na předchozí nebo další slide či položku. Pokud chcete použítat bluetooth klavesnici  nebo pedal (jako AirTurn), povolte tuto možnost.</string>
+    <string name="pref_header_server_settings">Nastavení serveru</string>
+    <string name="pref_title_mr_server">Server dálkového ovládání.</string>
+    <string name="pref_description_mr_server">Klikněte zde pro vložení adresy serveru dálkového ovládání.</string>
+    <string name="pref_title_on_end">akce při přechodu z jedné položky seznamu na druhou</string>
+    <string name="pref_description_on_end">Vyberte co chete po aplikaci aby dělala když přepíná položky pomocí uvedených možností a dojde na konec/začatek položky v seznamu </string>
+    <string name="pref_description_long_press">Vyberte co se stane když dlouho podržíze navigační tlačítko (z uvedených možností). Toto nebude fungovat AirTurn pedálem.</string>
+    <string name="pref_title_long_press">Akce při dlouhém ztlačení</string>
+    <string name="pref_title_double_press">Akce při dvojtém stlačení </string>
+    <string name="pref_description_double_press">Vyberte co se stane když zmačnete dvě navigační tlačitka zaráz ( uvedenými možnostmi).</string>
+    <string name="pref_description_swipe_navigation">Vyberte co se stane když soupnete doleva nebo doprava na obrazovce.</string>
+    <string name="pref_title_swipe_navigation">Šoupací navigace</string>
+    <string name="pref_description_auto_connect">Vždy se pokusit o automatické připojení pokud uložená adresa serveru nefunguje.</string>
+    <string name="pref_title_auto_connect">Použít automatické připojení</string>
+    <string name="pref_header_navigation_settings">Nastanení navigace</string>
+    <string name="pref_description_auto_timeout">Delší čas je lepší pokud máte špatné wifi spojení, kratší znamená rychlejší spojení ale server není tak často nalezen.</string>
+    <string name="pref_title_auto_timeout">Upravit délku pokusu o automatické připojení</string>
+
+    <!-- Translatable arrays -->
+    <string-array name="auto_progress">
+        <item name="0">Přejít na další/předchozí položku</item>
+        <item name="1">Schovat text ale nechat pozadí</item>
+        <item name="2">Schovat text a přepnout na logo</item>
+        <item name="3">Vypnout projekci</item>
+        <item name="4">Nic nedělat</item>
+    </string-array>
+    <string-array name="swipe_navigation">
+        <item name="0">Přepnout na další/predchozí položku promítání</item>
+        <item name="1">Přepnout na další/predchozí slide</item>
+        <item name="2">Nic nedělat</item>
+    </string-array>
+    <string-array name="auto_timeout">
+        <item name="200">Chvilka</item>
+        <item name="500">Tak akorát</item>
+        <item name="1000">Dlouhý</item>
+    </string-array>
+
+</resources>

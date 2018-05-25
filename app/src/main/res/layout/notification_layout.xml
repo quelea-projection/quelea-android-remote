@@ -1,0 +1,105 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/notification_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@mipmap/ic_launcher" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notification_text"
+        android:layout_toRightOf="@id/notification_image"
+        android:layout_toEndOf="@id/notification_image"
+        android:textSize="13sp"
+        android:layout_alignParentTop="true"
+        android:text="Currently displaying: Amazing Grace"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/notification_buttons"
+            android:layout_toRightOf="@+id/notification_image"
+            android:layout_toEndOf="@id/notification_image"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/notification_previousItem"
+                style="@style/btnStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.2"
+                android:contentDescription="@string/action_previous_item"
+                android:rotation="-90"
+                android:scaleType="fitCenter"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginEnd="30dp"
+                android:src="@drawable/btn_prev_item" />
+
+            <ImageButton
+                android:id="@+id/notification_previousSlide"
+                style="@style/btnStyle"
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="30dp"
+                android:layout_marginEnd="30dp"
+                android:contentDescription="@string/action_previous_slide"
+                android:rotation="-90"
+                android:scaleType="fitCenter"
+                android:src="@drawable/btn_prev_slide" />
+
+            <ImageButton
+                android:id="@+id/notification_nextSlide"
+                style="@style/btnStyle"
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="30dp"
+                android:layout_marginEnd="30dp"
+                android:contentDescription="@string/action_next_slide"
+                android:rotation="-90"
+                android:scaleType="fitCenter"
+                android:src="@drawable/btn_next_slide" />
+
+            <ImageButton
+                android:id="@+id/notification_nextItem"
+                style="@style/btnStyle"
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/action_next_item"
+                android:rotation="-90"
+                android:scaleType="fitCenter"
+                android:layout_marginRight="40dp"
+                android:layout_marginEnd="40dp"
+                android:src="@drawable/btn_next_item" />
+            <ImageButton
+                android:id="@+id/notification_hide"
+                style="@style/toggleButtonStyle"
+                android:layout_height="40dp"
+                android:layout_width="40dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/action_logo"
+                android:scaleType="fitCenter"
+                android:src="@drawable/btn_logo" />
+        </LinearLayout>
+</RelativeLayout>

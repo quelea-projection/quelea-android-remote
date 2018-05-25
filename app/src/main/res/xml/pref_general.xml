@@ -1,0 +1,89 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory
+        android:key="pref_key_server_settings"
+        android:title="@string/pref_header_server_settings" >
+        <EditTextPreference
+            android:defaultValue="http://192.168.0.2:1112"
+            android:key="urlMR"
+            android:summary="@string/pref_description_mr_server"
+            android:title="@string/pref_title_mr_server"
+            android:singleLine="true" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="autoConnect"
+            android:summary="@string/pref_description_auto_connect"
+            android:title="@string/pref_title_auto_connect" />
+        <ListPreference
+            android:key="autoTimeout"
+            android:summary="@string/pref_description_auto_timeout"
+            android:title="@string/pref_title_auto_timeout"
+            android:entryValues="@array/auto_timeout_values"
+            android:entries="@array/auto_timeout"
+            android:defaultValue="500"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="pref_key_navigation_settings"
+        android:title="@string/pref_header_navigation_settings" >
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="volume_buttons"
+        android:summary="@string/pref_description_volume_buttons"
+        android:title="@string/pref_title_volume_buttons" />
+    
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="dpad_buttons"
+        android:summary="@string/pref_description_dpad_buttons"
+        android:title="@string/pref_title_dpad_buttons" />
+     <ListPreference
+        android:key="swipe_navigation"
+        android:summary="@string/pref_description_swipe_navigation"
+        android:title="@string/pref_title_swipe_navigation"
+        android:entryValues="@array/swipe_navigation_values"
+        android:entries="@array/swipe_navigation"
+        android:defaultValue="null"
+         />
+    <ListPreference
+        android:key="on_end"
+        android:summary="@string/pref_description_on_end"
+        android:title="@string/pref_title_on_end"
+        android:entryValues="@array/auto_progress_values"
+        android:entries="@array/auto_progress"
+        android:defaultValue="null"
+         />
+    <ListPreference
+        android:key="double_press"
+        android:summary="@string/pref_description_double_press"
+        android:title="@string/pref_title_double_press"
+        android:entryValues="@array/auto_progress_values"
+        android:entries="@array/auto_progress"
+        android:defaultValue="null"
+         />
+    <ListPreference
+        android:key="long_press"
+        android:summary="@string/pref_description_long_press"
+        android:title="@string/pref_title_long_press"
+        android:entryValues="@array/auto_progress_values"
+        android:entries="@array/auto_progress"
+        android:defaultValue="null"
+         />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="pref_key_general_settings"
+        android:title="@string/pref_header_general" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="disableRec"
+            android:title="@string/pref_title_disable_rec" />
+        <ListPreference
+            android:key="app_theme"
+            android:summary="@string/pref_description_choose_app_theme"
+            android:title="@string/pref_title_app_theme"
+            android:entryValues="@array/app_theme_values"
+            android:entries="@array/app_theme"
+            android:defaultValue="0"
+            />
+    </PreferenceCategory>
+         
+</PreferenceScreen>

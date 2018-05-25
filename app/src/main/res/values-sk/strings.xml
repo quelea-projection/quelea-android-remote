@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="action_logout">odhlásiť</string>
+    <string name="action_exit">Vypnúť</string>
+    <string name="action_black">Čierná obrazovka</string>
+    <string name="action_clear">Vypnúť text</string>
+    <string name="action_logo">Logo</string>
+    <string name="action_previous_item">Predchádzajúca pieseň</string>
+    <string name="action_previous_slide">Predchádzajúcí slide</string>
+    <string name="action_next_slide">Budúci slide</string>
+    <string name="action_next_item">Budúci píseň</string>
+    <string name="title_activity_about">O aplikacii</string>
+    <string name="msg_currently_displaying">Práve sa premieta%s</string>
+    <string name="msg_want_to_exit">Opravdu chcete ukončit?</string>
+    <string name="action_yes_label">Ano</string>
+    <string name="action_no_label">Nie</string>
+    <string name="action_ok_label">OK</string>
+    <string name="msg_enter_mr_url">Vložte adresu serveru diaľkového ovládania.</string>
+    <string name="error_failed_finding_mr_server">Nie je možné nájsť server diaľkového ovládania.</string>
+    <string name="error_url_incorrect"> Uistite sa že quelea beží so zapnutým diaľkovým ovládaním a že ste zadali správnu adresu</string>
+    <string name="msg_no_live_item">Žiadne položky na zobrazenie</string>
+    <string name="action_cancel_label">Zrušiť</string>
+    <string name="msg_enter_password">Vložte heslo servera diaľkového ovládania</string>
+    <string name="msg_logged_in">Přihlásený</string>
+    <string name="msg_logged_out">Odhlásený</string>
+    <string name="title_about_headline">O aplikacii:</string>
+    <string name="msg_cant_use_ipv6">Bohuž nelze použít Ipv6 adresu. Je treba ipv4 adresa aby išlo použít  aplikaciu. Pokud nevieš ako to nalezť vygoogluj " najisť mistnu adressu spolu s menom operačného sustena  a vlož adesu tu: </string>
+    <string name="app_name_mr">Quelea Dialkové ovládánie</string>
+    <string name="msg_add_song">Chcete pridať tuto pieseň</string>
+    <string name="msg_select_song">Vyberte pieseň kteú chcete pridať</string>
+    <string name="msg_no_songs_message">Nieboly nalezeny piesnie ktoré odpoviedajů vašemu hľadánie.</string>
+    <string name="msg_search_tooltip">Pridať pieseň či pazaž z Biblie</string>
+    <string name="msg_about_text_app">Tato aplikacia je nezisková Zrobená k použitie s programom Quelea (http://quelea.org). Aj keď už to něje vývojová verzia stale nieje perfektná ani některé schopnosti nejsů kopletné. Toto je vedlejší projekt a hlavně myšlený pro osobnů potrebu, ale je sdielen s všemy ktorý by ho mohly mýt za užitečný.</string>
+    <string name="msg_about_text_support">Niehambitese poslat vívojárovy email (v Angličtině) na arvid@quelea.org aj keď máte otázky či niejaké problémy, ale ujistiete se že Quelea funguje pred tím ak aplikacia (a oba servery sů funkčné), a že obe zariaděnia sů tej istej sieti a zadaly jste správnú adresu</string>
+    <string name="msg_about_text_responsibility">Nelze garantovať perfeknú funkčnosť. Takže niemožem ručť za akykolvek problém který sa v reálu prejeví.</string>
+    <string name="msg_connected">Prirpojené k serveru pro dialkové ovládánie</string>
+    <string name="msg_select_book">Vybrať knihu</string>
+    <string name="msg_bible_query_hint">[Kapitola]:[Verš]-[verš] v prekľadu </string>
+    <string name="action_change_translation">Zmeniť preklaď</string>
+    <string name="action_search_song">Hľadať pieseň</string>
+    <string name="action_add_bible">Pridať pasáž z biblie</string>
+    <string name="action_play">Prehrať</string>
+    <string name="msg_no_server_found">Žiadý server nebol automatikcy nalezený. Prosím ujistiete se že Quelea běží a server pro automatické prirpojenie je funkčný či vložte adresu ručnie.</string>
+    <string name="action_select_translation">Vyberťe preklad Biblie</string>
+    <string name="action_add_go_live">Pridať a premietnút</string>
+    <string name="title_enter_song">Vyhledať pieseň kterú chcete pridať do plánu</string>
+    <string name="msg_how_to"><b>Vyhletanie piesně:</b>\n Hledejte část názvu nebo chvály, Stlačte enter a po par sekundách dostanete piesně které se shodujú s vašým hľadáním.\n\n<b>Přidání biblické pasáže:</b>\n Oddělte kapytoly a verše dvoutečkou (:) pokud chete zadat výce veršú v radu použíte pomlčku (-). pokud chcete vložiť více veršú do stejného slidu každou pasáž oddělte čiarkou (,) či stredníkem (;) (pasáž musí obsahovat i kapitolu). po stlačení enteru, Dostaniete oznámenie či je možné pasáž pridať,</string>
+    <string name="title_search_help">Pomoc pri hľadání</string>
+    <string name="msg_trying_to_find_server_automatically">Zkúšám naisť server automaticky…</string>
+    <string name="msg_getting_bible_translations">Zieskávám preklady biblie…</string>
+    <string name="msg_trying_to_add_passage">Zkúšám pridať pasáž do vašeho plánu…</string>
+    <string name="msg_checking_stored_url">Kontrolujem uloženú adresu…</string>
+    <string name="msg_searching">Hľadám……</string>
+    <string name="msg_getting_bible_books">Zieskávám biblické knihy…</string>
+    <string name="msg_checking_stored_url_and_auto_connecting">Kontrolujem adresu a automaticky sa pripojujem…</string>
+    <string name="action_change_book_or_translation">Zmeniť biblickú knihu či preklad</string>
+    <string name="msg_new_settings_added">Nové nastavenie navigace bylo pridané</string>
+    <string name="pref_description_auto_timeout">Delší čas je lepší pokud máte špatné wifi spojení, kratší znamená rychlejší spojení ale server není tak často nalezen.</string>
+    <string name="pref_title_auto_timeout">Upravit délku pokusu o automatické připojení</string>
+    <string name="action_pause">Pauza</string>
+    <string name="msg_navigation_drawer_open">Otvoriť rozvrh pesniček</string>
+    <string name="msg_navigation_drawer_close">Zavrieť schedule pesniček</string>
+
+
+    <!-- Preference labels -->
+    <string name="pref_title_activity_settings">Nastavenie</string>
+    <string name="pref_header_general">Hlavné</string>
+    <string name="pref_title_volume_buttons">Povoliť ovládanie tlačidlami hlasitosti</string>
+    <string name="pref_description_volume_buttons">Použiť fyzická tlačidlá hlasitosti na prepínanie slidov alebo položiek.</string>
+    <string name="pref_title_dpad_buttons">Povoliť dpad ovládanie</string>
+    <string name="pref_description_dpad_buttons">Použít směrová tlačítka (nahoru/dolů) k navigaci na předchozí nebo další slide či položku. Pokud chcete použítat bluetooth klavesnici  nebo pedal (jako AirTurn), povolte tuto možnost.</string>
+    <string name="pref_header_server_settings">Nastavenie servera</string>
+    <string name="pref_title_mr_server">Server diaľkového ovládánie</string>
+    <string name="pref_description_mr_server">Kliknite tu pre vloženie adresy servera  diaľkového ovládánie</string>
+    <string name="pref_description_long_press">Vyber čo sa zrobí keď dlho zmačkeš tlačitlo kterým posuvaš (z uvedených možnosti). toto něfunguje s AirTurn pedaly.</string>
+    <string name="pref_title_long_press">akce pri dlhom slačenie</string>
+    <string name="pref_title_double_press">Akce pri dvojtom stlačenie</string>
+    <string name="pref_description_double_press">Vyber čo sa zrobí keď dlho zmačkeš dve tlačidla zaraz kterýmy posuvaš (z uvedených možnosti)</string>
+    <string name="pref_description_swipe_navigation">Vyber čo sa zrobí keď šupneš do leva či v pravo na obrazovke.</string>
+    <string name="pref_title_swipe_navigation">Šúpací navigaca</string>
+    <string name="pref_title_on_end">Akcia na konci/začiatku položky</string>
+    <string name="pref_description_on_end">Zvolte čo chcete aby aplikacia robyla keď navigujete s uvedenými možnosťmi a dosáhnetě začiatku/konce položky premietánie.</string>
+    <string name="pref_description_auto_connect">Vždy sa  pokusí automaicky pripojiť keď uložená adresa niefunguje.</string>
+    <string name="pref_header_navigation_settings">Nastavení navigacie</string>
+    <string name="pref_title_auto_connect">Použiť automatické pripajenie</string>
+
+
+    <!-- Translatable arrays -->
+    <string-array name="auto_progress">
+        <item name="0">Preisť na dalšú/predchozů položku</item>
+        <item name="1">Zakriť text</item>
+        <item name="2">Zakriť text a ukázať logo</item>
+        <item name="3">Zakriť text a prezmietať černo</item>
+        <item name="4">Nič nerobiť</item>
+    </string-array>
+    <string-array name="swipe_navigation">
+        <item name="0">Posunuť na  další/predchozí položku</item>
+        <item name="1">Posunuť na  další/predchozí slide</item>
+        <item name="2">Nič nerobit</item>
+    </string-array>
+    <string-array name="auto_timeout">
+        <item name="200">Chvilka</item>
+        <item name="500">Tak akorát</item>
+        <item name="1000">Dlouhý</item>
+    </string-array>
+
+</resources>

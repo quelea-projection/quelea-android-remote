@@ -22,8 +22,7 @@ public class DownloadHandler {
         new MainActivity.DownloadHtml() {
             @Override
             protected void onPostExecute(String line) {
-                System.out.println(mode.name());
-                if (activity == null) return;
+                if (activity == null || line == null) return;
 
                 activity.setLine(line);
 

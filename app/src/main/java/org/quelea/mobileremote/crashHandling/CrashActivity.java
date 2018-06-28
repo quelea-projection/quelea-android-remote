@@ -22,7 +22,7 @@ public class CrashActivity extends AppCompatActivity {
         setTitle(title.replace("%s", getString(R.string.app_name_mr)));
         TextView tv = findViewById(R.id.crashText);
         StringBuilder sb = new StringBuilder();
-        sb.append("<br/><b>").append(String.format(getResources().getString(R.string.title_crash), getResources().getString(R.string.app_name_mr))).append("</b><br/>")
+        sb.append("<br/><b>").append(String.format(getResources().getString(R.string.title_activity_crash), getResources().getString(R.string.app_name_mr))).append("</b><br/>")
                 .append(getResources().getString(R.string.msg_crash_body_1)).append("<br/><br/>")
                 .append(getResources().getString(R.string.msg_crash_body_2)).append("<br/><br/>")
                 .append(getResources().getString(R.string.msg_crash_body_3));

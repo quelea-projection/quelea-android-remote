@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/quelea-projection/quelea-android-remote.svg?branch=master)](https://travis-ci.com/quelea-projection/quelea-android-remote)
+
 # Quelea Mobile Remote
 <a href="https://play.google.com/store/apps/details?id=org.quelea.mobileremote"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="75"></a>
 

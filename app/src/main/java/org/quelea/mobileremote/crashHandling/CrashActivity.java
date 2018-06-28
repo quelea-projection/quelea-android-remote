@@ -18,11 +18,11 @@ public class CrashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crash);
-        String title = getString(R.string.title_activity_crash);
-        setTitle(title.replace("%s", getString(R.string.app_name_mr)));
+        String title = getString(R.string.title_activity_crash).replace("%s", getString(R.string.app_name_mr));
+        setTitle(title);
         TextView tv = findViewById(R.id.crashText);
         StringBuilder sb = new StringBuilder();
-        sb.append("<br/><b>").append(String.format(getResources().getString(R.string.title_activity_crash), getResources().getString(R.string.app_name_mr))).append("</b><br/>")
+        sb.append("<br/><b>").append(title).append("</b><br/>")
                 .append(getResources().getString(R.string.msg_crash_body_1)).append("<br/><br/>")
                 .append(getResources().getString(R.string.msg_crash_body_2)).append("<br/><br/>")
                 .append(getResources().getString(R.string.msg_crash_body_3));

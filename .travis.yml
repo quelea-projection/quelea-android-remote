@@ -4,3 +4,5 @@ android:
     - build-tools-26.0.2
     - android-24
     - extra
+before_install:
+ - chmod +x gradlew

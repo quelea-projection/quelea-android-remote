@@ -33,16 +33,15 @@ public class SettingsActivity extends PreferenceActivity {
         CheckBoxPreference volumeButtons = (CheckBoxPreference) findPreference("volume_buttons");
         CheckBoxPreference dpad = (CheckBoxPreference) findPreference("dpad_buttons");
 
-        final PreferenceCategory category = (PreferenceCategory) findPreference("pref_key_navigation_settings");
+        final PreferenceCategory navigation_category = (PreferenceCategory) findPreference("pref_key_navigation_settings");
         onEnd = findPreference("on_end");
         doublePress = findPreference("double_press");
         longPress = findPreference("long_press");
 
-        if (!dpadChecked && !volumeChecked) {
-
-            category.removePreference(onEnd);
-            category.removePreference(doublePress);
-            category.removePreference(longPress);
+        if (!dpadChecked && !volumeChecked && navigation_category != null) {
+            navigation_category.removePreference(onEnd);
+            navigation_category.removePreference(doublePress);
+            navigation_category.removePreference(longPress);
         }
 
         volumeButtons
@@ -63,9 +62,11 @@ public class SettingsActivity extends PreferenceActivity {
                                         R.string.msg_new_settings_added, Toast.LENGTH_LONG)
                                         .show();
 
-                                category.addPreference(onEnd);
-                                category.addPreference(doublePress);
-                                category.addPreference(longPress);
+                                if (navigation_category != null) {
+                                    navigation_category.addPreference(onEnd);
+                                    navigation_category.addPreference(doublePress);
+                                    navigation_category.addPreference(longPress);
+                                }
                             }
 
                         } else {
@@ -73,10 +74,10 @@ public class SettingsActivity extends PreferenceActivity {
                                     "volume_buttons", false);
                             dpadChecked = sharedPrefs.getBoolean(
                                     "dpad_buttons", false);
-                            if (!dpadChecked) {
-                                category.removePreference(onEnd);
-                                category.removePreference(doublePress);
-                                category.removePreference(longPress);
+                            if (!dpadChecked && navigation_category != null) {
+                                navigation_category.removePreference(onEnd);
+                                navigation_category.removePreference(doublePress);
+                                navigation_category.removePreference(longPress);
                             }
                         }
 
@@ -100,18 +101,20 @@ public class SettingsActivity extends PreferenceActivity {
                                 R.string.msg_new_settings_added, Toast.LENGTH_LONG)
                                 .show();
 
-                        category.addPreference(onEnd);
-                        category.addPreference(doublePress);
-                        category.addPreference(longPress);
+                        if (navigation_category != null) {
+                            navigation_category.addPreference(onEnd);
+                            navigation_category.addPreference(doublePress);
+                            navigation_category.addPreference(longPress);
+                        }
                     }
                 } else {
                     volumeChecked = sharedPrefs.getBoolean("volume_buttons",
                             false);
                     dpadChecked = sharedPrefs.getBoolean("dpad_buttons", false);
-                    if (!volumeChecked) {
-                        category.removePreference(onEnd);
-                        category.removePreference(doublePress);
-                        category.removePreference(longPress);
+                    if (!volumeChecked && navigation_category != null) {
+                        navigation_category.removePreference(onEnd);
+                        navigation_category.removePreference(doublePress);
+                        navigation_category.removePreference(longPress);
                     }
                 }
 

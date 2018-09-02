@@ -1,37 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="error_failed_finding_mr_server">No se ha podido encontrar el servidor remoto de Quelea. Compruebe que Quelea esté iniciado y que el URL indicado esté correcto.</string>
-    <string name="msg_enter_password">Introduzca la contraseña del servidor remoto de Quelea Mobile</string>
     <string name="app_name_mr">Quelea Operación Remota</string>
-    <string name="error_url_incorrect">Parece que el URL está incorrecto. Compruebe que Quelea esté iniciado y que el URL del servidor remoto esté correcto.</string>
     <string name="action_logout">Cerrar sesión</string>
     <string name="action_exit">Salir</string>
     <string name="action_black">Negro</string>
-    <string name="action_clear">Ocultar texto</string>
-    <string name="action_logo">Logotipo</string>
-    <string name="action_previous_item">Elemento anterior</string>
-    <string name="action_previous_slide">Párrafo anterior</string>
-    <string name="action_next_slide">Próximo párrafo</string>
-    <string name="action_next_item">Próximo elemento</string>
     <string name="title_activity_about">Acerca de la aplicación</string>
-    <string name="msg_currently_displaying">Actualmente mostrando%s</string>
     <string name="msg_navigation_drawer_open">Abrir el orden del guión</string>
     <string name="msg_navigation_drawer_close">Cerrar el guión del culto</string>
-    <string name="msg_want_to_exit">¿Seguro que desea salir?</string>
-    <string name="action_yes_label">Sí</string>
-    <string name="action_no_label">No</string>
-    <string name="action_ok_label">OK</string>
-    <string name="msg_no_live_item">Ningún elemento en vivo</string>
-    <string name="action_cancel_label">Cancelar</string>
-    <string name="msg_logged_in">Sesión iniciada</string>
-    <string name="msg_logged_out">Sesión cerrada</string>
-    <string name="title_about_headline">Acerca de la aplicación <xliff:g id="app_name" example="Quelea Mobile Remote">%s</xliff:g>:</string>
     <string name="title_enter_song">Busque una canción que desea añadir a la lista del guión</string>
-    <string name="msg_add_song">¿Desea añadir esta canción?</string>
-    <string name="msg_select_song">Seleccione la canción que desea añadir</string>
-    <string name="msg_no_songs_message">No se encontraron canciones correspondientes a la búsqueda.</string>
-    <string name="msg_search_tooltip">Añadir una canción o una cita bíblica.</string>
     <string name="msg_about_text_app">Esta es una aplicación sin fines lucrativos desarrollada para el uso con el programa de código abierto Quelea (http://quelea.org). Aunque ya no esté en fase beta, seguramente no esté sin errores, tampoco está del todo desarrollada. Esto es un proyecto lateral y principalmente destinado al uso privado, pero que se comparte con placer con todos los que lo puedan encontrar útil.</string>
     <string name="msg_about_text_support">No dude en mandarme un correo electrónico a arvid@quelea.org en caso de que tenga preguntas o experimente problemas, pero anteriormente, compruebe que Quelea esté en marcha antes que la aplicación (con los dos servidores activos), que los dos dispositivos estén conectados al mismo red y que haya introducido el URL correcto.</string>
     <string name="msg_about_text_responsibility">No puedo garantizar una experiencia de la aplicación sin errores, por eso declino toda responsabilidad de cualquier problema que pueda ocurrir al uso en vivo.</string>
@@ -56,14 +33,12 @@
     <string name="action_change_book_or_translation">Cambiar libro de Bíblia o traducción</string>
     <string name="msg_cant_use_ipv6">Desafortunadamente no puede utilizar direcciones IPv6. Debe emplear una dirección IPv4 para el uso de esta aplicación. Para saber cómo encontrar su dirección, busque en Google \'enconrar dirección IP local\' y el nombre de su sistema operativo. Introduzca la dirección IPv4/el URL abajo.</string>
     <string name="msg_new_settings_added">Nuevos ajustes de navegación han sido añadidos.</string>
-    <string name="msg_not_supported">Su version de Quelea no admite esta función</string>
-
-    <!-- Preference labels -->
+    <string name="msg_not_supported">Su version de Quelea no admite esta función.</string>
     <string name="pref_title_activity_settings">Ajustes</string>
     <string name="pref_header_general">General</string>
     <string name="pref_title_volume_buttons">Utilizar navegación de volumen</string>
-    <string name="pref_description_volume_buttons">Utilice los botones de volumen del celular para navegar al elemento próximo/anterior</string>
-    <string name="pref_title_dpad_buttons">Utilizar navegación de dpad Använd dpad-navigation</string>
+    <string name="pref_description_volume_buttons">Utilice los botones de volumen del celular para navegar al elemento próximo/anterior.</string>
+    <string name="pref_title_dpad_buttons">Utilizar navegación de dpad</string>
     <string name="pref_description_dpad_buttons">Utilice los botones de dpad (arriba/abajo) para navegar al elemento próximo/anterior. Si desea emplear un teclado o un pedal de Bluetooth (p.ej. AirTurn) este tiene que estar activado.</string>
     <string name="pref_header_server_settings">Configuraciones de servidor</string>
     <string name="pref_description_auto_connect">Intentar conectar automáticamente si el URL guardado no funciona.</string>
@@ -76,13 +51,76 @@
     <string name="pref_title_double_press">Suceso de presión doble</string>
     <string name="pref_description_double_press">Seleccione qué desee que suceda cuando pulse dos botones simultáneamente al navegar con alguna de las opciones de arriba.</string>
     <string name="pref_description_swipe_navigation">Seleccione lo que desee que suceda al pasar el dedo por la pantalla a la derecha o a la izquierda.</string>
-    <string name="pref_title_swipe_navigation">Svepnavigation</string>
+    <string name="pref_title_swipe_navigation">Navegación por deslizamiento</string>
     <string name="pref_description_auto_timeout">Más tiempo da un mejor resultado si su conexión a wi-fi es insuficiente; menos tiempo implica una conexión más rápida, pero puede significar que se encuentre el servidor con menos frecuencia.</string>
     <string name="pref_title_auto_timeout">Tiempo límite de conexión automática</string>
     <string name="pref_description_mr_server">Haga clic aquí para indicar el URL del servidor de texto remoto.</string>
     <string name="pref_title_mr_server">Servidor remoto</string>
+    <string name="action_clear">Cerrar sesión</string>
+    <string name="action_logo">Logotipo</string>
+    <string name="action_previous_item">Elemento anterior</string>
+    <string name="action_previous_slide">Párrafo anterior</string>
+    <string name="action_next_slide">Próximo párrafo</string>
+    <string name="action_next_item">Próximo elemento</string>
+    <string name="msg_currently_displaying">Actualmente mostrando</string>
+    <string name="msg_want_to_exit">¿Seguro que desea salir?</string>
+    <string name="action_yes_label">Sí</string>
+    <string name="action_no_label">No</string>
+    <string name="action_ok_label">OK</string>
+    <string name="msg_enter_mr_url">Introduzca el URL para el servidor Quelea Operación Remota.</string>
+    <string name="error_failed_finding_mr_server">No se ha podido encontrar el servidor remoto de Quelea. Compruebe que Quelea esté iniciado y que el URL indicado esté correcto.</string>
+    <string name="error_url_incorrect">Parece que el URL está incorrecto. Compruebe que Quelea esté iniciado y que el URL del servidor remoto esté correcto.</string>
+    <string name="msg_no_live_item">Ningún elemento en vivo</string>
+    <string name="action_cancel_label">Cancelar</string>
+    <string name="msg_enter_password">Introduzca la contraseña del servidor remoto de Quelea Mobile</string>
+    <string name="msg_logged_in">Sesión iniciada</string>
+    <string name="msg_logged_out">Sesión cerrada</string>
+    <string name="title_about_headline">Acerca de la aplicación <xliff:g example="Quelea Mobile Remote" id="app_name">%s</xliff:g>:</string>
+    <string name="msg_add_song">¿Desea añadir esta canción?</string>
+    <string name="msg_select_song">Seleccione la canción que desea añadir</string>
+    <string name="msg_no_songs_message">No se encontraron canciones correspondientes a la búsqueda.</string>
+    <string name="msg_search_tooltip">Añadir una canción o una cita bíblica.</string>
+    <string name="action_play">Reproducir</string>
+    <string name="action_pause">Pausa</string>
+    <string name="action_feedback">Reporte un error/Sugiera nuevas funciones</string>
+    <string name="action_report">Reportar</string>
+    <string name="troubleshoot_msg_disable_firewall">Desactive temporalmente el firewall y anti-virus para asegúrarse que ese no es el problema.</string>
+    <string name="troubleshoot_msg_check_router">Verifique los ajustes de su router y asegurese que port fowarding esta habilitado. Esto varía entre las diferentes marcas asi que por favor consulte el manual de su router para esto.</string>
+    <string name="troubleshoot_msg_guide_info">Bienvenido a la guía de solución de problemas. Esto lo llevará a traves de las causas más comunes para fallos en la conexión. Para ayudarnos a mejorar la aplicación, por favor haga clic en \\\"Esto funcionó\\\" cada vez que encuentre alguna solución.</string>
+    <string name="troubleshoot_msg_report_bug">Esto significa que hay un problema con la aplicación. ¿Podría enviarnos un email con algo de información para que podamos corregirlo?</string>
+    <string name="troubleshoot_msg_not_within_app">Desafortunadamente esto significa que el problema está fuera de la aplicación, me temo que no puedo resolver esto para usted. Me alegro que haya encontrado alguna forma para al menos ponerlo a funcionar!</string>
+    <string name="title_select_theme">Seleccione tema</string>
+    <string name="msg_setting_theme">Aplicando tema <xliff:g example="Black on White" id="theme_name">%s</xliff:g></string>
+    <string name="msg_choose_action">Seleccione una acción para <xliff:g example="Amazing Grace" id="item_name">%s</xliff:g></string>
+    <string name="action_remove_item">Remover del guión</string>
+    <string name="action_move_up">Mover hacia arriba</string>
+    <string name="action_move_down">Mover hacia abajo</string>
+    <string name="action_search_server">Buscar servidor</string>
+    <string name="troubleshoot_title_activity">Solucionando la conexión con Quelea</string>
+    <string name="troubleshoot_msg_check_url">Verifique el URL en su navegador y asegúrese que funciona como debería.</string>
+    <string name="troubleshoot_msg_check_wifi">Asegúrese que el wifi este habilitado en su teléfono y que está conectado a la misma red que el computador con Quelea.</string>
+    <string name="troubleshoot_msg_auto_connect">Si usa la función de auto-conectar, asegúrese que la ha habilitado en Quelea agregando \\\"use.auto.detect.server=true\\\" al archivo de ajustes (settings) en la carpeta .quelea en el directorio del usuario.</string>
+    <string name="troubleshoot_msg_change_port">Trate cambiando el puerto en Quelea.</string>
+    <string name="troubleshoot_msg_finished">Perfecto! Entonces ya usted puede usar la aplicación normalmente desde ahora en adelante.</string>
+    <string name="troubleshoot_msg_nothing_worked">Lamentamos que todavía no pueda hacerla funcionar! ¿Desea enviarnos un correo para ver si podemos ayudarle un poco mas?</string>
+    <string name="troubleshoot_action_previous">Anterior</string>
+    <string name="troubleshoot_action_next">Proximo</string>
+    <string name="troubleshoot_action_this_worked">Esto funcionó</string>
+    <string name="troubleshoot_action_nothing_worked">Nada funcionó</string>
+    <string name="action_start_recording">Iniciar grabación</string>
+    <string name="action_stop_recording">Detener grabación</string>
+    <string name="title_activity_crash"><xliff:g example="Quelea Mobile Remote" id="app_name">%s</xliff:g> Crashed</string>
+    <string name="pref_description_choose_app_theme">Seleccione un tema por la aplicación</string>
+    <string name="pref_title_app_theme">Tema de la aplicación</string>
+    <string name="title_select_chapter">Seleccione capitulo</string>
+    <string name="title_select_verse">Seleccione versículo</string>
+    <string name="title_select_ending_verse">Seleccione versículo final</string>
+    <string name="pref_title_disable_rec">Desactivar el botón de grabación</string>
+    <string name="title_crash">¡Lamentamos la inconveniencia!</string>
+    <string name="msg_crash_body_1">Tratamos de mantener la aplicacion lo mas estable posible, pero algunas veces continúan los errores. Por favor ayudenos a resolver estos problemas enviandonos su valiosa informacion sobre el contexto en el cual ocurrio el error.</string>
+    <string name="msg_crash_body_2">Al hacer clic en \"Reportar\" un email será generado con un registro del error, que canción se estaba presentando, datos acerca de su telefono y otras informaciones que pueden ser utiles. Sientase en libertad de remover la informacion acerca de su telefono si no se siente comodo compartiendola.</string>
+    <string name="msg_crash_body_3">¡Gracias por su ayuda y paciencia!</string>
 
-    <!-- Translatable arrays -->
     <string-array name="auto_timeout">
         <item name="200">Corto</item>
         <item name="500">Medio</item>

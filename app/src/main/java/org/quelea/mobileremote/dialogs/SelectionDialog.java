@@ -1,8 +1,8 @@
 package org.quelea.mobileremote.dialogs;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.graphics.Typeface;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -55,7 +55,7 @@ public class SelectionDialog {
      * @param buttonNeutral text for neutral button, null means not visible
      */
 
-    SelectionDialog(Context context, String message, @Nullable String buttonYes, @Nullable String buttonNo, @Nullable String buttonNeutral) {
+    SelectionDialog(Activity context, String message, @Nullable String buttonYes, @Nullable String buttonNo, @Nullable String buttonNeutral) {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         LayoutInflater factory = LayoutInflater.from(context);
         @SuppressLint("InflateParams") final View customDialog = factory.inflate(
@@ -79,6 +79,9 @@ public class SelectionDialog {
         no.setText(buttonNo);
 
         neutral.setText(buttonNeutral);
+
+        if (context.isFinishing())
+            return;
 
         alertDialog = alert.show();
 

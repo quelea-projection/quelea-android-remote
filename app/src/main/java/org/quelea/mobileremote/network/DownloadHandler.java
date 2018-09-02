@@ -103,7 +103,7 @@ public class DownloadHandler {
                 @Override
                 protected void onPreExecute() {
                     super.onPreExecute();
-                    if (mainActivity == null) return;
+                    if (mainActivity == null || mainActivity.isFinishing()) return;
                     mainActivity.runOnUiThread(new Runnable() {
                         public void run() {
                             final ProgressDialog progressDialog = mainActivity.getProgressDialog();
@@ -145,7 +145,7 @@ public class DownloadHandler {
 
                 @Override
                 protected void onPostExecute(String line) {
-                    if (mainActivity == null || line == null) return;
+                    if (mainActivity == null || line == null || mainActivity.isFinishing()) return;
                     switch (mode) {
                         case CHECK:
                             mainActivity.getParseDownloadedTextHelper().checkURL(line);
@@ -185,7 +185,7 @@ public class DownloadHandler {
 
                 @Override
                 protected void onCancelled() {
-                    if (mainActivity == null) return;
+                    if (mainActivity == null || mainActivity.isFinishing()) return;
                     mainActivity.runOnUiThread(new Runnable() {
                         public void run() {
                             for (ProgressDialog pd : mainActivity.getProgressDialogs()) {

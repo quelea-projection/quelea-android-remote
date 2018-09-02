@@ -1,8 +1,8 @@
 package org.quelea.mobileremote.dialogs;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -33,7 +33,7 @@ public class DefaultDialog {
      * @param useHelp       true for visible help icon, false otherwise
      * @param useInput      true for showing user text input dialog, false otherwise
      */
-    public DefaultDialog(Context context, String message, @NonNull String prefill, @Nullable String buttonYes, @Nullable String buttonNo, @Nullable String buttonNeutral, boolean useHelp, boolean useInput) {
+    public DefaultDialog(Activity context, String message, @NonNull String prefill, @Nullable String buttonYes, @Nullable String buttonNo, @Nullable String buttonNeutral, boolean useHelp, boolean useInput) {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         LayoutInflater factory = LayoutInflater.from(context);
         @SuppressLint("InflateParams") final View customDialog = factory.inflate(
@@ -69,6 +69,9 @@ public class DefaultDialog {
         no.setText(buttonNo);
 
         neutral.setText(buttonNeutral);
+
+        if (context.isFinishing())
+            return;
 
         alertDialog = alert.show();
 

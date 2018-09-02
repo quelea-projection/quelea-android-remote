@@ -143,5 +143,13 @@
         <item name="500">Medel</item>
         <item name="1000">Lång</item>
     </string-array>
+    <string name="title_crash">Beklagar olägenheten!</string>
+    <string name="msg_crash_body_1">Jag försöker hårt att hålla appen så stabil som möljigt, men ibland krashar den ändå. Hjälp mig gärna att lösa problemet genom att förse mig med hjälpfull information om situationen i vilken appen krashade.</string>
+    <string name="msg_crash_body_2">Genom att klicka på \"Rapportera\" kommer ett epostmeddelande genereras med krashloggen, vilken song som visades, data om din telefon och annan information som kan hjälpa. Känn dig fri att ta bort informationen om din telefon om du känner dig obekväm med att dela den.</string>
+    <string name="msg_crash_body_3">Tack för din hjälp och förståelse!</string>
+    <string name="msg_error_on_add">Någonting gick fel när sången skulle läggas till.</string>
+    <string name="msg_error_on_save_url">Någonting gick fel när den hämtade URL:en skulle läggas till och sparas.</string>
+    <string name="msg_about_source_code">"Precis som huvudprogrammet har appen helt öppen källkod, vilket innebär att du kan se appens källkod och du kan bidra till att förbättra den. Du hittar källkoden här: https://github.com/quelea-projection/quelea-android-remote</string>
+
 
 </resources>

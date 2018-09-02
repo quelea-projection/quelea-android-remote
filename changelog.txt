@@ -1,10 +1,13 @@
 Version 4.2
-• Fixed bug that stopped app mode working without internet connection
+• Fixed bug that stopped app from working without internet connection
 • Fixed italic sync with server
 • Improved auto-connect
 • Added way to send in a translation through the app
 • Added backwards navigation in some activities
 • Added info about source code
+• Updated Portuguese translation
+• Added Spanish translation
+• Fixed potential crashes
 
 Version 4.1
 • Improved performance after resuming the app
@@ -77,7 +80,7 @@ Version 3.0
 • Updated Czech labels
 
 Version 2.9
-• Better crash handling: The default crash report doesn't always supply sufficient information to track down the bugs; hopefully you will be able to easily send me all the info I need to fix it mode now on.
+• Better crash handling: The default crash report doesn't always supply sufficient information to track down the bugs; hopefully you will be able to easily send me all the info I need to fix it from now on.
 • Added shortcut to report bugs or give suggestions.
 • Prepared option to control the new recording feature in Quelea (will automatically become active as soon as the code changes have been added to Quelea 2016.0)
 

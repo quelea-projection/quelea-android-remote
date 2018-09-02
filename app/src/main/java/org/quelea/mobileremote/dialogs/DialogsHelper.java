@@ -137,7 +137,7 @@ public class DialogsHelper {
         // number and the amount of characters needed to check if "http://"
         // is added or not)
         if ((ip.equals("")) || (ip.length() < 7)
-                || (!(ip.contains(":")))) {
+                || (!(ip.contains(":"))) || ip.contains("127.0.0.1")) {
             if (context.dialogNotShown())
                 enterURLDialog(
                         context.getResources().getString(
@@ -351,6 +351,8 @@ public class DialogsHelper {
         TextView t2 = customDialog.findViewById(R.id.songSearch);
         t2.setText(context.getResources().getString(R.string.action_search_song));
         builder.setCancelable(false);
+        if (context.isFinishing())
+            return;
         final AlertDialog alertText = builder.show();
         customDialog.findViewById(R.id.songButton).setOnClickListener(new View.OnClickListener() {
             @Override

@@ -3,6 +3,7 @@ package org.quelea.mobileremote.helpers;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.util.DisplayMetrics;
 
 /**
  * Class to get and store shared preferences.
@@ -130,6 +131,15 @@ public class SettingsHelper {
         // Translation questions
         translationQuestionDelay = sharedPrefs.getInt("translationQuestionDelay", 0);
         showTranslationQuestion = sharedPrefs.getBoolean("showTranslationQuestion", true);
+
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        float dpHeight = displayMetrics.heightPixels / displayMetrics.density;
+        float dpWidth = displayMetrics.widthPixels / displayMetrics.density;
+
+        if (dpWidth >= 600) {
+            useDpad = true;
+            saveSetting("dpad_buttons", true);
+        }
     }
 
     public void saveSetting(String id, String value) {

@@ -13,20 +13,24 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="120dp">
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:layout_gravity="center"
+            android:paddingTop="8dp">
 
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_weight="0.4"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
+                android:gravity="top|center"
                 android:id="@+id/songButton">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
-                    android:layout_centerInParent="true"
                     android:scaleType="fitCenter"
                     android:src="@drawable/ic_song"
                     android:id="@+id/songImage"/>
@@ -34,45 +38,38 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/songImage"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/small_text_size"
                     android:id="@+id/songSearch"
                     />
-            </RelativeLayout>
+            </LinearLayout>
 
-            <RelativeLayout
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="0.1"
-                android:layout_margin="20dp"/>
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.4"
+                android:layout_margin="12dp"
                 android:orientation="vertical"
+                android:layout_gravity="top|center"
+                android:gravity="center"
                 android:id="@+id/bibleButton">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
                     android:scaleType="fitCenter"
-                    android:layout_centerInParent="true"
                     android:src="@drawable/ic_bible"
                     android:id="@+id/bibleImage"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/bibleImage"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
-                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/small_text_size"
                     android:gravity="center"
                     android:id="@+id/bibleSearch"/>
-            </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
@@ -91,6 +88,7 @@
             android:layout_height="match_parent"
             android:clickable="true"
             android:text="@android:string/cancel"
+            android:textSize="@dimen/small_text_size"
             android:textColor="#ffffff"
             android:textStyle="bold" />
     </LinearLayout>

@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import org.quelea.mobileremote.R;
 import org.quelea.mobileremote.activities.MainActivity;
-import org.quelea.mobileremote.network.SeverIO;
+import org.quelea.mobileremote.network.ServerIO;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -108,7 +108,7 @@ public class ParseDownloadedTextHelper {
                 context.setTempLyrics(line);
 
                 // Get and update schedule
-                SeverIO.downloadSchedule(context);
+                ServerIO.downloadSchedule(context);
             }
         } else {
             if (context.dialogNotShown())
@@ -140,7 +140,7 @@ public class ParseDownloadedTextHelper {
 
             // Enable presentation images
             if (line.contains(".ppt") || line.contains(".pdf") || line.contains(".png") || line.contains(".tiff") || line.contains(".jpg") || line.contains(".jpeg") || line.contains(".gif") || line.contains(".bmp")) {
-                SeverIO.downloadSlides(context);
+                ServerIO.downloadSlides(context);
             }
 
             // Make play text clickable
@@ -298,7 +298,7 @@ public class ParseDownloadedTextHelper {
                     context.getDialogsHelper().loginDialog(context);
             } else {
                 context.setLoggedIn(true);
-                SeverIO.downloadLyrics(context);
+                ServerIO.downloadLyrics(context);
             }
         } else {
             // Check if auto-connect should be used
@@ -388,7 +388,7 @@ public class ParseDownloadedTextHelper {
             context.setBibleTranslation(context.getBibleTranslation()
                     .replaceAll(" ", "%20"));
         // Download the books of the selected translation
-        SeverIO.downloadBibleBooks(context);
+        ServerIO.downloadBibleBooks(context);
     }
 
     // Show result in a ListView instead of a dialog
@@ -413,7 +413,7 @@ public class ParseDownloadedTextHelper {
                                     .lastIndexOf("=\"") + 2,
                             context.getTempResult()[position]
                                     .lastIndexOf("\">"));
-                    SeverIO.getSong(song, context);
+                    ServerIO.getSong(song, context);
                     context.setSongSelected(true);
                 } else {
                     context.getDialogsHelper().infoDialog(context.getString(R.string.msg_error_on_add), context);

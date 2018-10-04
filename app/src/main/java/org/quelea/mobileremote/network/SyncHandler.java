@@ -31,12 +31,12 @@ public class SyncHandler {
                 if (context.isLoggedIn()) {
                     // Don't download changes until Quelea is fully started
                     if (!context.isFullyStarted()) {
-                        SeverIO.downloadStatus(UtilsMisc.DownloadHtmlModes.STARTED, context);
+                        ServerIO.downloadStatus(UtilsMisc.DownloadHtmlModes.STARTED, context);
                     } else {
                         // Check if any changes has been made
-                        SeverIO.downloadStatus(UtilsMisc.DownloadHtmlModes.STATUS, context);
-                        SeverIO.downloadSchedule(context);
-                        SeverIO.downloadLyrics(context);
+                        ServerIO.downloadStatus(UtilsMisc.DownloadHtmlModes.STATUS, context);
+                        ServerIO.downloadSchedule(context);
+                        ServerIO.downloadLyrics(context);
                     }
                 }
             }

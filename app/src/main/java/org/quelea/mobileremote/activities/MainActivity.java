@@ -2,6 +2,7 @@ package org.quelea.mobileremote.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -36,7 +38,7 @@ import org.quelea.mobileremote.helpers.NavigationHelper;
 import org.quelea.mobileremote.helpers.ParseDownloadedTextHelper;
 import org.quelea.mobileremote.helpers.SettingsHelper;
 import org.quelea.mobileremote.network.DownloadHandler;
-import org.quelea.mobileremote.network.SeverIO;
+import org.quelea.mobileremote.network.ServerIO;
 import org.quelea.mobileremote.network.SyncHandler;
 import org.quelea.mobileremote.utils.UtilsMisc;
 import org.quelea.mobileremote.utils.UtilsNetwork;
@@ -69,13 +71,7 @@ public class MainActivity extends AppCompatActivity {
         // Check previously stored settings
         settingsHelper.loadSettings(this);
 
-        // Start setting theme
-        if (settingsHelper.getTheme() != null && settingsHelper.getTheme().equals("1")) {
-            setTheme(R.style.DarkTheme);
-        } else {
-            setTheme(R.style.AppTheme);
-        }
-        setContentView(R.layout.activity_main);
+        initUI();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         PreferenceManager.setDefaultValues(this, R.xml.pref_general, false);
 
@@ -84,9 +80,46 @@ public class MainActivity extends AppCompatActivity {
         // Set custom error manager
         Thread.setDefaultUncaughtExceptionHandler(new CrashHandler(MainActivity.this));
 
+        initButtons();
+
+        checkTranslation();
+    }
+
+    private void initButtons() {
+        // Start listening for buttons pressed
+        navigationHelper = new NavigationHelper(this);
+        navigationHelper.keyListener(lyricsListView);
+        navigationHelper.buttonListeners();
+        scheduleListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int i, long l) {
+                dialogsHelper.scheduleLongClickDialog(i, MainActivity.this);
+                return true;
+            }
+        });
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        initUI();
+    }
+
+    private void initUI() {
+        // Start setting theme
+        if (settingsHelper.getTheme() != null && settingsHelper.getTheme().equals("1")) {
+            setTheme(R.style.DarkTheme);
+        } else {
+            setTheme(R.style.AppTheme);
+        }
+        setContentView(R.layout.activity_main);
         TextView tv = findViewById(R.id.currentlyDisplaying);
         tv.setText(getResources().getString(R.string.msg_no_live_item));
         tv.setTypeface(Typeface.createFromAsset(this.getAssets(), "OpenSans-Regular.ttf"), Typeface.NORMAL);
+        if (getResources().getBoolean(R.bool.small_screen))
+            tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17);
+        else
+            tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
 
         // Setup lyrics view
         lyricsListView = findViewById(R.id.lyrics);
@@ -110,22 +143,14 @@ public class MainActivity extends AppCompatActivity {
             findViewById(R.id.black).setBackgroundResource(R.drawable.btn_toggle_synced);
             findViewById(R.id.clear).setBackgroundResource(R.drawable.btn_toggle_synced);
             lyricsListView.setBackgroundResource(R.color.background);
-            scheduleDrawerLayout.setBackgroundResource(R.color.background);
+            if (scheduleDrawerLayout != null)
+                scheduleDrawerLayout.setBackgroundResource(R.color.background);
+            else {
+                findViewById(R.id.left_drawer).setBackgroundColor(UtilsMisc.getBackgroundColor(this));
+            }
         }
 
-        // Start listening for buttons pressed
-        navigationHelper = new NavigationHelper(this);
-        navigationHelper.keyListener(lyricsListView);
-        navigationHelper.buttonListerners();
-        scheduleListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int i, long l) {
-                dialogsHelper.scheduleLongClickDialog(i, MainActivity.this);
-                return true;
-            }
-        });
-
-        checkTranslation();
+        initButtons();
     }
 
     /**
@@ -134,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
     public void continueLoading() {
         if (UtilsNetwork.checkWifiOnAndConnected(this)) {
             // Check if URL responds
-            SeverIO.checkServerConnection(MainActivity.this, settingsHelper.getIp());
+            ServerIO.checkServerConnection(MainActivity.this, settingsHelper.getIp());
 
         } else {
             dialogsHelper.enterURLDialog(getString(R.string.troubleshoot_msg_check_wifi), settingsHelper.getIp(), this);
@@ -143,8 +168,8 @@ public class MainActivity extends AppCompatActivity {
         // Download lyrics and schedule if already online (e.g. screen rotate or
         // backing out and in again)
         if (online) {
-            SeverIO.downloadLyrics(this);
-            SeverIO.downloadSchedule(this);
+            ServerIO.downloadLyrics(this);
+            ServerIO.downloadSchedule(this);
         }
 
         // Start auto-refreshing; search for changes on slides, buttons or
@@ -193,27 +218,29 @@ public class MainActivity extends AppCompatActivity {
 
         mTitle = mDrawerTitle = getTitle();
         scheduleDrawerLayout = findViewById(R.id.drawer_layout);
-        scheduleDrawerToggle = new ActionBarDrawerToggle(this, scheduleDrawerLayout,
-                R.string.msg_navigation_drawer_open,
-                R.string.msg_navigation_drawer_close) {
+        if (scheduleDrawerLayout != null) {
+            scheduleDrawerToggle = new ActionBarDrawerToggle(this, scheduleDrawerLayout,
+                    R.string.msg_navigation_drawer_open,
+                    R.string.msg_navigation_drawer_close) {
 
-            @Override
-            public void onDrawerClosed(View view) {
-                super.onDrawerClosed(view);
-                assert getSupportActionBar() != null;
-                getSupportActionBar().setTitle(mTitle);
-            }
+                @Override
+                public void onDrawerClosed(View view) {
+                    super.onDrawerClosed(view);
+                    assert getSupportActionBar() != null;
+                    getSupportActionBar().setTitle(mTitle);
+                }
 
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                super.onDrawerOpened(drawerView);
-                assert getSupportActionBar() != null;
-                getSupportActionBar().setTitle(mDrawerTitle);
-                scheduleListView = findViewById(R.id.left_drawer);
-            }
-        };
+                @Override
+                public void onDrawerOpened(View drawerView) {
+                    super.onDrawerOpened(drawerView);
+                    assert getSupportActionBar() != null;
+                    getSupportActionBar().setTitle(mDrawerTitle);
+                    scheduleListView = findViewById(R.id.left_drawer);
+                }
+            };
 
-        scheduleDrawerLayout.addDrawerListener(scheduleDrawerToggle);
+            scheduleDrawerLayout.addDrawerListener(scheduleDrawerToggle);
+        }
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -224,18 +251,20 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> arg0, View v, final int position,
                                     long id) {
                 scheduleListView.setItemChecked(position, true);
-                scheduleDrawerLayout.closeDrawers();
+                if (scheduleDrawerLayout != null)
+                    scheduleDrawerLayout.closeDrawers();
                 if (canJump) {
-                    SeverIO.gotoItem(position, activeItem, MainActivity.this);
+                    ServerIO.gotoItem(position, activeItem, MainActivity.this);
                 } else {
                     if (position > activeItem) {
                         for (int i = activeItem; i < (position); i++)
-                            SeverIO.nextItem(MainActivity.this);
+                            ServerIO.nextItem(MainActivity.this);
                     } else {
                         for (int i = 0; i < (activeItem - position); i++)
-                            SeverIO.prevItem(MainActivity.this);
+                            ServerIO.prevItem(MainActivity.this);
                     }
                 }
+                scheduleListView.requestFocus();
             }
         });
 
@@ -246,15 +275,15 @@ public class MainActivity extends AppCompatActivity {
                                     long id) {
                 lyricsListView.setItemChecked(position, true);
                 if (playable) {
-                    SeverIO.loadInBackground(settingsHelper.getIp() + "/play", MainActivity.this);
+                    ServerIO.loadInBackground(settingsHelper.getIp() + "/play", MainActivity.this);
                 } else if (!slide) {
-                    SeverIO.loadInBackground(settingsHelper.getIp() + "/section" + position, MainActivity.this);
+                    ServerIO.loadInBackground(settingsHelper.getIp() + "/section" + position, MainActivity.this);
                     final Handler handler2 = new Handler();
                     handler2.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            SeverIO.downloadLyrics(MainActivity.this);
-                            SeverIO.downloadSchedule(MainActivity.this);
+                            ServerIO.downloadLyrics(MainActivity.this);
+                            ServerIO.downloadSchedule(MainActivity.this);
                         }
                     }, 1000);
                 }
@@ -265,7 +294,7 @@ public class MainActivity extends AppCompatActivity {
         theme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SeverIO.getThemes(context);
+                ServerIO.getThemes(context);
             }
         });
     }
@@ -281,7 +310,7 @@ public class MainActivity extends AppCompatActivity {
                     settingsHelper.getIp(), this);
         } else {
             String address = "http://" + autoIP + ":50015";
-            SeverIO.loadWithProgressDialog(MainActivity.this, LoadWithProgressModes.AUTO, address);
+            ServerIO.loadWithProgressDialog(MainActivity.this, LoadWithProgressModes.AUTO, address);
         }
     }
 
@@ -310,7 +339,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             String address = url.toString();
-            SeverIO.loadWithProgressDialog(MainActivity.this, LoadWithProgressModes.AUTO, address);
+            ServerIO.loadWithProgressDialog(MainActivity.this, LoadWithProgressModes.AUTO, address);
         }
     }
 
@@ -397,7 +426,7 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         String searchURL = settingsHelper.getIp() + "/search/" +
                                 URLEncoder.encode(query, "utf-8");
-                        SeverIO.loadWithProgressDialog(MainActivity.this,
+                        ServerIO.loadWithProgressDialog(MainActivity.this,
                                 LoadWithProgressModes.SEARCHINDIALOG, searchURL);
                     } catch (UnsupportedEncodingException e) {
                         Log.e("Search", "Search encoding failed: " + e);
@@ -409,7 +438,7 @@ public class MainActivity extends AppCompatActivity {
                     resultView.setVisibility(View.GONE);
                 } else {
                     try {
-                        SeverIO.loadWithProgressDialog(MainActivity.this,
+                        ServerIO.loadWithProgressDialog(MainActivity.this,
                                 LoadWithProgressModes.BIBLE, settingsHelper.getIp() + "/addbible/"
                                         + bibleTranslation + "/" + URLEncoder.encode(bibleBook, "UTF-8")
                                         + "/" + query);
@@ -431,7 +460,7 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         String searchURL = settingsHelper.getIp() + "/search/" +
                                 URLEncoder.encode(newText, "utf-8");
-                        SeverIO.loadWithProgressDialog(MainActivity.this,
+                        ServerIO.loadWithProgressDialog(MainActivity.this,
                                 LoadWithProgressModes.SEARCH, searchURL);
                     } catch (UnsupportedEncodingException e) {
                         Log.e("Search", "Search encoding failed: " + e);
@@ -450,7 +479,7 @@ public class MainActivity extends AppCompatActivity {
         // Handle action bar item clicks.
         int id = item.getItemId();
 
-        if (scheduleDrawerToggle.onOptionsItemSelected(item)) {
+        if (scheduleDrawerLayout != null && scheduleDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
 
@@ -458,9 +487,9 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_logout) {
             Toast.makeText(MainActivity.this, R.string.msg_logged_out,
                     Toast.LENGTH_SHORT).show();
-            SeverIO.loadInBackground(settingsHelper.getIp() + "/logout", MainActivity.this);
+            ServerIO.loadInBackground(settingsHelper.getIp() + "/logout", MainActivity.this);
             loggedIn = false;
-            SeverIO.checkServerConnection(MainActivity.this, settingsHelper.getIp());
+            ServerIO.checkServerConnection(MainActivity.this, settingsHelper.getIp());
         }
 
         // Handle setting
@@ -512,7 +541,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Handle record button
         if (id == R.id.record) {
-            SeverIO.loadInBackground(settingsHelper.getIp() + "/record", MainActivity.this);
+            ServerIO.loadInBackground(settingsHelper.getIp() + "/record", MainActivity.this);
         }
 
         return super.onOptionsItemSelected(item);
@@ -617,7 +646,7 @@ public class MainActivity extends AppCompatActivity {
                         singleClick = System.currentTimeMillis();
                         long diff = singleClick - doubleClick;
                         if (diff > 300)
-                            returnState = navigationHelper.keyPress(keyCode);
+                            returnState = navigationHelper.keyPress(keyCode, event);
                     }
                     clicksWebView = 0;
                 }
@@ -665,7 +694,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        scheduleDrawerToggle.syncState();
+        if (scheduleDrawerLayout != null)
+            scheduleDrawerToggle.syncState();
     }
 
 
@@ -679,7 +709,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
 
         // Close drawer if back is pressed when it's open
-        if (scheduleDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+        if (scheduleDrawerLayout != null && scheduleDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             scheduleDrawerLayout.closeDrawer(GravityCompat.START);
         } else {
             // If drawer already is closed, show exit dialog
@@ -757,7 +787,7 @@ public class MainActivity extends AppCompatActivity {
             if (activity == null) return;
 
             // Check if password worked
-            SeverIO.checkServerConnection(activity, activity.getSettings().getIp());
+            ServerIO.checkServerConnection(activity, activity.getSettings().getIp());
 
             // Show toast if login was successful
             if (activity.isLoggedIn())

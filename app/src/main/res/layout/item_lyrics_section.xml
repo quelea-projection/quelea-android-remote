@@ -20,5 +20,5 @@
         android:layout_centerInParent="true"
         android:gravity="center"
         android:minHeight="80dp"
-        android:textSize="17sp" />
+        android:textSize="@dimen/plain_text_size" />
 </RelativeLayout>

@@ -31,7 +31,7 @@ import static org.quelea.mobileremote.network.DownloadHandler.downloadWithProgre
  * Class to handle all Input/Output in connection with the server.
  * Methods are static to be called with MainActivity as context.
  */
-public class SeverIO {
+public class ServerIO {
     public static void downloadLyrics(MainActivity activity) {
         downloadHtml(UtilsMisc.DownloadHtmlModes.LYRICS, settingsHelper.getIp() + "/lyrics", activity);
     }
@@ -57,8 +57,8 @@ public class SeverIO {
     }
 
     public static void nextSlide(MainActivity mainActivity) {
-        SeverIO.loadInBackground(settingsHelper.getIp() + "/next", mainActivity);
-        SeverIO.downloadLyrics(mainActivity);
+        ServerIO.loadInBackground(settingsHelper.getIp() + "/next", mainActivity);
+        ServerIO.downloadLyrics(mainActivity);
     }
 
     public static void nextItem(final MainActivity mainActivity) {
@@ -71,7 +71,7 @@ public class SeverIO {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                SeverIO.downloadLyrics(mainActivity);
+                ServerIO.downloadLyrics(mainActivity);
                 mainActivity.getLyricsAdapter().notifyDataSetChanged();
             }
         }, 300);
@@ -142,10 +142,10 @@ public class SeverIO {
                 if (line.contains("<!DOCTYPE html>")) {
                     if (oldItem < newItem) {
                         for (int i = oldItem; i < (newItem); i++)
-                            SeverIO.nextItem(mainActivity);
+                            ServerIO.nextItem(mainActivity);
                     } else {
                         for (int i = newItem; i < (oldItem); i++)
-                            SeverIO.prevItem(mainActivity);
+                            ServerIO.prevItem(mainActivity);
                     }
                     mainActivity.setCanJump(false);
                 }

@@ -1,6 +1,7 @@
 package org.quelea.mobileremote.helpers;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v4.view.GravityCompat;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -9,10 +10,11 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
-import org.quelea.mobileremote.network.SeverIO;
-import org.quelea.mobileremote.utils.OnSwipeTouchListener;
 import org.quelea.mobileremote.R;
 import org.quelea.mobileremote.activities.MainActivity;
+import org.quelea.mobileremote.activities.SettingsActivity;
+import org.quelea.mobileremote.network.ServerIO;
+import org.quelea.mobileremote.utils.OnSwipeTouchListener;
 
 import static org.quelea.mobileremote.activities.MainActivity.settingsHelper;
 
@@ -44,25 +46,27 @@ public class NavigationHelper {
                         + " = " + KeyEvent.KEYCODE_DPAD_DOWN);
                 // Check if hardware buttons are activated
                 if (context.getSettings().isUseDpad()) {
-                    if ((event.getAction() == KeyEvent.ACTION_DOWN)
+                    if ((event.getAction() == KeyEvent.ACTION_UP)
                             && ((keyCode == KeyEvent.KEYCODE_DPAD_DOWN) || (keyCode == KeyEvent.KEYCODE_PAGE_DOWN))) {
                         // Check if it should advance slide or item
-                        if (context.getActiveVerse() < context.getVerseTotal()) {
-                            SeverIO.nextSlide(context);
+                        if (event.isCtrlPressed())
+                            ServerIO.nextItem(context);
+                        else if (context.getActiveVerse() < context.getVerseTotal()) {
+                            ServerIO.nextSlide(context);
                         } else {
                             switch (context.getSettings().getAutoProgress()) {
                                 case "progress":
                                     if (context.getActiveItem() != context.getItemsTotal() - 1)
-                                        SeverIO.nextItem(context);
+                                        ServerIO.nextItem(context);
                                     break;
                                 case "clear":
-                                    SeverIO.clear(context);
+                                    ServerIO.clear(context);
                                     break;
                                 case "black":
-                                    SeverIO.black(context);
+                                    ServerIO.black(context);
                                     break;
                                 case "logo":
-                                    SeverIO.logo(context);
+                                    ServerIO.logo(context);
                                     break;
                                 default:
                                     break;
@@ -71,11 +75,31 @@ public class NavigationHelper {
                         return true;
                     } else if ((event.getAction() == KeyEvent.ACTION_UP)
                             && ((keyCode == KeyEvent.KEYCODE_DPAD_UP) || (keyCode == KeyEvent.KEYCODE_PAGE_UP))) {
-                        if (context.getActiveVerse() > 0) {
-                            SeverIO.prevSlide(context);
+                        if (event.isCtrlPressed())
+                            ServerIO.prevItem(context);
+                        else if (context.getActiveVerse() > 0) {
+                            ServerIO.prevSlide(context);
                         } else if (context.getActiveItem() != 0) {
-                            SeverIO.prevItem(context);
+                            ServerIO.prevItem(context);
                         }
+                        return true;
+                    } else if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_F5) {
+                        ServerIO.logo(context);
+                        return true;
+                    } else if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_F6) {
+                        ServerIO.black(context);
+                        return true;
+                    } else if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_F7) {
+                        ServerIO.clear(context);
+                        return true;
+                    } else if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode >= 8 && keyCode <= 16) {
+                        ServerIO.loadInBackground(settingsHelper.getIp() + "/section" + (keyCode - 8), context);
+                        return true;
+                    } else if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_T && event.isCtrlPressed()) {
+                        context.startActivity(new Intent(context, SettingsActivity.class));
+                        return true;
+                    } else if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ESCAPE) {
+                        context.getDialogsHelper().exitDialog(context);
                         return true;
                     } else
                         return false;
@@ -90,20 +114,20 @@ public class NavigationHelper {
 
             public void onSwipeRight() {
                 if (context.getSettings().getUseSwipe().equals("slide")) {
-                    SeverIO.prevSlide(context);
+                    ServerIO.prevSlide(context);
                 }
                 if (context.getSettings().getUseSwipe().equals("item") && context.getActiveItem() != 0) {
-                    SeverIO.prevItem(context);
+                    ServerIO.prevItem(context);
                     Log.i("SlideRight", "Slide right. Active slide: " + context.getActiveVerse());
                 }
             }
 
             public void onSwipeLeft() {
                 if (context.getSettings().getUseSwipe().equals("slide")) {
-                    SeverIO.nextSlide(context);
+                    ServerIO.nextSlide(context);
                 }
                 if (context.getSettings().getUseSwipe().equals("item") && context.getActiveItem() != context.getItemsTotal() - 1) {
-                    SeverIO.nextItem(context);
+                    ServerIO.nextItem(context);
                     Log.i("SlideRight", "Slide left. Active slide: " + context.getActiveVerse());
                 }
             }
@@ -118,13 +142,13 @@ public class NavigationHelper {
     // Handle two buttons pressed simultaneously
     public void handleDoubleClick() {
         if (context.getSettings().getDoublePress().equals("progress") && context.getActiveItem() != context.getItemsTotal() - 1) {
-            SeverIO.nextItem(context);
+            ServerIO.nextItem(context);
         } else if (context.getSettings().getDoublePress().equals("clear"))
-            SeverIO.clear(context);
+            ServerIO.clear(context);
         else if (context.getSettings().getDoublePress().equals("black"))
-            SeverIO.black(context);
+            ServerIO.black(context);
         else if (context.getSettings().getDoublePress().equals("logo"))
-            SeverIO.logo(context);
+            ServerIO.logo(context);
     }
 
     // Handle buttons being long pressed
@@ -132,26 +156,26 @@ public class NavigationHelper {
         switch (context.getSettings().getLongClick()) {
             case "progress":
                 if (direction.equals("next") && context.getActiveItem() != context.getItemsTotal() - 1) {
-                    SeverIO.nextItem(context);
+                    ServerIO.nextItem(context);
                 }
                 if (direction.equals("previous") && context.getActiveItem() != 0) {
-                    SeverIO.prevItem(context);
+                    ServerIO.prevItem(context);
                 }
                 break;
             case "clear":
-                SeverIO.clear(context);
+                ServerIO.clear(context);
                 break;
             case "black":
-                SeverIO.black(context);
+                ServerIO.black(context);
                 break;
             case "logo":
-                SeverIO.logo(context);
+                ServerIO.logo(context);
                 break;
         }
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    public void buttonListerners() {
+    public void buttonListeners() {
         // Check if buttons are clicked
         final ImageButton logo = context.findViewById(R.id.logo);
 
@@ -174,7 +198,7 @@ public class NavigationHelper {
                     logo.setPressed(false);
                     context.setLogoUsed(false);
                 }
-                SeverIO.logo(context);
+                ServerIO.logo(context);
                 context.getLyricsAdapter().notifyDataSetChanged();
                 return true;
             }
@@ -200,7 +224,7 @@ public class NavigationHelper {
                     black.setPressed(false);
                     context.setBlackUsed(false);
                 }
-                SeverIO.black(context);
+                ServerIO.black(context);
                 context.getLyricsAdapter().notifyDataSetChanged();
                 return true;
             }
@@ -226,7 +250,7 @@ public class NavigationHelper {
                     clear.setPressed(false);
                     context.setClearUsed(false);
                 }
-                SeverIO.clear(context);
+                ServerIO.clear(context);
                 context.getLyricsAdapter().notifyDataSetChanged();
                 return true;
             }
@@ -237,7 +261,7 @@ public class NavigationHelper {
 
             @Override
             public void onClick(View v) {
-                SeverIO.prevSlide(context);
+                ServerIO.prevSlide(context);
             }
         });
 
@@ -246,7 +270,7 @@ public class NavigationHelper {
 
             @Override
             public void onClick(View v) {
-                SeverIO.nextSlide(context);
+                ServerIO.nextSlide(context);
             }
         });
 
@@ -256,7 +280,7 @@ public class NavigationHelper {
             @Override
             public void onClick(View v) {
                 if (context.getActiveItem() != 0) {
-                    SeverIO.prevItem(context);
+                    ServerIO.prevItem(context);
                 }
             }
         });
@@ -267,13 +291,13 @@ public class NavigationHelper {
             @Override
             public void onClick(View v) {
                 if (context.getActiveItem() != context.getItemsTotal() - 1) {
-                    SeverIO.nextItem(context);
+                    ServerIO.nextItem(context);
                 }
             }
         });
     }
 
-    public boolean keyPress(int keyCode) {
+    public boolean keyPress(int keyCode, KeyEvent event) {
 
         switch (keyCode) {
             // Handle volume keys
@@ -283,16 +307,16 @@ public class NavigationHelper {
                     if (context.isNotLongPress() && context.isNotDoubleClicked()) {
                         // Check if it should advance slide or item
                         if (context.getActiveVerse() < context.getVerseTotal()) {
-                            SeverIO.nextSlide(context);
+                            ServerIO.nextSlide(context);
                         } else {
                             if (settingsHelper.getAutoProgress().equals("progress") && context.getActiveItem() != context.getItemsTotal() - 1) {
-                                SeverIO.nextItem(context);
+                                ServerIO.nextItem(context);
                             } else if (settingsHelper.getAutoProgress().equals("clear"))
-                                SeverIO.clear(context);
+                                ServerIO.clear(context);
                             else if (settingsHelper.getAutoProgress().equals("black"))
-                                SeverIO.black(context);
+                                ServerIO.black(context);
                             else if (settingsHelper.getAutoProgress().equals("logo"))
-                                SeverIO.logo(context);
+                                ServerIO.logo(context);
                         }
                         return true;
                     } else {
@@ -308,16 +332,16 @@ public class NavigationHelper {
                     if (context.isNotLongPress() && context.isNotDoubleClicked()) {
                         // Check if it should decrease slide or item
                         if (context.getActiveVerse() > 0) {
-                            SeverIO.prevSlide(context);
+                            ServerIO.prevSlide(context);
                         } else {
                             if (settingsHelper.getAutoProgress().equals("progress") && context.getActiveItem() != 0) {
-                                SeverIO.prevItem(context);
+                                ServerIO.prevItem(context);
                             } else if (settingsHelper.getAutoProgress().equals("clear"))
-                                SeverIO.clear(context);
+                                ServerIO.clear(context);
                             else if (settingsHelper.getAutoProgress().equals("black"))
-                                SeverIO.black(context);
+                                ServerIO.black(context);
                             else if (settingsHelper.getAutoProgress().equals("logo"))
-                                SeverIO.logo(context);
+                                ServerIO.logo(context);
                         }
                         return true;
                     } else {
@@ -331,20 +355,22 @@ public class NavigationHelper {
                 // pedals (like AirTurn) to be used.
             case KeyEvent.KEYCODE_DPAD_UP:
                 // Check if hardware buttons are enabled
-                if (settingsHelper.isUseDpad()) {
+                if (settingsHelper.isUseDpad() && event.getAction() == KeyEvent.ACTION_DOWN) {
                     if (context.isNotLongPress()) {
                         // Check if it should decrease slide or item
-                        if (context.getActiveVerse() > 0) {
-                            SeverIO.prevSlide(context);
+                        if (event.isCtrlPressed())
+                            ServerIO.prevItem(context);
+                        else if (context.getActiveVerse() > 0) {
+                            ServerIO.prevSlide(context);
                         } else {
                             if (settingsHelper.getAutoProgress().equals("progress") && context.getActiveItem() != 0) {
-                                SeverIO.prevItem(context);
+                                ServerIO.prevItem(context);
                             } else if (settingsHelper.getAutoProgress().equals("clear"))
-                                SeverIO.clear(context);
+                                ServerIO.clear(context);
                             else if (settingsHelper.getAutoProgress().equals("black"))
-                                SeverIO.black(context);
+                                ServerIO.black(context);
                             else if (settingsHelper.getAutoProgress().equals("logo"))
-                                SeverIO.logo(context);
+                                ServerIO.logo(context);
                         }
                         return true;
                     } else {
@@ -355,21 +381,23 @@ public class NavigationHelper {
                     return false;
             case KeyEvent.KEYCODE_DPAD_DOWN:
                 // Check if hardware buttons are enabled
-                if (settingsHelper.isUseDpad()) {
+                if (settingsHelper.isUseDpad() && event.getAction() == KeyEvent.ACTION_DOWN) {
                     if (context.isNotLongPress()) {
                         // Check if it should advance slide or item
-                        if (context.getActiveVerse() < context.getVerseTotal()) {
-                            SeverIO.nextSlide(context);
+                        if (event.isCtrlPressed())
+                            ServerIO.nextItem(context);
+                        else if (context.getActiveVerse() < context.getVerseTotal()) {
+                            ServerIO.nextSlide(context);
                         } else {
                             if (settingsHelper.getAutoProgress().equals("progress")
                                     && context.getActiveItem() != context.getItemsTotal() - 1) {
-                                SeverIO.nextItem(context);
+                                ServerIO.nextItem(context);
                             } else if (settingsHelper.getAutoProgress().equals("clear"))
-                                SeverIO.clear(context);
+                                ServerIO.clear(context);
                             else if (settingsHelper.getAutoProgress().equals("black"))
-                                SeverIO.black(context);
+                                ServerIO.black(context);
                             else if (settingsHelper.getAutoProgress().equals("logo"))
-                                SeverIO.logo(context);
+                                ServerIO.logo(context);
                         }
                         return true;
                     } else {
@@ -378,15 +406,42 @@ public class NavigationHelper {
                     }
                 } else
                     return false;
+            case KeyEvent.KEYCODE_DPAD_LEFT:
+                return true;
+            case KeyEvent.KEYCODE_DPAD_RIGHT:
+                return true;
             case KeyEvent.KEYCODE_BACK:
-                if (context.getScheduleDrawerLayout().isDrawerOpen(GravityCompat.START)) {
+                if (context.getScheduleDrawerLayout() != null && context.getScheduleDrawerLayout().isDrawerOpen(GravityCompat.START)) {
                     context.getScheduleDrawerLayout().closeDrawer(GravityCompat.START);
                 } else {
                     // Exit if drawer already is closed
                     context.getDialogsHelper().exitDialog(context);
                 }
                 return true;
+            case KeyEvent.KEYCODE_F5:
+                if (event.getAction() == KeyEvent.ACTION_DOWN)
+                    ServerIO.logo(context);
+                return true;
+            case KeyEvent.KEYCODE_F6:
+                if (event.getAction() == KeyEvent.ACTION_DOWN)
+                    ServerIO.black(context);
+                return true;
+            case KeyEvent.KEYCODE_F7:
+                if (event.getAction() == KeyEvent.ACTION_DOWN)
+                    ServerIO.clear(context);
+                return true;
+            case KeyEvent.KEYCODE_T:
+                if (event.isCtrlPressed() && event.getAction() == KeyEvent.ACTION_DOWN)
+                    context.startActivity(new Intent(context, SettingsActivity.class));
+                return true;
+            case KeyEvent.KEYCODE_ESCAPE:
+                if (event.getAction() == KeyEvent.ACTION_DOWN)
+                    context.getDialogsHelper().exitDialog(context);
+                return true;
             default:
+                if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode >= 8 && keyCode <= 16) {
+                    ServerIO.loadInBackground(settingsHelper.getIp() + "/section" + (keyCode - 8), context);
+                }
                 return false;
 
         }

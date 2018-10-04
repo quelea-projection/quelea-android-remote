@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
+            android:textSize="@dimen/plain_text_size"
             android:background="@drawable/btn_navigation"
             android:text="@string/action_exit" />
 
@@ -40,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginStart="30dp"
+            android:textSize="@dimen/plain_text_size"
             android:background="@drawable/btn_navigation"
             android:text="@string/action_report" />
     </LinearLayout>
@@ -68,6 +70,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/crashHeadline"
+        android:textSize="@dimen/plain_text_size"
         android:background="@null"
         android:maxLines="10000"
         android:scrollbars="vertical"

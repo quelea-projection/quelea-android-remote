@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.widget.SearchView;
 import android.text.Editable;
 import android.text.Html;
@@ -30,7 +31,7 @@ import org.quelea.mobileremote.activities.MainActivity;
 import org.quelea.mobileremote.activities.TranslationActivity;
 import org.quelea.mobileremote.activities.TroubleshootingActivity;
 import org.quelea.mobileremote.adapters.ThemeAdapter;
-import org.quelea.mobileremote.network.SeverIO;
+import org.quelea.mobileremote.network.ServerIO;
 import org.quelea.mobileremote.utils.UtilsMisc;
 import org.quelea.mobileremote.utils.UtilsNetwork;
 
@@ -95,7 +96,7 @@ public class DialogsHelper {
             public void onClick(View view) {
                 dialog.dismiss();
                 context.setDialogShown(false);
-                SeverIO.checkServerConnection(context, context.getSettings().getIp());
+                ServerIO.checkServerConnection(context, context.getSettings().getIp());
             }
         });
 
@@ -166,14 +167,14 @@ public class DialogsHelper {
             // Check if login is needed
             if (Patterns.WEB_URL.matcher(ip).matches() && !context.isLoggedIn()) {
                 context.getSettings().setIp(ip);
-                SeverIO.checkServerConnection(context, ip);
+                ServerIO.checkServerConnection(context, ip);
             } else if (!context.isLoggedIn()) {
                 enterURLDialog(context.getString(R.string.error_url_incorrect), ip, context);
             }
 
             // Download lyrics if already logged in
             if (context.isLoggedIn()) {
-                SeverIO.downloadLyrics(context);
+                ServerIO.downloadLyrics(context);
             }
             context.setDialogShown(false);
         }
@@ -194,7 +195,7 @@ public class DialogsHelper {
                 alertText.dismiss();
 
                 // Log in
-                SeverIO.sendPassword(password, context);
+                ServerIO.sendPassword(password, context);
                 context.setDialogShown(false);
             }
         });
@@ -221,7 +222,7 @@ public class DialogsHelper {
                         String password = value.toString();
 
                         // Log in
-                        SeverIO.sendPassword(password, context);
+                        ServerIO.sendPassword(password, context);
                         alertText.dismiss();
                     }
                 }
@@ -255,13 +256,13 @@ public class DialogsHelper {
             public void onItemClick(AdapterView<?> adapterView, View view, int which, long l) {
                 if (which == 0) {
                     String url = context.getSettings().getIp() + "/remove/" + i;
-                    SeverIO.checkSupported(url, context);
+                    ServerIO.checkSupported(url, context);
                 } else if (which == 1) {
                     String url = context.getSettings().getIp() + "/moveup/" + i;
-                    SeverIO.checkSupported(url, context);
+                    ServerIO.checkSupported(url, context);
                 } else if (which == 2) {
                     String url = context.getSettings().getIp() + "/movedown/" + i;
-                    SeverIO.checkSupported(url, context);
+                    ServerIO.checkSupported(url, context);
                 }
                 context.setDialogShown(false);
                 dialog.dismiss();
@@ -290,7 +291,7 @@ public class DialogsHelper {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int which, long l) {
                         Toast.makeText(context, String.format(context.getString(R.string.msg_setting_theme), options[which]), Toast.LENGTH_SHORT).show();
-                        SeverIO.setTheme(options[which].replaceAll(" ", "%20"), context);
+                        ServerIO.setTheme(options[which].replaceAll(" ", "%20"), context);
                         dialog.dismiss();
                         context.setDialogShown(false);
                     }
@@ -371,7 +372,7 @@ public class DialogsHelper {
             @Override
             public void onClick(View view) {
                 context.setBibleSearch(true);
-                SeverIO.getTranslations(context);
+                ServerIO.getTranslations(context);
                 alertText.dismiss();
             }
         });
@@ -632,7 +633,7 @@ public class DialogsHelper {
                     // The 'which' argument contains the
                     // index position of the selected item
                     if (context.getLine().contains("=\"") && context.getLine().contains("=\"") && context.getLine().contains("\">")) {
-                        SeverIO.getSong(context.getTempResult()[which].substring(
+                        ServerIO.getSong(context.getTempResult()[which].substring(
                                 context.getTempResult()[which]
                                         .lastIndexOf("=\"") + 2,
                                 context.getTempResult()[which]
@@ -680,13 +681,19 @@ public class DialogsHelper {
         alert.getNeutral().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SeverIO.loadSong(songNumber, context);
+                ServerIO.loadSong(songNumber, context);
 
                 if (!context.isCanJump()) {
                     for (int i = context.getActiveItem(); i < (context.getScheduleList().size()); i++)
-                        SeverIO.nextItem(context);
+                        ServerIO.nextItem(context);
                 } else {
-                    SeverIO.gotoItem(context.getScheduleList().size(), context.getActiveItem(), context);
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            ServerIO.gotoItem(context.getScheduleList().size(), context.getActiveItem(), context);
+                        }
+                    }, 300);
                 }
 
                 final Animation nextAnim = AnimationUtils.loadAnimation(context, R.anim.next);
@@ -704,7 +711,7 @@ public class DialogsHelper {
         alert.getYes().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SeverIO.loadSong(songNumber, context);
+                ServerIO.loadSong(songNumber, context);
                 dialog.dismiss();
                 searchMenuItem.collapseActionView();
                 sv.setQuery("", false);

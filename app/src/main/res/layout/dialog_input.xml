@@ -1,103 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingBottom="10dp">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
             android:id="@+id/dialogTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:visibility="gone"
             android:text="@string/msg_enter_mr_url"
+            android:textSize="@dimen/plain_text_size"
             android:textStyle="bold"
-            android:textSize="15sp"/>
+            android:visibility="gone" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.7"
         android:orientation="horizontal">
-    <TextView
-        android:id="@+id/txt_dia"
-        android:layout_width="0dp"
-        android:layout_weight="0.8"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_margin="10dp"
-        android:maxLines = "10000"
-        android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/txt_dia"
+            android:layout_width="0dp"
+            android:maxWidth="450dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:maxLines="10000"
+            android:textSize="@dimen/plain_text_size" />
 
         <ImageView
+            android:id="@+id/helpButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@android:drawable/ic_menu_help"
-            android:id="@+id/helpButton" />
+            android:src="@android:drawable/ic_menu_help" />
 
     </LinearLayout>
 
     <EditText
+        android:id="@+id/edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_text"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:textSize="15sp"/>
+        android:textSize="@dimen/plain_text_size" />
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_yes"
             android:layout_width="0dp"
-            android:layout_weight="0.3"
             android:layout_height="match_parent"
+            android:layout_weight="0.3"
             android:clickable="true"
+            android:focusable="true"
             android:text="@string/action_yes_label"
             android:textColor="#ffffff"
-            android:textStyle="bold"
-            android:focusable="true" />
+            android:textSize="@dimen/small_text_size"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_no"
             android:layout_width="0dp"
-            android:layout_weight="0.3"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:layout_marginStart="5dp"
+            android:layout_weight="0.3"
             android:clickable="true"
+            android:focusable="true"
             android:text="@string/action_no_label"
             android:textColor="#ffffff"
-            android:textStyle="bold"
-            android:focusable="true" />
+            android:textSize="@dimen/small_text_size"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/btn_neutral"
             android:layout_width="0dp"
-            android:layout_weight="0.3"
-            android:paddingLeft="5dp"
-            android:paddingStart="5dp"
-            android:paddingRight="5dp"
-            android:paddingEnd="5dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:layout_marginStart="5dp"
+            android:layout_weight="0.3"
             android:clickable="true"
+            android:focusable="true"
+            android:paddingEnd="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingStart="5dp"
             android:text="@string/action_cancel_label"
             android:textColor="#ffffff"
-            android:textStyle="bold"
-            android:focusable="true" />
+            android:textSize="@dimen/small_text_size"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </LinearLayout>

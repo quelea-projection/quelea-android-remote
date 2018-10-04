@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
@@ -31,7 +30,7 @@
         </activity>
         <receiver
             android:name=".receivers.NotificationReceiver"
-            android:enabled="true">
+            android:enabled="false">
             <intent-filter>
                 <action android:name="NEXT_ITEM" />
                 <action android:name="NEXT_SLIDE" />

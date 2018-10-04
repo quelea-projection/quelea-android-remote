@@ -11,6 +11,7 @@ import java.net.URL;
 
 /**
  * Class to download text from the server.
+ *
  * @author Arvid
  */
 
@@ -177,7 +178,8 @@ public class DownloadHandler {
                     mainActivity.runOnUiThread(new Runnable() {
                         public void run() {
                             for (ProgressDialog pd : mainActivity.getProgressDialogs()) {
-                                pd.dismiss();
+                                if (pd != null && pd.isShowing())
+                                    pd.dismiss();
                             }
                         }
                     });
@@ -189,7 +191,8 @@ public class DownloadHandler {
                     mainActivity.runOnUiThread(new Runnable() {
                         public void run() {
                             for (ProgressDialog pd : mainActivity.getProgressDialogs()) {
-                                pd.dismiss();
+                                if (pd != null && pd.isShowing())
+                                    pd.dismiss();
                             }
                         }
                     });

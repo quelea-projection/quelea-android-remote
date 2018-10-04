@@ -8,6 +8,8 @@ Version 4.2
 • Updated Portuguese translation
 • Added Spanish translation
 • Fixed potential crashes
+• Improved layout for larger screens
+• Added keyboard shortcuts
 
 Version 4.1
 • Improved performance after resuming the app

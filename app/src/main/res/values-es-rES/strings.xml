@@ -62,7 +62,7 @@
     <string name="action_previous_slide">Párrafo anterior</string>
     <string name="action_next_slide">Próximo párrafo</string>
     <string name="action_next_item">Próximo elemento</string>
-    <string name="msg_currently_displaying">Actualmente mostrando</string>
+    <string name="msg_currently_displaying">Actualmente mostrando%s</string>
     <string name="msg_want_to_exit">¿Seguro que desea salir?</string>
     <string name="action_yes_label">Sí</string>
     <string name="action_no_label">No</string>

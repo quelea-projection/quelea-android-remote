@@ -12,4 +12,9 @@
 
     <dimen name="app_minimumsize_h">598.0dip</dimen>
 
+    <dimen name="small_text_size">16sp</dimen>
+    <dimen name="plain_text_size">17sp</dimen>
+    <dimen name="headline_text_size">18sp</dimen>
+    <bool name="small_screen">true</bool>
+
 </resources>

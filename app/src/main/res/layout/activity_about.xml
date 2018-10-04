@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_about_headline"
-        android:textSize="18sp" />
+        android:textSize="@dimen/plain_text_size" />
 
     <LinearLayout 
         android:layout_width="fill_parent"
@@ -23,6 +23,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@null"
+        android:textSize="@dimen/plain_text_size"
         android:layout_marginTop="30dp"
         android:maxLines = "10000"
         android:text="@string/msg_about_text_app"/>

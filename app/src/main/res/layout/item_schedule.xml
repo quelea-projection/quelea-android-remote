@@ -12,5 +12,5 @@
         android:layout_gravity="center"
         android:layout_marginLeft="5dp"
         android:layout_marginStart="5dp"
-        android:textSize="17sp" />
+        android:textSize="@dimen/plain_text_size" />
 </LinearLayout>

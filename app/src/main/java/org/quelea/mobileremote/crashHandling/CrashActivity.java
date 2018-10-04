@@ -20,6 +20,8 @@ public class CrashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_crash);
         String title = getString(R.string.title_activity_crash).replace("%s", getString(R.string.app_name_mr));
         setTitle(title);
+        TextView headLine = findViewById(R.id.crashHeadline);
+        headLine.setText(title);
         TextView tv = findViewById(R.id.crashText);
         StringBuilder sb = new StringBuilder();
         sb.append("<br/><b>").append(title).append("</b><br/>")

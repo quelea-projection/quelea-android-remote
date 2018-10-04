@@ -1,0 +1,155 @@
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+
+    <string name="action_logout">Sair</string>
+    <string name="action_exit">Sair</string>
+    <string name="action_black">Preto</string>
+    <string name="action_clear">Limpar</string>
+    <string name="action_logo">Logotipo</string>
+    <string name="action_previous_item">Item anterior</string>
+    <string name="action_previous_slide">Slide anterior</string>
+    <string name="action_next_slide">Próximo slide</string>
+    <string name="action_next_item">Próximo item</string>
+    <string name="title_activity_about">Sobre</string>
+    <string name="msg_currently_displaying">Atualmente exibindo %s</string>
+    <string name="msg_want_to_exit">Você tem certeza que quer sair?</string>
+    <string name="action_yes_label">Sim</string>
+    <string name="action_no_label">Não</string>
+    <string name="action_ok_label">OK</string>
+    <string name="msg_enter_mr_url">Digite o URL para o servidor do Quelea Mobile Remote.</string>
+    <string name="error_failed_finding_mr_server">Falha ao localizar o servidor remoto do Quelea Mobile. Por favor, certifique-se Quelea é iniciado e que você digitou o URL correto.</string>
+    <string name="error_url_incorrect">URL parece estar incorreto. Verifique se o Quelea foi iniciado e insira a URL no servidor do Quelea Mobile Remote.</string>
+    <string name="msg_no_live_item">Nenhum item está atualmente ativo</string>
+    <string name="action_cancel_label">Cancelar</string>
+    <string name="msg_enter_password">Digite a senha para o servidor Quelea Mobile Remote.</string>
+    <string name="msg_logged_in">Conectado</string>
+    <string name="msg_logged_out">Desconectado</string>
+    <string name="title_about_headline">Sobre este aplicativo:</string>
+    <string name="app_name_mr">Quelea Mobile Remote</string>
+    <string name="msg_add_song">Você quer adicionar essa música?</string>
+    <string name="msg_select_song">Selecione a música que você deseja adicionar</string>
+    <string name="msg_no_songs_message">Não foi possível encontrar músicas que correspondam à sua pesquisa.</string>
+    <string name="msg_search_tooltip">Adicione uma música ou uma passagem bíblica</string>
+    <string name="msg_about_text_app">Este é um aplicativo sem fins lucrativos, feito para ser usado com o software de projeção da igreja chamado Quelea (http://quelea.org). Embora não esteja mais na versão beta, certamente este aplicativo pode apresentar falhas, e nem está completo. Este é um projeto paralelo e destina-se principalmente para uso pessoal, mas é com prazer que compartilhado com qualquer um que possa achar útil.</string>
+    <string name="msg_about_text_support">Sinta-se à vontade para me enviar um email para arvid@quelea.org se tiver alguma dúvida ou tiver problemas, mas certifique-se de ter iniciado o Quelea antes do aplicativo (com os dois servidores ativos), que ambos os dispositivos estejam conectados à mesma rede e que você digitou o URL correto primeiro.</string>
+    <string name="msg_about_text_responsibility">Não posso garantir uma experiência sem falhas, por isso não me responsabilizarei por quaisquer problemas que possam ocorrer em um ambiente ao vivo.</string>
+    <string name="msg_connected">Conectado ao servidor remoto móvel</string>
+    <string name="msg_select_book">Selecione o livro</string>
+    <string name="msg_bible_query_hint">[Capítulo]: [Verso] - [Verso] em </string>
+    <string name="action_change_translation">Alterar tradução</string>
+    <string name="action_search_song">Pesquisar uma música</string>
+    <string name="action_add_bible">Adicionar uma passagem bíblica</string>
+    <string name="action_play">Reproduzir</string>
+    <string name="action_pause">Pausar</string>
+    <string name="msg_no_server_found">Nenhum servidor foi encontrado ao tentar se conectar automaticamente. Certifique-se de que o Quelea e o servidor de conexão automática estejam iniciados ou insira o URL manualmente.</string>
+    <string name="action_select_translation">Selecione a tradução da bíblia</string>
+    <string name="action_add_go_live">Adicionar e ir ao vivo</string>
+    <string name="title_enter_song">Procure uma música para adicionar à sua programação</string>
+    <string name="msg_how_to"><b>Pesquisar uma música:</b>\nProcurar por uma parte da letra da canção ou o título da música, pressione Enter e depois de alguns segundos você receberá todas as músicas correspondentes a frase de pesquisa.\n\n<b>Adicionar uma passagem da bíblia:</b>\nSeparar o capítulo de um verso com dois pontos (:) e vários versos em uma fila com um hífen (-). Se você quiser adicionar vários versos diferentes para o mesmo slide, você pode separar cada novo verso com uma vírgula (,) ou um ponto e vírgula (;) e, em seguida, escrever a passagem completa (incluindo capítulo). Depois de pressionar Enter, você receberá uma mensagem se foi possível adicionar a passagem ou não.</string>
+    <string name="title_search_help">Procure ajuda</string>
+    <string name="msg_trying_to_find_server_automatically">Tentando encontrar o servidor automaticamente …</string>
+    <string name="msg_getting_bible_translations">Obtendo traduções da Bíblia …</string>
+    <string name="msg_trying_to_add_passage">Tentando adicionar passagem à sua programação…</string>
+    <string name="msg_checking_stored_url">Verificando o URL armazenado …</string>
+    <string name="msg_searching">Procurando…</string>
+    <string name="msg_getting_bible_books">Obtendo livros bíblicos …</string>
+    <string name="msg_checking_stored_url_and_auto_connecting">Verificação de URL armazenado e conexão automática…</string>
+    <string name="action_change_book_or_translation">Mudar livro bíblico ou tradução</string>
+    <string name="msg_cant_use_ipv6">Infelizmente você não pode usar endereços IPv6. Você precisa usar um endereço IPv4 para ser capaz de usar este aplicativo. Se você não sabe como encontrá-lo, o google encontrará o IP local e o nome do seu sistema operacional. Digite o endereço/URL ipv4 abaixo.</string>
+    <string name="msg_new_settings_added">Novas configurações de navegação foram adicionadas</string>
+    <string name="title_activity_crash">%s Travou</string>
+    <string name="title_crash">Desculpe pela inconveniência!</string>
+    <string name="msg_crash_body_1">Eu tento manter o aplicativo o mais estável possível, mas às vezes o aplicativo ainda falha. Por favor, ajude-me a resolver este problema, fornecendo-me informações úteis sobre o contexto em que o erro ocorreu.</string>
+    <string name="msg_crash_body_2">Ao clicar em \\"Relatório\\", um e-mail será gerado com o log de travamento, qual música estava sendo exibida no momento, dados sobre seu telefone e outras informações que podem ser úteis. Sinta-se à vontade para remover as informações do seu telefone caso se sinta desconfortável em compartilhá-lo.</string>
+    <string name="msg_crash_body_3">Obrigado pela sua ajuda e compreensão!</string>
+    <string name="action_feedback">Reportar erro/Sugerir funcionalidade</string>
+    <string name="action_start_recording">Comece a gravar</string>
+    <string name="action_stop_recording">Pare de gravar</string>
+    <string name="action_report">Reportar</string>
+    <string name="troubleshoot_title_activity">Solucionando problemas de conexão com o Quelea</string>
+    <string name="troubleshoot_msg_check_url">Verifique no seu navegador se a URL funciona normalmente.</string>
+    <string name="troubleshoot_msg_check_wifi">Certifique-se de que o wifi esteja ligado e que você esteja conectado à mesma rede que o computador com o Quelea.</string>
+    <string name="troubleshoot_msg_auto_connect">Se você usar o recurso de conexão automática, certifique-se de tê-lo ativado no Quelea adicionando \"use.auto.detect.server = true\" ao arquivo de configurações localizado na pasta .quelea no diretório do usuário.</string>
+    <string name="troubleshoot_msg_change_port">Tente alterar a porta no Quelea.</string>
+    <string name="troubleshoot_msg_disable_firewall">Desative o firewall e o anti-vírus temporariamente para garantir que este não é o problema.</string>
+    <string name="troubleshoot_msg_check_router">Verifique se a opção port forwarding do seu roteador está ativa. Como esta opção é diferente para cada marca, consulte o manual do roteador.</string>
+    <string name="troubleshoot_msg_guide_info">Bem-vindo ao guia de solução de problemas. Isso guiará você pelas causas mais comuns de falha na conexão. Para me ajudar a melhorar o aplicativo, por favor, clique em \"Isso funcionou\" sempre que você encontrar algo que funcione.</string>
+    <string name="troubleshoot_msg_report_bug">Existe um problema com o aplicativo. Você pode me enviar um e-mail com algumas informações para que eu possa resolver?</string>
+    <string name="troubleshoot_msg_not_within_app">Infelizmente, o problema não é com o aplicativo. Por isso, não posso resolver isso para você. Fico feliz em saber que encontrou um jeito de fazê-lo funcionar!</string>
+    <string name="troubleshoot_msg_finished">Perfeito! Agora você pode usar o aplicativo normalmente.</string>
+    <string name="troubleshoot_msg_nothing_worked">Sinto muito que ainda não tenha conseguido fazer funcionar! Gostaria de me mandar um e-mail para ver se posso ajudá-lo?</string>
+    <string name="troubleshoot_action_previous">Anterior</string>
+    <string name="troubleshoot_action_this_worked">Funcionou</string>
+    <string name="troubleshoot_action_next">Próximo</string>
+    <string name="troubleshoot_action_nothing_worked">Nenhum funcionou</string>
+    <string name="msg_not_supported">Sua versão do Quelea não suporta este recurso.</string>
+    <string name="msg_navigation_drawer_open">Abrir lista de programação</string>
+    <string name="msg_navigation_drawer_close">Fechar lista de programação</string>
+    <string name="title_select_theme">Selecione o tema</string>
+    <string name="msg_setting_theme">Definindo o tema <xliff:g example="Preto em Branco" id="theme_name"> %s </xliff:g></string>
+    <string name="msg_choose_action">Escolha uma ação para <xliff:g example="Amazing Grace" id="item_name"> %s </xliff:g></string>
+    <string name="action_remove_item">Remover da programação</string>
+    <string name="action_move_up">Mover para cima</string>
+    <string name="action_move_down">Mover para baixo</string>
+    <string name="action_search_server">Procurar servidor</string>
+    <string name="title_select_chapter">Selecione o capítulo</string>
+    <string name="title_select_verse">Selecione o versículo</string>
+    <string name="title_select_ending_verse">Selecione o versículo final</string>
+    <string name="action_add">Não, apenas adicione</string>
+    <string name="msg_failed_sending">Falha ao enviar sinal para o servidor</string>
+    <string name="action_change_book">Mudar livro</string>
+    <string name="action_translate">Ajude a traduzir o aplicativo</string>
+    <string name="msg_partially_translated">Infelizmente, este aplicativo pode ser traduzido apenas parcialmente para o seu idioma. Algumas das palavras estarão em inglês até que sejam adicionadas em uma atualização posterior.  Você gostaria de me ajudar a atualizar a tradução?</string>
+    <string name="msg_error_on_add">Algo deu errado ao tentar adicionar a música.</string>
+    <string name="msg_error_on_save_url">Algo deu errado ao tentar adicionar para salvar o URL buscado.</string>
+    <string name="msg_about_source_code">Assim como o software principal, o aplicativo é completamente open source, o que significa que você pode visualizar o código fonte do aplicativo e contribuir para melhorá-lo. Você pode encontrar o código fonte aqui: https://github.com/quelea-projection/quelea-android-remote</string>
+
+    <!-- Preference labels -->
+    <string name="pref_title_activity_settings">Configurações</string>
+    <string name="pref_header_general">Geral</string>
+    <string name="pref_title_volume_buttons">Ativar navegação por volume</string>
+    <string name="pref_description_volume_buttons">Use os botões de volume do seu aparelho para navegar para o slide/item seguinte ou anterior.</string>
+    <string name="pref_title_dpad_buttons">Ativar navegação no dpad</string>
+    <string name="pref_description_dpad_buttons">Use os botões do dpad (para cima/para baixo) para navegar para o próximo/anterior slide/item. Se você quiser usar um teclado ou pedal bluetooth (como AirTurn), ative isso.</string>
+    <string name="pref_header_server_settings">Configurações do servidor</string>
+    <string name="pref_title_mr_server">Servidor Remoto Móvel</string>
+    <string name="pref_description_mr_server">Clique aqui para inserir o URL do Servidor Remoto Móvel.</string>
+    <string name="pref_description_auto_connect">Sempre tente se conectar automaticamente se o URL armazenado não funcionar.</string>
+    <string name="pref_title_auto_connect">Use conexão automática</string>
+    <string name="pref_header_navigation_settings">Configurações de navegação</string>
+    <string name="pref_title_on_end">Fim do item/ação inicial</string>
+    <string name="pref_description_on_end">Selecione o que você deseja que o aplicativo faça quando você navegar com uma das duas opções acima e chegar ao final / início de um item.</string>
+    <string name="pref_description_long_press">Selecione o que você quer que aconteça se você pressionar longamente um botão quando estiver navegando com uma das duas opções acima. Observe que isso não funcionará com os pedais do AirTurn.</string>
+    <string name="pref_title_long_press">Ação de longa duração</string>
+    <string name="pref_title_double_press">Pressione duas vezes a ação</string>
+    <string name="pref_description_double_press">Selecione o que você quer que aconteça se você pressionar dois botões ao mesmo tempo quando estiver navegando com uma das duas opções acima.</string>
+    <string name="pref_description_swipe_navigation">Escolha o que deve acontecer se você deslizar para a esquerda ou para a direita na tela.</string>
+    <string name="pref_title_swipe_navigation">Navegação Swipe</string>
+    <string name="pref_description_auto_timeout">Maior tempo significa melhor resultado se você tiver uma conexão wifi ruim, menor significa conexão mais rápida, mas pode significar que o servidor seja encontrado com menos frequência.</string>
+    <string name="pref_title_auto_timeout">Editar o tempo limite de conexão automática</string>
+    <string name="pref_title_disable_rec">Desativar o botão de gravação</string>
+    <string name="pref_title_app_theme">Tema da aplicação</string>
+    <string name="pref_description_choose_app_theme">Escolha um tema para o aplicativo</string>
+
+    <!-- Translatable arrays -->
+    <string-array name="auto_progress">
+        <item name="0">Progresso para o item seguinte/anterior</item>
+        <item name="1">Ocultar texto com botão Limpar</item>
+        <item name="2">Ocultar texto e mostrar o Logotipo</item>
+        <item name="3">Ocultar texto com Tela Preta</item>
+        <item name="4">Não faça nada</item>
+    </string-array>
+    <string-array name="swipe_navigation">
+        <item name="0">Mover para o item seguinte/anterior</item>
+        <item name="1">Mover para o próximo slide/anterior</item>
+        <item name="2">Não faça nada</item>
+    </string-array>
+    <string-array name="auto_timeout">
+        <item name="200">Curto</item>
+        <item name="500">Médio</item>
+        <item name="1000">Longo</item>
+    </string-array>
+    <string-array name="app_theme">
+        <item name="default">Padrão</item>
+        <item name="dark">Escuro</item>
+    </string-array>
+</resources>

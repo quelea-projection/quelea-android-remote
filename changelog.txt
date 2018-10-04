@@ -10,6 +10,7 @@ Version 4.2
 • Fixed potential crashes
 • Improved layout for larger screens
 • Added keyboard shortcuts
+• Added Brazilian Portuguese translation
 
 Version 4.1
 • Improved performance after resuming the app

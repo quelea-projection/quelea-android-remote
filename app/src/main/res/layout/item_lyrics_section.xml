@@ -2,16 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:minHeight="80dp"
     android:gravity="center">
 
     <ImageView
         android:id="@+id/slideImage"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:maxHeight="200dp"
+        android:layout_height="150dp"
+        android:maxHeight="150dp"
         android:layout_centerInParent="true"
         android:layout_centerVertical="true"
-        android:scaleType="fitCenter" />
+        android:scaleType="fitCenter"/>
 
     <TextView
         android:id="@+id/detailRight"

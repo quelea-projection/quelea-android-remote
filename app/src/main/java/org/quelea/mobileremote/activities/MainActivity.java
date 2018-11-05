@@ -22,6 +22,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
@@ -273,6 +275,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> arg0, View v, int position,
                                     long id) {
+                Animation animation;
+                animation = AnimationUtils.loadAnimation(getApplicationContext(),
+                        R.anim.blink);
+                v.startAnimation(animation);
                 lyricsListView.setItemChecked(position, true);
                 if (playable) {
                     ServerIO.loadInBackground(settingsHelper.getIp() + "/play", MainActivity.this);
@@ -701,7 +707,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        lyricsAdapter.imageLoader.clearCache();
+        getLyricsAdapter().imageLoader.clearCache();
         super.onDestroy();
     }
 
@@ -743,8 +749,8 @@ public class MainActivity extends AppCompatActivity {
             try {
                 URL url = new URL(urls[0]);
                 URLConnection yc = url.openConnection();
-                yc.setConnectTimeout(500);
-                yc.setReadTimeout(500);
+                yc.setConnectTimeout(2500);
+                yc.setReadTimeout(2500);
                 yc.setUseCaches(false);
                 BufferedReader in = new BufferedReader(new InputStreamReader(
                         yc.getInputStream()));
@@ -756,7 +762,10 @@ public class MainActivity extends AppCompatActivity {
                 return sb.toString();
 
             } catch (IOException e) {
-                Log.e("HTMLWithoutProgress", "Exception: " + e);
+                Log.e("HTMLWithoutProgress", "Exception: " + e.getLocalizedMessage() + " " + urls[0]);
+                // TODO: Delete temporary work-around for Quelea bug
+                if (urls[0].contains("/slides"))
+                    return "slides";
                 // Return empty content if no page was found
                 return " ";
             }

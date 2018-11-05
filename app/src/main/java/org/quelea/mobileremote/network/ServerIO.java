@@ -190,8 +190,8 @@ public class ServerIO {
             @Override
             public void run() {
                 HttpParams params = new BasicHttpParams();
-                HttpConnectionParams.setConnectionTimeout(params, 800);
-                HttpConnectionParams.setSoTimeout(params, 800);
+                HttpConnectionParams.setConnectionTimeout(params, 2800);
+                HttpConnectionParams.setSoTimeout(params, 2800);
                 HttpClient httpclient = new DefaultHttpClient(params);
                 HttpResponse response;
                 try {

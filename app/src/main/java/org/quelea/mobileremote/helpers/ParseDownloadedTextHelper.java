@@ -75,6 +75,10 @@ public class ParseDownloadedTextHelper {
         if (context.isOnline()) {
             TextView tv = context.findViewById(R.id.currentlyDisplaying);
 
+            // Avoid text getting reset to default on rotate
+            if (!context.getTempCurrentlyDisplaying().isEmpty() && !context.getTempCurrentlyDisplaying().equals(context.getString(R.string.msg_no_live_item)) && tv.getText().equals(context.getString(R.string.msg_no_live_item)))
+                tv.setText(context.getResources().getString(R.string.msg_currently_displaying, context.getTempCurrentlyDisplaying()));
+
             // Check if lyrics page is empty
             if (line.contains("<br/></i>")) {
 
@@ -83,17 +87,19 @@ public class ParseDownloadedTextHelper {
 
                 // Check if the TextView with what is currently displaying
                 // is equal to the downloaded lyrics
-                if (line.contains(":") && line.contains("<br/></i>") && (!context.getTempCurrentlyDisplaying().equals(
-                        line.substring(line.indexOf(":"), line.indexOf("<br/></i>"))) || tv.getText().equals(context.getString(R.string.msg_no_live_item)))) {
-                    context.getLyricsAdapter().imageLoader.clearCache();
-                    context.setTempCurrentlyDisplaying(line.substring(line.indexOf(":"), line.indexOf("<br/></i>")));
-                    // Update the name of the item if it has changed
-                    String tempCurrent = line.substring(line.indexOf(":"),
-                            line.indexOf("<br/></i>"));
-                    tempCurrent = android.text.Html.fromHtml(
-                            tempCurrent).toString();
-                    tv.setText(context.getResources().getString(R.string.msg_currently_displaying, tempCurrent));
-                    context.setPresentation(false);
+                if (line.contains(":")) {
+                    String newItem = line.substring(line.indexOf(":"), line.indexOf("<br/></i>"));
+                    if ((!context.getTempCurrentlyDisplaying().equals(newItem) || tv.getText().equals(context.getString(R.string.msg_no_live_item)))) {
+                        context.getLyricsAdapter().imageLoader.clearCache();
+                        context.setTempCurrentlyDisplaying(line.substring(line.indexOf(":"), line.indexOf("<br/></i>")));
+                        // Update the name of the item if it has changed
+                        String tempCurrent = line.substring(line.indexOf(":"),
+                                line.indexOf("<br/></i>"));
+                        tempCurrent = android.text.Html.fromHtml(
+                                tempCurrent).toString();
+                        tv.setText(context.getResources().getString(R.string.msg_currently_displaying, tempCurrent));
+                        context.setPresentation(false);
+                    }
                 }
             } else {
                 // If no item is live, change TextView to stored label
@@ -127,6 +133,7 @@ public class ParseDownloadedTextHelper {
             String current = line.substring(line.indexOf("current\">") + 43,
                     line.indexOf(")", line.indexOf("current\">") + 43));
             context.setActiveVerse(Integer.parseInt(current));
+            context.getLyricsListView().smoothScrollToPosition(context.getActiveVerse() + 1);
         }
         context.setSlide(false);
         int verses = -1;

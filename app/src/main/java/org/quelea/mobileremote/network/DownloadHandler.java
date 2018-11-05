@@ -33,15 +33,16 @@ public class DownloadHandler {
                         activity.setFullyStarted(true);
                     }
 
-                    // Check if connection has failed and if that's true for 8 times in a row, alert user that the connection has failed
+                    // Check if connection has failed. If true for 8 times in a row, alert user that the connection has failed
                     if (line.equals(" ")) {
                         connectionFailedMR++;
+                        if (connectionFailedMR == 8)
+                            activity.lostConnection();
+                        return;
                     } else {
                         connectionFailedMR = 0;
                         activity.setOnline(true);
                     }
-                    if (connectionFailedMR == 8)
-                        activity.lostConnection();
                 }
 
                 // Handle the html differently based on what page has been downloaded
@@ -85,6 +86,9 @@ public class DownloadHandler {
                         break;
                     case SLIDES:
                         latestVersion = !line.contains("<!DOCTYPE html>");
+                        // TODO: Delete temporary work-around for Quelea bug
+                        if (line.equals("slides"))
+                            latestVersion = true;
                         if (activity.isLatestVersion()) {
                             activity.setPresentation(true);
                             activity.getLyricsAdapter().notifyDataSetChanged();

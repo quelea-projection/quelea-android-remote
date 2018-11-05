@@ -1,3 +1,9 @@
+Version 4.3
+• Fixed presentation thumbnail bugs
+• Improved connection stability
+• Added visual confirmation for slide clicks
+• Added scroll to active slide
+
 Version 4.2
 • Fixed bug that stopped app from working without internet connection
 • Fixed italic sync with server

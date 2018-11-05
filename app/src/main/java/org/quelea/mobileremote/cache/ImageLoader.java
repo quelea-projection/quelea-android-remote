@@ -41,34 +41,31 @@ public class ImageLoader {
     //handler to display images in UI thread
     private Handler handler = new Handler();
 
-    public ImageLoader(Context context){
+    public ImageLoader(Context context) {
 
         fileCache = new FileCache(context);
 
         // Creates a thread pool that reuses a fixed number of
         // threads operating off a shared unbounded queue.
-        executorService=Executors.newFixedThreadPool(5);
+        executorService = Executors.newFixedThreadPool(5);
 
     }
 
     // default image show in list (Before online image download)
-    private final int stub_id=android.R.color.transparent;
+    private final int stub_id = android.R.color.transparent;
 
-    public void DisplayImage(String url, ImageView imageView)
-    {
+    public void DisplayImage(String url, ImageView imageView) {
         //Store image and url in Map
         imageViews.put(imageView, url);
 
         //Check image is stored in MemoryCache Map or not (see MemoryCache.java)
         Bitmap bitmap = memoryCache.get(url);
 
-        if(bitmap!=null){
+        if (bitmap != null) {
             // if image is stored in MemoryCache Map then
             // Show image in listview row
             imageView.setImageBitmap(bitmap);
-        }
-        else
-        {
+        } else {
             //queue Photo to download from url
             queuePhoto(url, imageView);
 
@@ -77,8 +74,7 @@ public class ImageLoader {
         }
     }
 
-    private void queuePhoto(String url, ImageView imageView)
-    {
+    private void queuePhoto(String url, ImageView imageView) {
         // Store image and url in PhotoToLoad object
         PhotoToLoad p = new PhotoToLoad(url, imageView);
 
@@ -90,60 +86,60 @@ public class ImageLoader {
     }
 
     //Task for the queue
-    private class PhotoToLoad
-    {
+    private class PhotoToLoad {
         public String url;
         ImageView imageView;
-        PhotoToLoad(String u, ImageView i){
-            url=u;
-            imageView=i;
+
+        PhotoToLoad(String u, ImageView i) {
+            url = u;
+            imageView = i;
         }
     }
 
     class PhotosLoader implements Runnable {
         PhotoToLoad photoToLoad;
 
-        PhotosLoader(PhotoToLoad photoToLoad){
-            this.photoToLoad=photoToLoad;
+        PhotosLoader(PhotoToLoad photoToLoad) {
+            this.photoToLoad = photoToLoad;
         }
 
         @Override
         public void run() {
-            try{
+            try {
                 //Check if image already downloaded
                 if(imageViewReused(photoToLoad))
                     return;
+
                 // download image from web url
                 Bitmap bmp = getBitmap(photoToLoad.url);
 
                 // set image data in Memory Cache
                 memoryCache.put(photoToLoad.url, bmp);
 
-                if(imageViewReused(photoToLoad))
+                if (imageViewReused(photoToLoad))
                     return;
 
                 // Get bitmap to display
-                BitmapDisplayer bd=new BitmapDisplayer(bmp, photoToLoad);
+                BitmapDisplayer bd = new BitmapDisplayer(bmp, photoToLoad);
 
                 // Causes the Runnable bd (BitmapDisplayer) to be added to the message queue.
                 // The runnable will be run on the thread to which this handler is attached.
                 // BitmapDisplayer run method will call
                 handler.post(bd);
 
-            }catch(Throwable th){
+            } catch (Throwable th) {
                 th.printStackTrace();
             }
         }
     }
 
-    private Bitmap getBitmap(String url)
-    {
-        File f=fileCache.getFile(url);
+    private Bitmap getBitmap(String url) {
+        File f = fileCache.getFile(url);
 
         //From SD cache
         //CHECK : if trying to decode file which not exist in cache return null
         Bitmap b = decodeFile(f);
-        if(b!=null)
+        if (b != null)
             return b;
 
         // Download image file from web
@@ -154,7 +150,7 @@ public class ImageLoader {
             conn.setConnectTimeout(30000);
             conn.setReadTimeout(30000);
             conn.setInstanceFollowRedirects(true);
-            InputStream is=conn.getInputStream();
+            InputStream is = conn.getInputStream();
 
             // Constructs a new FileOutputStream that writes to file
             // if file not exist then it will create file
@@ -174,77 +170,79 @@ public class ImageLoader {
 
             return bitmap;
 
-        } catch (Throwable ex){
+        } catch (Throwable ex) {
             ex.printStackTrace();
-            if(ex instanceof OutOfMemoryError)
+            if (ex instanceof OutOfMemoryError)
                 memoryCache.clear();
             return null;
         }
     }
 
     //Decodes image and scales it to reduce memory consumption
-    private Bitmap decodeFile(File f){
+    private Bitmap decodeFile(File f) {
 
         try {
 
             //Decode image size
             BitmapFactory.Options o = new BitmapFactory.Options();
             o.inJustDecodeBounds = true;
-            FileInputStream stream1=new FileInputStream(f);
-            BitmapFactory.decodeStream(stream1,null,o);
+            FileInputStream stream1 = new FileInputStream(f);
+            BitmapFactory.decodeStream(stream1, null, o);
             stream1.close();
 
             //Find the correct scale value. It should be the power of 2.
 
             // Set width/height of recreated image
-            final int REQUIRED_SIZE=800;
+            final int REQUIRED_SIZE = 300;
 
-            int width_tmp=o.outWidth, height_tmp=o.outHeight;
-            int scale=1;
-            while(true){
-                if(width_tmp/2 < REQUIRED_SIZE || height_tmp/2 < REQUIRED_SIZE)
+            int width_tmp = o.outWidth, height_tmp = o.outHeight;
+            int scale = 1;
+            while (true) {
+                if (width_tmp / 2 < REQUIRED_SIZE || height_tmp / 2 < REQUIRED_SIZE)
                     break;
-                width_tmp/=2;
-                height_tmp/=2;
-                scale*=2;
+                width_tmp /= 2;
+                height_tmp /= 2;
+                scale *= 2;
             }
 
             //decode with current scale values
             BitmapFactory.Options o2 = new BitmapFactory.Options();
-            o2.inSampleSize=scale;
-            FileInputStream stream2=new FileInputStream(f);
-            Bitmap bitmap=BitmapFactory.decodeStream(stream2, null, o2);
+            o2.inSampleSize = scale;
+            FileInputStream stream2 = new FileInputStream(f);
+            Bitmap bitmap = BitmapFactory.decodeStream(stream2, null, o2);
             stream2.close();
             return bitmap;
 
         } catch (FileNotFoundException ignored) {
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
     }
 
-    private boolean imageViewReused(PhotoToLoad photoToLoad){
+    private boolean imageViewReused(PhotoToLoad photoToLoad) {
 
-        String tag=imageViews.get(photoToLoad.imageView);
+        String tag = imageViews.get(photoToLoad.imageView);
         //Check url is already exist in imageViews MAP
         return tag == null || !tag.equals(photoToLoad.url);
     }
 
     //Used to display bitmap in the UI thread
-    class BitmapDisplayer implements Runnable
-    {
+    class BitmapDisplayer implements Runnable {
         Bitmap bitmap;
         PhotoToLoad photoToLoad;
-        BitmapDisplayer(Bitmap b, PhotoToLoad p){bitmap=b;photoToLoad=p;}
-        public void run()
-        {
-            if(imageViewReused(photoToLoad))
+
+        BitmapDisplayer(Bitmap b, PhotoToLoad p) {
+            bitmap = b;
+            photoToLoad = p;
+        }
+
+        public void run() {
+            if (imageViewReused(photoToLoad))
                 return;
 
             // Show bitmap on UI
-            if(bitmap!=null)
+            if (bitmap != null)
                 photoToLoad.imageView.setImageBitmap(bitmap);
             else
                 photoToLoad.imageView.setImageResource(stub_id);

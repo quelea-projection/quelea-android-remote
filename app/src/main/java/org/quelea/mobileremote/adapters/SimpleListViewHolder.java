@@ -7,11 +7,13 @@ import android.widget.TextView;
 import org.quelea.mobileremote.R;
 
 class SimpleListViewHolder {
-    TextView mTVItem;
-    ImageView mImageView;
+    TextView slideText;
+    TextView slideTitle;
+    ImageView slideImage;
 
     SimpleListViewHolder(View base) {
-        mTVItem = base.findViewById(R.id.detailRight);
-        mImageView = base.findViewById(R.id.slideImage);
+        slideText = base.findViewById(R.id.detailRight);
+        slideTitle = base.findViewById(R.id.slide_title);
+        slideImage = base.findViewById(R.id.slideImage);
     }
 }

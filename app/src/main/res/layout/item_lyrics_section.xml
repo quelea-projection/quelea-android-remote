@@ -15,7 +15,14 @@
         android:scaleType="fitCenter"/>
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/slide_title"
+        android:textColor="@android:color/holo_blue_dark" />
+
+    <TextView
         android:id="@+id/detailRight"
+        android:layout_below="@+id/slide_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"

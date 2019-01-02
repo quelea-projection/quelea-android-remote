@@ -1,6 +1,5 @@
 package org.quelea.mobileremote.adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -63,49 +62,53 @@ public class LyricsAdapter extends BaseAdapter {
             v = convertView;
             viewHolder = (SimpleListViewHolder) convertView.getTag();
         }
-        viewHolder.mTVItem.setText(mList.get(position));
-        viewHolder.mTVItem.setTypeface(Typeface.createFromAsset(mContext.getAssets(), "OpenSans-Regular.ttf"));
+        viewHolder.slideText.setText(mList.get(position));
+        viewHolder.slideText.setTypeface(Typeface.createFromAsset(mContext.getAssets(), "OpenSans-Regular.ttf"));
         if (mContext.isPresentation()) {
             String url = mContext.getSettings().getIp() + "/slides/slide" + (position + 1) + ".png";
-            imageLoader.DisplayImage(url, viewHolder.mImageView);
-            viewHolder.mTVItem.setTextColor(mContext.getResources().getColor(R.color.text_default));
-            viewHolder.mImageView.getLayoutParams().height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 150, mContext.getResources().getDisplayMetrics());
-            viewHolder.mImageView.requestLayout();
-            viewHolder.mImageView.setVisibility(View.VISIBLE);
-            viewHolder.mTVItem.bringToFront();
+            imageLoader.DisplayImage(url, viewHolder.slideImage);
+            viewHolder.slideText.setTextColor(mContext.getResources().getColor(R.color.text_default));
+            viewHolder.slideImage.getLayoutParams().height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 150, mContext.getResources().getDisplayMetrics());
+            viewHolder.slideImage.requestLayout();
+            viewHolder.slideImage.setVisibility(View.VISIBLE);
+            viewHolder.slideText.bringToFront();
         } else {
-            viewHolder.mImageView.setVisibility(View.INVISIBLE);
-            viewHolder.mImageView.getLayoutParams().height = 80;
-            viewHolder.mImageView.requestLayout();
+            viewHolder.slideImage.setVisibility(View.INVISIBLE);
+            viewHolder.slideImage.getLayoutParams().height = 80;
+            viewHolder.slideImage.requestLayout();
         }
         if (position == mContext.getActiveVerse()) {
             v.setBackgroundColor(mContext.getResources().getColor(R.color.live_item));
-            viewHolder.mTVItem.setTextColor(mContext.getResources().getColor(R.color.text_default));
-            viewHolder.mImageView.setAlpha(0.5f);
+            viewHolder.slideText.setTextColor(mContext.getResources().getColor(R.color.text_default));
+            viewHolder.slideImage.setAlpha(0.5f);
             if (mContext.isTextHidden()) {
-                viewHolder.mTVItem.setTypeface(viewHolder.mTVItem.getTypeface(), Typeface.ITALIC);
-                viewHolder.mImageView.setColorFilter(Color.rgb(60, 60, 60), android.graphics.PorterDuff.Mode.MULTIPLY);
+                viewHolder.slideText.setTypeface(viewHolder.slideText.getTypeface(), Typeface.ITALIC);
+                viewHolder.slideImage.setColorFilter(Color.rgb(60, 60, 60), android.graphics.PorterDuff.Mode.MULTIPLY);
             } else {
-                viewHolder.mTVItem.setTypeface(viewHolder.mTVItem.getTypeface(), Typeface.NORMAL);
-                viewHolder.mImageView.clearColorFilter();
+                viewHolder.slideText.setTypeface(viewHolder.slideText.getTypeface(), Typeface.NORMAL);
+                viewHolder.slideImage.clearColorFilter();
             }
-            viewHolder.mTVItem.setTextColor(mContext.getResources().getColor(R.color.text_default));
-            viewHolder.mTVItem.bringToFront();
+            viewHolder.slideText.setTextColor(mContext.getResources().getColor(R.color.text_default));
+            viewHolder.slideText.bringToFront();
 
         } else {
             v.setBackgroundColor(UtilsMisc.getBackgroundColor(mContext));
-            viewHolder.mTVItem.setVisibility(View.VISIBLE);
-            viewHolder.mImageView.setAlpha(1f);
-            viewHolder.mImageView.clearColorFilter();
+            viewHolder.slideText.setVisibility(View.VISIBLE);
+            viewHolder.slideImage.setAlpha(1f);
+            viewHolder.slideImage.clearColorFilter();
             if (mContext.getSettings().getTheme().equals("1")) {
-                viewHolder.mTVItem.setTextColor(mContext.getResources().getColor(R.color.text_dark_theme));
+                viewHolder.slideText.setTextColor(mContext.getResources().getColor(R.color.text_dark_theme));
             } else {
-                viewHolder.mTVItem.setTextColor(mContext.getResources().getColor(R.color.text_default));
+                viewHolder.slideText.setTextColor(mContext.getResources().getColor(R.color.text_default));
             }
+        }
+        if (mContext.getSlideTitles().get(position) != null) {
+            viewHolder.slideTitle.setText(String.format("%s%s", mContext.getSlideTitles().get(position), mContext.getSlideTitles().get(position).isEmpty() ? "" : "\n"));
+        } else {
+            viewHolder.slideTitle.setText("");
         }
         return v;
     }
-
 }
 
 

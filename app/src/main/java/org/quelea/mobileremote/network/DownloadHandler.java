@@ -54,7 +54,6 @@ public class DownloadHandler {
                         activity.getParseDownloadedTextHelper().setLyrics(line);
                         break;
                     case STATUS:
-                        System.out.println(line);
                         activity.getParseDownloadedTextHelper().handleButtonStatus(line);
                         break;
                     case CHECK:

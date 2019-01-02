@@ -15,6 +15,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.util.Log;
+import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -160,9 +161,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void continueLoading() {
         if (UtilsNetwork.checkWifiOnAndConnected(this)) {
-            // Check if URL responds
             ServerIO.checkServerConnection(MainActivity.this, settingsHelper.getIp());
-
         } else {
             dialogsHelper.enterURLDialog(getString(R.string.troubleshoot_msg_check_wifi), settingsHelper.getIp(), this);
         }
@@ -312,8 +311,9 @@ public class MainActivity extends AppCompatActivity {
     // Method to handle result from auto-connecting
     public void handleAutoIPResult(String autoIP) {
         if (autoIP.equals("")) {
-            dialogsHelper.enterURLDialog(getResources().getString(R.string.msg_no_server_found),
-                    settingsHelper.getIp(), this);
+            if (!isFinishing())
+                dialogsHelper.enterURLDialog(getResources().getString(R.string.msg_no_server_found),
+                        settingsHelper.getIp(), this);
         } else {
             String address = "http://" + autoIP + ":50015";
             ServerIO.loadWithProgressDialog(MainActivity.this, LoadWithProgressModes.AUTO, address);
@@ -1297,6 +1297,10 @@ public class MainActivity extends AppCompatActivity {
         return progressDialogs;
     }
 
+    public SparseArray<String> getSlideTitles() {
+        return slideTitles;
+    }
+
     public static SettingsHelper settingsHelper = new SettingsHelper();
     private DialogsHelper dialogsHelper = new DialogsHelper();
     private ScheduleAdapter scheduleAdapter;
@@ -1363,6 +1367,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean clearPressed;
     private boolean presentation;
     private boolean canJump = true;
+    private SparseArray<String> slideTitles = new SparseArray<>();
 
     private enum LongClickModes {
         PROGRESS,

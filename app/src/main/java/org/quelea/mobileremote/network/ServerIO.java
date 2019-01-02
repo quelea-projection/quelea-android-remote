@@ -62,7 +62,6 @@ public class ServerIO {
     }
 
     public static void nextItem(final MainActivity mainActivity) {
-        System.out.println("Next Item");
         loadInBackground(settingsHelper.getIp() + "/nextitem", mainActivity);
         nextItemAnimation(mainActivity);
         mainActivity.setActiveVerse(0);

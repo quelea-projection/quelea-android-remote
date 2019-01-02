@@ -127,6 +127,7 @@ public class ParseDownloadedTextHelper {
     private void cleanLyrics(String line) {
         context.setLine(line);
         context.getVerseLyrics().clear();
+        context.getSlideTitles().clear();
 
         // Calculate which slide is currently active
         if (line.contains("current\">")) {
@@ -177,6 +178,9 @@ public class ParseDownloadedTextHelper {
             context.getVerseLyrics().remove(context.getVerseLyrics().size() - 1);
             int i = 0;
             for (String s : context.getVerseLyrics()) {
+                if (s.contains(");\" type=\"")) {
+                    context.getSlideTitles().put(i, s.replaceAll(".*type=\"([A-Za-z 1-9-]*).*", "$1"));
+                }
                 context.getVerseLyrics().set(i, Html.fromHtml(s).toString().replaceAll("￼", "").replaceAll("\n\n", ""));
                 i++;
             }

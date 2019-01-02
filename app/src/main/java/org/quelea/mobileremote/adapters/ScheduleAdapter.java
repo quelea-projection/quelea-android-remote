@@ -57,27 +57,27 @@ public class ScheduleAdapter extends BaseAdapter {
         }
         if (position == ((MainActivity) mContext).getActiveItem()) {
             v.setBackgroundColor(mContext.getResources().getColor(R.color.live_item));
-            viewHolder.mTVItem.setTextColor(mContext.getResources().getColor(R.color.text_default));
+            viewHolder.slideText.setTextColor(mContext.getResources().getColor(R.color.text_default));
         } else if (position == ((MainActivity) mContext).getPreviewItem()) {
             v.setBackgroundColor(mContext.getResources().getColor(R.color.preview_item));
-            viewHolder.mTVItem.setTextColor(mContext.getResources().getColor(R.color.text_default));
+            viewHolder.slideText.setTextColor(mContext.getResources().getColor(R.color.text_default));
         } else {
             v.setBackgroundColor(UtilsMisc.getBackgroundColor(mContext));
             if (((MainActivity) mContext).getSettings().getTheme().equals("1"))
-                viewHolder.mTVItem.setTextColor(mContext.getResources().getColor(R.color.text_dark_theme));
+                viewHolder.slideText.setTextColor(mContext.getResources().getColor(R.color.text_dark_theme));
             else {
-                viewHolder.mTVItem.setTextColor(mContext.getResources().getColor(R.color.text_default));
+                viewHolder.slideText.setTextColor(mContext.getResources().getColor(R.color.text_default));
                 parent.setBackgroundResource(R.color.background);
             }
         }
 
-        viewHolder.mTVItem.setText(mList.get(position));
+        viewHolder.slideText.setText(mList.get(position));
         if (mList.get(position).equals("")) {
-            viewHolder.mTVItem.setVisibility(View.GONE);
+            viewHolder.slideText.setVisibility(View.GONE);
         } else {
-            viewHolder.mTVItem.setVisibility(View.VISIBLE);
+            viewHolder.slideText.setVisibility(View.VISIBLE);
         }
-        viewHolder.mTVItem.setTypeface(Typeface.createFromAsset(mContext.getAssets(), "OpenSans-Regular.ttf"));
+        viewHolder.slideText.setTypeface(Typeface.createFromAsset(mContext.getAssets(), "OpenSans-Regular.ttf"));
         return v;
     }
 }

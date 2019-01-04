@@ -178,8 +178,8 @@ public class ParseDownloadedTextHelper {
             context.getVerseLyrics().remove(context.getVerseLyrics().size() - 1);
             int i = 0;
             for (String s : context.getVerseLyrics()) {
-                if (s.contains(");\" type=\"")) {
-                    context.getSlideTitles().put(i, s.replaceAll(".*type=\"([A-Za-z 1-9-]*).*", "$1"));
+                if (s.contains(");\" data-type=\"")) {
+                    context.getSlideTitles().put(i, s.replaceAll(".*data-type=\"([A-Za-z 1-9-]*).*", "$1"));
                 }
                 context.getVerseLyrics().set(i, Html.fromHtml(s).toString().replaceAll("￼", "").replaceAll("\n\n", ""));
                 i++;

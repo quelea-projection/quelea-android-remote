@@ -130,6 +130,8 @@
     <string name="pref_title_disable_rec">Disable the record button</string>
     <string name="pref_title_app_theme">Application theme</string>
     <string name="pref_description_choose_app_theme">Choose a theme for the application</string>
+    <string name="msg_enter_notice_text">Enter notice text</string>
+    <string name="action_send_notice">Send notice</string>
 
     <!-- Translatable arrays -->
     <string-array name="auto_progress">

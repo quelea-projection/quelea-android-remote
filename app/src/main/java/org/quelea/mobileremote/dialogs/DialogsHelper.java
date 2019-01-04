@@ -132,6 +132,52 @@ public class DialogsHelper {
         input.setOnEditorActionListener(exampleListener);
     }
 
+    // Show dialog telling user to enter notice to send
+    public void noticeDialog(final MainActivity context) {
+        urlNotFound++;
+        context.setDialogShown(true);
+        final DefaultDialog alert = new DefaultDialog(context, context.getString(R.string.msg_enter_notice_text), "", context.getResources().getString(R.string.action_ok_label), null, context.getResources().getString(R.string.action_cancel_label), false, true, true);
+        final EditText input = alert.getInput();
+        final AlertDialog dialog = alert.getAlertDialog();
+
+        alert.getYes().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.setDialogShown(false);
+                Editable value = input.getText();
+                ServerIO.sendNotice(value.toString(), alert.getNumberPicker().getValue(), context);
+                dialog.dismiss();
+            }
+        });
+
+
+        alert.getNeutral().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                context.setDialogShown(false);
+                ServerIO.checkServerConnection(context, context.getSettings().getIp());
+            }
+        });
+
+        // Listen for enter/return press on input
+        TextView.OnEditorActionListener exampleListener = new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView input, int actionId,
+                                          KeyEvent event) {
+                if (((actionId == EditorInfo.IME_NULL && event.getAction() == KeyEvent.ACTION_DOWN))
+                        || (actionId == EditorInfo.IME_ACTION_DONE)) {
+                    Editable value = input.getEditableText();
+                    ServerIO.sendNotice(value.toString(), alert.getNumberPicker().getValue(), context);
+                    dialog.dismiss();
+                }
+                return true;
+            }
+        };
+
+        input.setOnEditorActionListener(exampleListener);
+    }
+
     public void checkUserInput(String ip, MainActivity context) {
         // Check if input is empty or contains less than 7 characters
         // (which both is the smallest potential IP with port

@@ -78,7 +78,11 @@ public class DownloadHandler {
                         if (line.contains("<!DOCTYPE html>")) {
                             activity.runOnUiThread(new Runnable() {
                                 public void run() {
-                                    activity.getDialogsHelper().infoDialog(activity.getString(R.string.msg_not_supported), activity);
+                                    if (ip.contains("notice")) {
+                                        activity.getNotice().setVisible(false);
+                                    } else {
+                                        activity.getDialogsHelper().infoDialog(activity.getString(R.string.msg_not_supported), activity);
+                                    }
                                 }
                             });
                         }

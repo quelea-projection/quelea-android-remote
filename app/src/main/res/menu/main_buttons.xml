@@ -28,4 +28,11 @@
         android:title="@string/action_start_recording"
         myapp:showAsAction="always"/>
 
+    <item
+        android:id="@+id/notice"
+        android:icon="@drawable/ic_warning"
+        android:title="@string/action_send_notice"
+        android:visible="false"
+        myapp:showAsAction="always"/>
+
 </menu>

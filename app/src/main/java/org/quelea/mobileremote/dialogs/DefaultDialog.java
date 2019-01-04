@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 
 import org.quelea.mobileremote.R;
@@ -24,16 +25,17 @@ public class DefaultDialog {
     /**
      * Custom dialog default for the app with up to three buttons, optional input and help icon.
      *
-     * @param context       app context
-     * @param message       message to be displayed (no title is used)
-     * @param prefill       predefined value for input, can be empty but not null
-     * @param buttonYes     text for positive button, null means not visible
-     * @param buttonNo      text for negative button, null means not visible
-     * @param buttonNeutral text for neutral button, null means not visible
-     * @param useHelp       true for visible help icon, false otherwise
-     * @param useInput      true for showing user text input dialog, false otherwise
+     * @param context         app context
+     * @param message         message to be displayed (no title is used)
+     * @param prefill         predefined value for input, can be empty but not null
+     * @param buttonYes       text for positive button, null means not visible
+     * @param buttonNo        text for negative button, null means not visible
+     * @param buttonNeutral   text for neutral button, null means not visible
+     * @param useHelp         true for visible help icon, false otherwise
+     * @param useInput        true for showing user text input dialog, false otherwise
+     * @param useNumberPicker true for showing a number picker in the dialog, false otherwise
      */
-    public DefaultDialog(Activity context, String message, @NonNull String prefill, @Nullable String buttonYes, @Nullable String buttonNo, @Nullable String buttonNeutral, boolean useHelp, boolean useInput) {
+    public DefaultDialog(Activity context, String message, @NonNull String prefill, @Nullable String buttonYes, @Nullable String buttonNo, @Nullable String buttonNeutral, boolean useHelp, boolean useInput, boolean useNumberPicker) {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         LayoutInflater factory = LayoutInflater.from(context);
         @SuppressLint("InflateParams") final View customDialog = factory.inflate(
@@ -43,6 +45,7 @@ public class DefaultDialog {
         no = customDialog.findViewById(R.id.btn_no);
         neutral = customDialog.findViewById(R.id.btn_neutral);
         help = customDialog.findViewById(R.id.helpButton);
+        numberPicker = customDialog.findViewById(R.id.number_picker);
 
         TextView tv = customDialog.findViewById(R.id.txt_dia);
         Typeface font = Typeface.createFromAsset(context.getAssets(), "OpenSans-Regular.ttf");
@@ -96,6 +99,18 @@ public class DefaultDialog {
         if (!useHelp) {
             help.setVisibility(View.GONE);
         }
+
+        if (useNumberPicker) {
+            numberPicker.setVisibility(View.VISIBLE);
+            numberPicker.setMinValue(1);
+            numberPicker.setMaxValue(10);
+        } else {
+            numberPicker.setVisibility(View.GONE);
+        }
+    }
+
+    public DefaultDialog(Activity context, String message, @NonNull String prefill, @Nullable String buttonYes, @Nullable String buttonNo, @Nullable String buttonNeutral, boolean useHelp, boolean useInput) {
+        this(context, message, prefill, buttonYes, buttonNo, buttonNeutral, useHelp, useInput, false);
     }
 
     private AlertDialog alertDialog;
@@ -105,6 +120,7 @@ public class DefaultDialog {
     private Button neutral;
     private EditText input;
     private ImageView help;
+    private NumberPicker numberPicker;
 
     ImageView getHelp() {
         return help;
@@ -138,4 +154,7 @@ public class DefaultDialog {
         return alertDialog;
     }
 
+    public NumberPicker getNumberPicker() {
+        return numberPicker;
+    }
 }

@@ -408,6 +408,7 @@ public class MainActivity extends AppCompatActivity {
         searchViewMenu = menu;
         resultView = findViewById(R.id.dropDownSearch);
         translateMenuItem = menu.findItem(R.id.action_translate);
+        notice = menu.findItem(R.id.notice);
 
         searchView
                 .setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
@@ -548,6 +549,11 @@ public class MainActivity extends AppCompatActivity {
         // Handle record button
         if (id == R.id.record) {
             ServerIO.loadInBackground(settingsHelper.getIp() + "/record", MainActivity.this);
+        }
+
+        // Handle notice button
+        if (id == R.id.notice) {
+            dialogsHelper.noticeDialog(MainActivity.this);
         }
 
         return super.onOptionsItemSelected(item);
@@ -802,6 +808,9 @@ public class MainActivity extends AppCompatActivity {
             if (activity.isLoggedIn())
                 Toast.makeText(activity, R.string.msg_logged_in,
                         Toast.LENGTH_LONG).show();
+
+            // Check notice support
+            ServerIO.checkSupported(activity.getSettings().getIp() + "/notice", activity);
         }
 
         @Override
@@ -1026,6 +1035,10 @@ public class MainActivity extends AppCompatActivity {
 
     public MenuItem getEdit_book() {
         return edit_book;
+    }
+
+    public MenuItem getNotice() {
+        return notice;
     }
 
     public boolean isServerFound() {
@@ -1319,6 +1332,7 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem help;
     private MenuItem record;
     private MenuItem edit_book;
+    private MenuItem notice;
     private MenuItem translateMenuItem;
     private ListView scheduleListView;
     private ListView lyricsListView;

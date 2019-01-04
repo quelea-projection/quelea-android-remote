@@ -310,6 +310,7 @@ public class ParseDownloadedTextHelper {
             } else {
                 context.setLoggedIn(true);
                 ServerIO.downloadLyrics(context);
+                ServerIO.checkSupported(context.getSettings().getIp() + "/notice", context);
             }
         } else {
             // Check if auto-connect should be used

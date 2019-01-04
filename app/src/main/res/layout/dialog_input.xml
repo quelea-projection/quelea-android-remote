@@ -47,6 +47,11 @@
             android:layout_gravity="center"
             android:src="@android:drawable/ic_menu_help" />
 
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/number_picker"/>
+
     </LinearLayout>
 
     <EditText

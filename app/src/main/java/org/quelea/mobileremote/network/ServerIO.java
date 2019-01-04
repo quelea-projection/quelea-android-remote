@@ -120,9 +120,12 @@ public class ServerIO {
         DownloadHandler.downloadHtml(UtilsMisc.DownloadHtmlModes.SUPPORTED, url, mainActivity);
     }
 
-
     public static void loadSong(String songNumber, MainActivity mainActivity) {
         loadInBackground(settingsHelper.getIp() + songNumber, mainActivity);
+    }
+
+    public static void sendNotice(String text, int times, MainActivity mainActivity) {
+        loadInBackground(mainActivity.getSettings().getIp() + "/notice/" + text.replaceAll(" ", "&nbsp;") + "/" + times, mainActivity);
     }
 
     public static void sendPassword(String password, MainActivity mainActivity) {

@@ -33,10 +33,10 @@ public class DownloadHandler {
                         activity.setFullyStarted(true);
                     }
 
-                    // Check if connection has failed. If true for 8 times in a row, alert user that the connection has failed
-                    if (line.equals(" ")) {
+                    // Check if connection has failed. If true for 6 times in a row (3 seconds timeout), alert user that the connection has failed
+                    if (line.equals(" ") && mode.equals(UtilsMisc.DownloadHtmlModes.STATUS)) {
                         connectionFailedMR++;
-                        if (connectionFailedMR == 8)
+                        if (connectionFailedMR == 6)
                             activity.lostConnection();
                         return;
                     } else {

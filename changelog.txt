@@ -1,3 +1,8 @@
+Version 4.4
+• Added support for section titles with Quelea 2019.0 (thanks Dylan!)
+• Improved connection timeout
+• Prepared support for notices
+
 Version 4.3
 • Fixed presentation thumbnail bugs
 • Improved connection stability

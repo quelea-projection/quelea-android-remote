@@ -39,7 +39,7 @@ public class DownloadHandler {
                         if (connectionFailedMR == 6)
                             activity.lostConnection();
                         return;
-                    } else {
+                    } else if (mode.equals(UtilsMisc.DownloadHtmlModes.STATUS)) {
                         connectionFailedMR = 0;
                         activity.setOnline(true);
                     }

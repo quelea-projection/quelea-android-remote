@@ -186,6 +186,9 @@ public class ServerIO {
         DownloadHandler.downloadWithProgress(mode, ip, mainActivity);
     }
 
+    // TODO: Investigate alternative methods instead of depricated Apache HTTP client
+    // I had problems with the HttpURLConnection approach for sending the background signals
+    // so I moved to Apache instead. Since Android 9, this approach is deprecated.
     @SuppressWarnings("deprecation")
     public static void loadInBackground(final String ip, final MainActivity activity) {
         Runnable runnable = new Runnable() {

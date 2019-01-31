@@ -1,3 +1,6 @@
+Version 4.5
+• Added support for Android 9
+
 Version 4.4
 • Added support for section titles with Quelea 2019.0 (thanks Dylan!)
 • Improved connection timeout

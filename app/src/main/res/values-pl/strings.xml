@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+
+    <string name="action_logout">Wyloguj się</string>
+    <string name="action_exit">Zakończ</string>
+    <string name="action_black">Czarny</string>
+    <string name="action_clear">Wyczyść</string>
+    <string name="action_logo">Logo</string>
+    <string name="action_previous_item">Poprzednia pozycja</string>
+    <string name="action_previous_slide">Poprzedni slajd</string>
+    <string name="action_next_slide">Następny slajd</string>
+    <string name="action_next_item">Następna pozycja</string>
+    <string name="title_activity_about">O aplikacji</string>
+    <string name="msg_currently_displaying">Teraz wyświetlane%s</string>
+    <string name="msg_want_to_exit">Na pewno zakończyć?</string>
+    <string name="action_yes_label">Tak</string>
+    <string name="action_no_label">Nie</string>
+    <string name="action_ok_label">OK</string>
+    <string name="msg_enter_mr_url">Enter URL to the Quelea Mobile Remote server.</string>
+    <string name="error_failed_finding_mr_server">Failed to find the Quelea Mobile Remote server. Please make sure Quelea is started and that you\'ve entered the right URL.</string>
+    <string name="error_url_incorrect">URL seems to be incorrect. Make sure Quelea is started and enter URL to the Quelea Mobile Remote server.</string>
+    <string name="msg_no_live_item">No item is currently live</string>
+    <string name="action_cancel_label">Cancel</string>
+    <string name="msg_enter_password">Enter the password to the Quelea Mobile Remote server.</string>
+    <string name="msg_logged_in">Logged in</string>
+    <string name="msg_logged_out">Logged out</string>
+    <string name="title_about_headline">About this app:</string>
+    <string name="app_name_mr">Quelea Mobile Remote</string>
+    <string name="msg_add_song">Do you want to add this song?</string>
+    <string name="msg_select_song">Select the song you want to add</string>
+    <string name="msg_no_songs_message">Couldn\'t find any songs matching your search.</string>
+    <string name="msg_search_tooltip">Add a song or a bible passage</string>
+    <string name="msg_about_text_app">This app is a non-profit app made to use with the open source church software Quelea (http://quelea.org). Although it\'s no longer in beta, it\'s surely not flawless yet nor is it feature complete. This is a side project and mostly meant for personal usage, but is gladly shared with anyone who might find it useful.</string>
+    <string name="msg_about_text_support">Feel free to send me an email at arvid@quelea.org if you have any questions or are experiencing issues, but make sure you\'ve started Quelea before the app (with both servers active), that both devices are connected to same network and that you\'ve entered the correct URL first.</string>
+    <string name="msg_about_text_responsibility">I cannot guarantee a flawless experience, so I will not take responsibility for any issues that could occur in a live setting.</string>
+    <string name="msg_connected">Connected to Mobile Remote Server</string>
+    <string name="msg_select_book">Select book</string>
+    <string name="msg_bible_query_hint">[Chapter]:[Verse]-[Verse] in </string>
+    <string name="action_change_translation">Change translation</string>
+    <string name="action_search_song">Search a song</string>
+    <string name="action_add_bible">Add a bible passage</string>
+    <string name="action_play">Play</string>
+    <string name="action_pause">Pause</string>
+    <string name="msg_no_server_found">No server was found when trying to auto-connect. Please make sure Quelea and the auto-connect sever is started or enter URL manually.</string>
+    <string name="action_select_translation">Select bible translation</string>
+    <string name="action_add_go_live">Add and go live</string>
+    <string name="title_enter_song">Search for a song to add to your schedule</string>
+    <string name="msg_how_to"><b>Search a song:</b>\nSearch for a part of the song lyrics or the song title, press Enter and after a few seconds you will receive all the songs matching that search phrase.\n\n<b>Add a bible passage:</b>\nYou separate the chapter mode a verse with a colon (:) and multiple verses in a row with a hyphen (-). If you would like to add several different verses to the same slide, you can separate each new verse with a comma (,) or a semicolon (;) and then write the full passage (including chapter). After you press Enter, you will receive a message if it was possible to add the passage or not.</string>
+    <string name="title_search_help">Search help</string>
+    <string name="msg_trying_to_find_server_automatically">Trying to find server automatically…</string>
+    <string name="msg_getting_bible_translations">Getting bible translations…</string>
+    <string name="msg_trying_to_add_passage">Trying to add passage to your schedule…</string>
+    <string name="msg_checking_stored_url">Checking stored URL…</string>
+    <string name="msg_searching">Searching…</string>
+    <string name="msg_getting_bible_books">Getting bible books…</string>
+    <string name="msg_checking_stored_url_and_auto_connecting">Checking stored URL and auto-connecting…</string>
+    <string name="action_change_book_or_translation">Change bible book or translation</string>
+    <string name="msg_cant_use_ipv6">Unfortunately you can\'t use ipv6 addresses. You need to use an ipv4 address to be able to use this app. If you don\'t know how to find it, google \'find local ip\' and the name of your operating system. Enter the ipv4 address/URL below.</string>
+    <string name="msg_new_settings_added">New navigation settings was added</string>
+    <string name="title_activity_crash">%s Crashed</string>
+    <string name="title_crash">Sorry for the inconvenience!</string>
+    <string name="msg_crash_body_1">I try hard to keep the app as stable as possible, but sometimes the app still crashes. Please help me solving this issue by providing me with helpful information about the context in which the error occurred.</string>
+    <string name="msg_crash_body_2">By clicking \"Report\" an email will be generated with the crash log, which song was currently displayed, data about your phone and other information that could be helpful. Feel free to remove the information about your phone if you feel uncomfortable sharing that.</string>
+    <string name="msg_crash_body_3">Thanks for your help and understanding!</string>
+    <string name="action_feedback">Report a bug/Suggest a feature</string>
+    <string name="action_start_recording">Start recording</string>
+    <string name="action_stop_recording">Stop recording</string>
+    <string name="action_report">Report</string>
+    <string name="troubleshoot_title_activity">Troubleshooting the connection with Quelea</string>
+    <string name="troubleshoot_msg_check_url">Check the URL in your web browser to make sure that the URL works as it is supposed to.</string>
+    <string name="troubleshoot_msg_check_wifi">Make sure wifi is enable on your phone and that you are connected to the same network as the computer with Quelea.</string>
+    <string name="troubleshoot_msg_auto_connect">If you use the auto-connect feature, make sure you have enabled it in Quelea by adding \"use.auto.detect.server=true\" to the settings file located in the .quelea folder in the user directory.</string>
+    <string name="troubleshoot_msg_change_port">Try changing port in Quelea.</string>
+    <string name="troubleshoot_msg_disable_firewall">Disable firewall and anti-virus temporarily to make sure that\'s not where the problem lies.</string>
+    <string name="troubleshoot_msg_check_router">Check your router settings to make sure port forwarding is enabled. This is different for every brand so please consult your product manual for this.</string>
+    <string name="troubleshoot_msg_guide_info">Welcome to the troubleshooting guide. This will walk you through some of the most common causes for the connection to fail. To help me improve the app, please click \"This worked\" whenever you find something that works.</string>
+    <string name="troubleshoot_msg_report_bug">This means there\'s a problem with the app. Would you consider sending me an email with some information so I can solve this?</string>
+    <string name="troubleshoot_msg_not_within_app">Unfortunately this means that the issue lies outside of the app, so I\'m afraid I can\'t solve this for you. Glad you have found some way of getting it to work at least!</string>
+    <string name="troubleshoot_msg_finished">Perfect! Then you should be able to use the app normally mode now on.</string>
+    <string name="troubleshoot_msg_nothing_worked">Sorry that you still can\'t get it to work! Would you like to send me an email so I can see if I could help you any further?</string>
+    <string name="troubleshoot_action_previous">Previous</string>
+    <string name="troubleshoot_action_this_worked">This worked</string>
+    <string name="troubleshoot_action_next">Next</string>
+    <string name="troubleshoot_action_nothing_worked">Nothing worked</string>
+    <string name="msg_not_supported">Your version of Quelea doesn\'t support this feature.</string>
+    <string name="msg_navigation_drawer_open">Open schedule list</string>
+    <string name="msg_navigation_drawer_close">Close schedule list</string>
+    <string name="title_select_theme">Select theme</string>
+    <string name="msg_setting_theme">Setting theme <xliff:g example="Black on White" id="theme_name">%s</xliff:g></string>
+    <string name="msg_choose_action">Choose action for <xliff:g example="Amazing Grace" id="item_name">%s</xliff:g></string>
+    <string name="action_remove_item">Remove from schedule</string>
+    <string name="action_move_up">Move up</string>
+    <string name="action_move_down">Move down</string>
+    <string name="action_search_server">Search server</string>
+    <string name="title_select_chapter">Select chapter</string>
+    <string name="title_select_verse">Select verse</string>
+    <string name="title_select_ending_verse">Select ending verse</string>
+    <string name="action_add">No, just add</string>
+    <string name="msg_failed_sending">Failed sending signal to server</string>
+    <string name="action_change_book">Change book</string>
+    <string name="action_translate">Help translate the app</string>
+    <string name="msg_partially_translated">Unfortunately this app might only be partially translated to your language. Some of the words will be in English until they are added in a later update.  Would you like to help me update the translation?</string>
+    <string name="msg_error_on_add">Something went wrong when trying to add the song.</string>
+    <string name="msg_error_on_save_url">Something went wrong when trying to add to save the fetched URL.</string>
+    <string name="msg_about_source_code">Just like the main software, the app is completely open source, meaning that you can view the source code of the app and contribute to improve it. You can find the source code here: https://github.com/quelea-projection/quelea-android-remote</string>
+
+    <!-- Preference labels -->
+    <string name="pref_title_activity_settings">Settings</string>
+    <string name="pref_header_general">General</string>
+    <string name="pref_title_volume_buttons">Enable volume navigation</string>
+    <string name="pref_description_volume_buttons">Use the phone hardware volume buttons to navigate to next or previous slide/item.</string>
+    <string name="pref_title_dpad_buttons">Enable dpad navigation</string>
+    <string name="pref_description_dpad_buttons">Use dpad buttons (up/down) to navigate to next or previous slide/item. If you want to use a bluetooth keyboard or pedal (like AirTurn), activate this.</string>
+    <string name="pref_header_server_settings">Server settings</string>
+    <string name="pref_title_mr_server">Mobile Remote server</string>
+    <string name="pref_description_mr_server">Click here to enter the URL to the Mobile Remote server.</string>
+    <string name="pref_description_auto_connect">Always try to auto-connect if stored URL does not work.</string>
+    <string name="pref_title_auto_connect">Use auto-connect</string>
+    <string name="pref_header_navigation_settings">Navigation settings</string>
+    <string name="pref_title_on_end">Item end/beginning action</string>
+    <string name="pref_description_on_end">Select what you want the app to do when you navigate with either of the two options above and reach the end/beginning of an item.</string>
+    <string name="pref_description_long_press">Select what you want to happen if you long-press a button when you are navigating with either of the two options above. Note that this won\'t work with AirTurn pedals.</string>
+    <string name="pref_title_long_press">Long-press action</string>
+    <string name="pref_title_double_press">Double press action</string>
+    <string name="pref_description_double_press">Select what you want to happen if you press two buttons at the same time when you are navigating with either of the two options above.</string>
+    <string name="pref_description_swipe_navigation">Choose what should happen if you swipe left or right on the screen.</string>
+    <string name="pref_title_swipe_navigation">Swipe navigation</string>
+    <string name="pref_description_auto_timeout">Longer time means better result if you\'ve got a bad wifi connection, shorter means faster connection but could mean that server is found less often.</string>
+    <string name="pref_title_auto_timeout">Edit auto-connect timeout length</string>
+    <string name="pref_title_disable_rec">Disable the record button</string>
+    <string name="pref_title_app_theme">Application theme</string>
+    <string name="pref_description_choose_app_theme">Choose a theme for the application</string>
+    <string name="msg_enter_notice_text">Enter notice text</string>
+    <string name="action_send_notice">Send notice</string>
+
+    <!-- Translatable arrays -->
+    <string-array name="auto_progress">
+        <item name="0">Progress to next/previous item</item>
+        <item name="1">Hide text with clear button</item>
+        <item name="2">Hide text and show logo</item>
+        <item name="3">Hide text with black screen</item>
+        <item name="4">Do nothing</item>
+    </string-array>
+    <string-array name="swipe_navigation">
+        <item name="0">Move to next/previous item</item>
+        <item name="1">Move to next/previous slide</item>
+        <item name="2">Do nothing</item>
+    </string-array>
+    <string-array name="auto_timeout">
+        <item name="200">Short</item>
+        <item name="500">Medium</item>
+        <item name="1000">Long</item>
+    </string-array>
+    <string-array name="app_theme">
+        <item name="default">Default</item>
+        <item name="dark">Dark</item>
+    </string-array>
+</resources>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+
+    <string name="action_logout">Odjava</string>
+    <string name="action_exit">Izhod</string>
+    <string name="action_black">Èrnina</string>
+    <string name="action_clear">Prazen zaslon</string>
+    <string name="action_logo">Logotip</string>
+    <string name="action_previous_item">Predhodni predmet</string>
+    <string name="action_previous_slide">Predhodna prosojnica</string>
+    <string name="action_next_slide">Naslednja prosojnica</string>
+    <string name="action_next_item">Naslednji predmet</string>
+    <string name="title_activity_about">O aplikaciji</string>
+    <string name="msg_currently_displaying">Trenutno prikazovanje%s</string>
+    <string name="msg_want_to_exit">Ali res želite zapreti program?</string>
+    <string name="action_yes_label">Da</string>
+    <string name="action_no_label">Ne</string>
+    <string name="action_ok_label">V redu</string>
+    <string name="msg_enter_mr_url">Vnesite URL strežnika Queleinega daljinca (mobile remote).</string>
+    <string name="error_failed_finding_mr_server">Queleinega strežnika za daljinsko upravljanje ni mogoèe najti. Preverite, da je Quelea zagnana in ste vnesli pravilni URL.</string>
+    <string name="error_url_incorrect">Kaže, da je URL napaèen. Preverite da je Quelea zagnana in vnesite URL v strežnik Queleinega daljinca (mobile remote).</string>
+    <string name="msg_no_live_item">Trenutno niè ni v živo</string>
+    <string name="action_cancel_label">Preklièi</string>
+    <string name="msg_enter_password">Vnesite geslo strežnika Queleinega daljinca (mobile remote).</string>
+    <string name="msg_logged_in">Prijavljen</string>
+    <string name="msg_logged_out">Odjavljen</string>
+    <string name="title_about_headline">O tej aplikaciji:</string>
+    <string name="app_name_mr">Quelein daljinec (mobile remote)</string>
+    <string name="msg_add_song">Ali želite dodati to pesem?</string>
+    <string name="msg_select_song">Izberite pesem, ki jo želite dodati</string>
+    <string name="msg_no_songs_message">Ni mogoèe najti pesmi, ki bo odgovarjala vašemu iskanju.</string>
+    <string name="msg_search_tooltip">Dodaj pesem ali svetopisemski odlomek</string>
+    <string name="msg_about_text_app">To je brezplaèna aplikacija za uporabo ob odprtokodnem programu za bogoslužje, Quelea (http://quelea.org). Èeprav ni veè preizkusna razlièica, še vedno ni brez napak niti nima še vseh zmožnosti. Je postranski projekt, naèeloma narejen za zasebno rabo, vendar ga lahko uporabi vsak, komur se bo zdel uporaben.</string>
+    <string name="msg_about_text_support">Èe boste imeli kakšno vprašanje ali ste naleteli na težavo, mi brez težave lahko pošljete epošto na arvid @ quelea.org. Preverite le, da ste Queleo zagnali (z omogoèenima obema strežnikoma) še pred zagonom aplikacije, da sta obe napravi na istem omrežju in da ste vnesli najprej pravi URL.</string>
+    <string name="msg_about_text_responsibility">Nej jamèim izkušnje brez napak, zato ne prevzemam odgovornosti za kakršne koli težave, èe bi nastale pri postavitvi v živo.</string>
+    <string name="msg_connected">Povezan s strežnikom daljinca</string>
+    <string name="msg_select_book">Izberite knjigo</string>
+    <string name="msg_bible_query_hint">[Poglavje]:[Vrstica]-[Vrstica] v </string>
+    <string name="action_change_translation">Spremeni prevod</string>
+    <string name="action_search_song">Poišèi pesem</string>
+    <string name="action_add_bible">Dodaj svetopisemski odlomek</string>
+    <string name="action_play">Predvajaj</string>
+    <string name="action_pause">Premor</string>
+    <string name="msg_no_server_found">Pri poskusu samodejnega povezovanja ni bilo mogoèe najti nobenega strežnika. Preverite, ali sta Quelea in strežnik za samodejno povezovanje zagnana, ali pa roèno vnesite URL.</string>
+    <string name="action_select_translation">Izberite prevod Svetega pisma</string>
+    <string name="action_add_go_live">Dodaj in pošlji v živo</string>
+    <string name="title_enter_song">Išèite pesem, ki jo želite dodati na razpored</string>
+    <string name="msg_how_to"><b>Iskanje pesmi:</b>\nVtipkajte del besedila ali naslov pesmi, potrdite z vnašalko in v nekaj sekundah se vam bodo izpisale vse pesmi, ki se ujemajo z vašim iskanjem.\n\n<b>Dodaj svetopisemski odlomek:</b>\nPri navajanju poglavje loèite od vrstice z dvopièjem (:) in zaporedne vrstice s pomišljajem (-). Èe želite na prosojnico dodati veè razliènih vrstic, lahko vsako naslednjo loèite z vejico (,) ali podpièjem (;) in napišete celoten odlomek (vkljuèno s poglavjem). Po pritisku na vnašalko boste prejeli obvestilo, ali je bilo odlomek mogoèe dodati na razpored ali ne.</string>
+    <string name="title_search_help">Pomoè pri iskanju</string>
+    <string name="msg_trying_to_find_server_automatically">Poskušamo samodejno poiskati strežnik …</string>
+    <string name="msg_getting_bible_translations">Pridobivanje prevoda Svetega pisma …</string>
+    <string name="msg_trying_to_add_passage">Poskušamo dodati svetopisemski odlomek na razpored …</string>
+    <string name="msg_checking_stored_url">Preverjanje shranjenih URLjev …</string>
+    <string name="msg_searching">Iskanje …</string>
+    <string name="msg_getting_bible_books">Pridobivanje svetopisemskih knjig…</string>
+    <string name="msg_checking_stored_url_and_auto_connecting">Preverjanje shranjenega URL in samodejno povezovanje …</string>
+    <string name="action_change_book_or_translation">Zamenjaj svetopisemko knjigo ali prevod</string>
+    <string name="msg_cant_use_ipv6">Žal ni mogoèe uporabljati naslovov ipv6. Èe želite uporabljati to aplikacijo, morate uporabljati ipv4 naslov. Èe ga ne znate poiskati, vtipkajte v iskalnik \'najdi krajevni IP (find local ip)\' in naziv vašega operacijskega sistema. Vnesite spodaj ipv4 naslov/URL.</string>
+    <string name="msg_new_settings_added">Nova nastavitev krmarjenja je bila dodana</string>
+    <string name="title_activity_crash">%s se je sesul</string>
+    <string name="title_crash">Žal nam je za nevšeènosti!</string>
+    <string name="msg_crash_body_1">Trudim se, da bi bila aplikacija karseda stabilna, vendar se lahko kdaj vseeno sesuje. Pomagajte mi reševati te težave s poroèanjem o dogajanju v trenutku sesutja.</string>
+    <string name="msg_crash_body_2">S klikom na \"Poroèaj\" se bo spisalo epoštno sporoèilo z dnevnikom sesutja, katera pesem se je takrat prikazovala, podatki o telefonu in drugimi podatki, ki bi lahko bili koristni. Seveda lahko podatke o vašem telefonu odstranite, èe jih ne želite deliti.</string>
+    <string name="msg_crash_body_3">Hvala za vašo pomoè in razmevanje</string>
+    <string name="action_feedback">Poroèaj o hrošèu/Predlagaj zmožnost</string>
+    <string name="action_start_recording">Zaèni snemanje</string>
+    <string name="action_stop_recording">Ustavi snemanje</string>
+    <string name="action_report">Poroèaj</string>
+    <string name="troubleshoot_title_activity">Iskanje napak v povezavi s Queleo</string>
+    <string name="troubleshoot_msg_check_url">Preverite URL v vašem spletnem brskalniku, da se preprièate, ali URL deluje, kot mora.</string>
+    <string name="troubleshoot_msg_check_wifi">Preprièajte se, da je Wi-fi na vašem telefonu omogoèen in povezan v isto omrežje kot raèunalnik s Queleo.</string>
+    <string name="troubleshoot_msg_auto_connect">Èe uporabljate zmožnost samodejnega povezovanja preverite, da je omogoèeno v Quelei tako, da nastavite \"use.auto.detect.server=true\" v nastavitveni datoteki, ki jo lahko najdete v podmapi .quelea mape \"uporabnik\".</string>
+    <string name="troubleshoot_msg_change_port">Poskusite v Quelei spremeniti vrata.</string>
+    <string name="troubleshoot_msg_disable_firewall">Zaèasno onemogoèite požarni zid in protivirusnik, da se preprièate, da nista vzrok za težave.</string>
+    <string name="troubleshoot_msg_check_router">Preverite, da je v nastavitvah usmerjevalnika (router) omogoèeno posredovanje vrat. To se razlikuje med razliènimi znamkami, zato poglejte v njihove priroènike.</string>
+    <string name="troubleshoot_msg_guide_info">Dobrodošli v vodniku za odkrivanje napak. Vodil vas bo skozi nekaj najobièajnejših vzrokov za neuspelo povezavo. Èe želite pomagati pri izboljšanju aplikacije, kliknite \"To je delovalo\", ko vam nek predlog pomaga rešiti težavo.</string>
+    <string name="troubleshoot_msg_report_bug">To pomeni da ima aplikacija težavo. Ali mi želite poslati epošto z nekaj podatki, da bi to lahko odpravil?</string>
+    <string name="troubleshoot_msg_not_within_app">Žal to pomeni, da je težava izven aplikacije, zato se bojim, da tega ne morem rešiti. Veseli me, da ste vseeno uspeli najti rešitev za delovanje aplikacije!</string>
+    <string name="troubleshoot_msg_finished">Odlino! Torej lahko aplikacijo od zdaj normalno uporabljali.</string>
+    <string name="troubleshoot_msg_nothing_worked">Žal nam je, da je še vedno ne morete usposobiti! Ali mi želite poslati epošto, da bi lahko pogledal, ali vam lahko še kako pomagam?</string>
+    <string name="troubleshoot_action_previous">Predhodno</string>
+    <string name="troubleshoot_action_this_worked">To je delovalo</string>
+    <string name="troubleshoot_action_next">Naprej</string>
+    <string name="troubleshoot_action_nothing_worked">Niè ni delovalo</string>
+    <string name="msg_not_supported">Vaša razlièica Queleje je podpira te zmožnosti.</string>
+    <string name="msg_navigation_drawer_open">Odpri seznam razporeda</string>
+    <string name="msg_navigation_drawer_close">Zapri seznam razporeda</string>
+    <string name="title_select_theme">Izberite temo</string>
+    <string name="msg_setting_theme">Nastavljanje teme <xliff:g example="Black on White" id="theme_name">%s</xliff:g></string>
+    <string name="msg_choose_action">Izberite dejanje za <xliff:g example="Amazing Grace" id="item_name">%s</xliff:g></string>
+    <string name="action_remove_item">Odstrani z razporeda</string>
+    <string name="action_move_up">Pomakni više</string>
+    <string name="action_move_down">Pomakni niže</string>
+    <string name="action_search_server">Išèi strežnik</string>
+    <string name="title_select_chapter">Izberite poglavje</string>
+    <string name="title_select_verse">Izberite vrstico</string>
+    <string name="title_select_ending_verse">Izberite zakljuèno vrstico</string>
+    <string name="action_add">Ne, le dodaj</string>
+    <string name="msg_failed_sending">Pošiljanje signala strežniku je spodletelo</string>
+    <string name="action_change_book">Spremeni knjigo</string>
+    <string name="action_translate">Pomagajte prevesti aplikacijo</string>
+    <string name="msg_partially_translated">Žal je je ta aplikacija lahko le delno prevedena v vaš jezik. Nekatere besede bodo v anglešèini dokler niso dodane v poznejši posodobitvi. Ali želite pomagati posodobiti prevod?</string>
+    <string name="msg_error_on_add">Pri dodajanju pesmi je šlo nekaj narobe.</string>
+    <string name="msg_error_on_save_url">Pri dodajanju pridobljenega URLja je šlo nekaj narobe.</string>
+    <string name="msg_about_source_code">Prav tako kot glavni program, je tudi aplikacija popolnoma odprtokodna, kar pomeni, da lahko kodo vodite in prispevate izboljšave. Izvorno kodo alhko najdete na https://github.com/quelea-projection/quelea-android-remote</string>
+
+    <!-- Preference labels -->
+    <string name="pref_title_activity_settings">Nastavitve</string>
+    <string name="pref_header_general">Obèe</string>
+    <string name="pref_title_volume_buttons">Omogoèi upravljanje z glasnostnimi tipkami</string>
+    <string name="pref_description_volume_buttons">Za krmiljenje med prosojnicami oz. predmeti uporabi stvarne glasnostne tipke telefona.</string>
+    <string name="pref_title_dpad_buttons">Omogoèi krmiljenje s smernikom</string>
+    <string name="pref_description_dpad_buttons">Za prehod na naslednjo ali predhodno prosojnico/predmet uporabi tipke smernika (gor/dol). Èe želite uporabiti bluetooth tipkovnico ali pedal (kot je AirTurn), omogoèite to možnost.</string>
+    <string name="pref_header_server_settings">Nastavitve strežnika</string>
+    <string name="pref_title_mr_server">Strežnik daljinca (Mobile Remote)</string>
+    <string name="pref_description_mr_server">Za vnos URLja do strežnika daljinca kliknite sem.</string>
+    <string name="pref_description_auto_connect">Vedno poskusi s samodejnim povezovanjem, èe shranjeni URL ne deluje.</string>
+    <string name="pref_title_auto_connect">Uporabi samodejno povezovanje</string>
+    <string name="pref_header_navigation_settings">Nastavitve krmiljenja</string>
+    <string name="pref_title_on_end">Konec/zaèetek predmeta</string>
+    <string name="pref_description_on_end">Izberite, kaj želite, da aplikacija naredi, ko krmarite z eno izmed zgornjih dveh možnosti in pridete do konca oz. zaèetka predmeta.</string>
+    <string name="pref_description_long_press">Izberite, kaj želite, da se zgodi, èe tišèite gumb, ko krmarite z eno izmed zgornjih dveh možnosti. Pozor, to ne bo delovalo z AirTurn pedali.</string>
+    <string name="pref_title_long_press">Dejanje ob tišèanju</string>
+    <string name="pref_title_double_press">Dejanje ob dvotapu</string>
+    <string name="pref_description_double_press">Izberite, kaj naj se zgodi ob soèasnem pritisku na dva gumba med krmiljenjem z eno od zgornjih dveh možnosti.</string>
+    <string name="pref_description_swipe_navigation">Izberite kaj se zgodi, èe podrsate po zaslonu levo ali desno.</string>
+    <string name="pref_title_swipe_navigation">Krmiljenje s podrsanjem</string>
+    <string name="pref_description_auto_timeout">Daljši èas pomeni boljši rezultat, èe imate slabo Wi-fi povezavo, hitrejši po drugi strani pomeni hitrejšo povezavo, vendar lahko pomeni tudi, da je strežnik redkeje najden.</string>
+    <string name="pref_title_auto_timeout">Uredi dolžino premora pri samodejnem povezovanju</string>
+    <string name="pref_title_disable_rec">Onemogoèi snemalni gumb</string>
+    <string name="pref_title_app_theme">Videz aplikacije</string>
+    <string name="pref_description_choose_app_theme">Izberite videz aplikacije</string>
+    <string name="msg_enter_notice_text">Vnesite napis opombe</string>
+    <string name="action_send_notice">Pošlji opombo</string>
+
+    <!-- Translatable arrays -->
+    <string-array name="auto_progress">
+        <item name="0">Pojdi na naslednji/predhodni predmet</item>
+        <item name="1">Skrij besedilo z gumbom Prazen zaslon</item>
+        <item name="2">Skrij besedilo in prikaži logotip</item>
+        <item name="3">Skrij besedilo s èrnino</item>
+        <item name="4">Ne naredi nièesar</item>
+    </string-array>
+    <string-array name="swipe_navigation">
+        <item name="0">Pojdi na naslednji/predhodni predmet</item>
+        <item name="1">Pojdi na naslednjo/predhodno prosojnico</item>
+        <item name="2">Ne naredi nièesar</item>
+    </string-array>
+    <string-array name="auto_timeout">
+        <item name="200">Kratek</item>
+        <item name="500">Srednji</item>
+        <item name="1000">Dolg</item>
+    </string-array>
+    <string-array name="app_theme">
+        <item name="default">Privzeta</item>
+        <item name="dark">Temna</item>
+    </string-array>
+</resources>
